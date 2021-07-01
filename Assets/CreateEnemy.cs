@@ -28,7 +28,8 @@ public class CreateEnemy : MonoBehaviour
 
             Instantiate(prefabEnemy, creatingPoint, Quaternion.identity);
             
-            delay = 10.0f / (count + 4);
+            delay = DataManager.Instance.enemyInterval/(count)  + 0.1f;
+
             yield return new WaitForSeconds(delay);
         }
     }
