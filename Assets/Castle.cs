@@ -13,14 +13,15 @@ public class Castle : MonoBehaviour
     Transform tr;
     public GameObject prefabBullet;
 
+    private bool isDelay = false;
+
     // Start is called before the first frame update
     void Start()
     {
         
-        
         tr = GetComponent<Transform>();
 
-        InvokeRepeating("Fire", 0f, 0.1f + 1/DataManager.Instance.bulletDelay);
+        
 
     }
 
@@ -31,18 +32,36 @@ public class Castle : MonoBehaviour
         {
             SceneManager.LoadScene("GameOver");
         }
-       // Fire();
+       Fire();
+    }
+
+    void CreateBullet()
+    {
+        mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Instantiate(prefabBullet, tr.position, Quaternion.identity);
+        
+    }
+
+    IEnumerator Delay()
+    {
+        yield return new WaitForSeconds(0.05f + 1/DataManager.Instance.bulletDelay);
+        isDelay = false;
     }
 
     void Fire()
     {
-        if(Input.GetMouseButton(0))
+        if(Input.GetMouseButton(0) && DataManager.Instance.isWave)
         {
             if(EventSystem.current.IsPointerOverGameObject() == false)
             {
-                mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                Instantiate(prefabBullet, tr.position, Quaternion.identity);
-                
+                if(!isDelay)
+                {
+                    isDelay = true;
+                    mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                    Instantiate(prefabBullet, tr.position, Quaternion.identity);
+            
+                    StartCoroutine(Delay());
+                }
             }
         }
     }
@@ -57,8 +76,4 @@ public class Castle : MonoBehaviour
         }
     }
 
-    IEnumerator FireDelay()
-    {
-        yield return new WaitForSeconds(1f);
-    }
 }

@@ -37,6 +37,7 @@ public class EnemyMove : MonoBehaviour
         if(EnemyHp <= 0)
         {
             Destroy(gameObject);
+            DataManager.Instance.money += 2;
         }
     }
 }

@@ -22,7 +22,7 @@ public class DataManager : MonoBehaviour
        }
        else
        {
-           DestroyObject(gameObject);
+           Destroy(gameObject);
        }
    }
 
@@ -37,4 +37,10 @@ public class DataManager : MonoBehaviour
 
    public float MaxHp;
    public float NowHp;
+
+   public int Wave;
+
+   public bool isWave;
+
+   public int money;
 }
