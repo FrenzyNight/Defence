@@ -68,6 +68,7 @@ public class CreateEnemy : MonoBehaviour
         Vector2 creatingPoint = new Vector2(limitMin.x, r);
 
         Instantiate(prefabEnemy, creatingPoint, Quaternion.identity);  
+         
         isStart = true;
         if(count >= mobcount)
         {

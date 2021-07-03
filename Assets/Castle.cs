@@ -66,6 +66,7 @@ public class Castle : MonoBehaviour
         }
     }
 
+    /*
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.tag == "enemy")
@@ -75,5 +76,6 @@ public class Castle : MonoBehaviour
             Destroy(collision.gameObject);
         }
     }
+    */
 
 }
