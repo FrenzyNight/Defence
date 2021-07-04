@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9072534785172888672}
   - component: {fileID: 8084868179229135275}
-  - component: {fileID: 4280774481936248676}
+  - component: {fileID: -7216332911083362823}
   m_Layer: 0
   m_Name: Granade
   m_TagString: Untagged
@@ -83,7 +83,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &4280774481936248676
+--- !u!114 &-7216332911083362823
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -96,6 +96,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 0}
-  Angle: 45
+  Angle: 40
   gravity: 9.8
   Projectile: {fileID: 0}

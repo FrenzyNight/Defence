@@ -5,18 +5,25 @@ using UnityEngine;
 public class ParabolaMove : MonoBehaviour
 {
     public Transform Target;
-    public float Angle = 45.0f;
+    public float Angle = 40.0f;
+    private float correctAngle;
 
     public float gravity = 9.8f;
 
     public Transform Projectile;
-    private Transform myTransform;
+    //private Transform myTransform;
 
 
     void Awake()
     {
         Target = GameObject.FindWithTag("target").GetComponent<Transform>();
-        myTransform = GetComponent<Transform>();
+        Projectile = GetComponent<Transform>();
+
+        Vector2 v = Target.position - Projectile.position;
+
+        correctAngle = Mathf.Atan2(v.y, v.x) * Mathf.Rad2Deg;
+
+        //Angle += correctAngle;
        
     }
 
@@ -31,28 +38,35 @@ public class ParabolaMove : MonoBehaviour
     {
         yield return new WaitForSeconds(0.1f);
 
-        Projectile.position = myTransform.position;
+        //Projectile.position = myTransform.position;
+        
 
         float target_Distance = Vector2.Distance(Projectile.position, Target.position);
 
-        float projectile_Velocity = target_Distance / (Mathf.Sin(2*Angle*Mathf.Deg2Rad) / gravity);
+        float projectile_Velocity = target_Distance / (Mathf.Sin(2*Angle*Mathf.Deg2Rad) / gravity) ;
 
-        float Vx = Mathf.Sqrt(projectile_Velocity) * Mathf.Cos(Angle * Mathf.Deg2Rad);
+        float Vx = Mathf.Sqrt(projectile_Velocity) * Mathf.Cos((Angle + correctAngle) * Mathf.Deg2Rad);
 
-        float Vy = Mathf.Sqrt(projectile_Velocity) * Mathf.Sin(Angle * Mathf.Deg2Rad);
+        float Vy = Mathf.Sqrt(projectile_Velocity) * Mathf.Sin((Angle + correctAngle)  * Mathf.Deg2Rad);
 
+       // Vx *= Mathf.Sin(correctAngle * Mathf.Deg2Rad);
+        
+       // Vy *= Mathf.Cos(correctAngle * Mathf.Deg2Rad);
 
         float flightDuration = target_Distance / Vx;
 
-        Projectile.rotation = Quaternion.LookRotation(Target.position - Projectile.position);
+        //Projectile.rotation = Quaternion.LookRotation(Target.position - Projectile.position);
 
         float elapse_time = 0;
 
-        while(elapse_time < flightDuration)
-        {
-            Projectile.Translate(0, (Vy - (gravity * elapse_time)) * Time.deltaTime, Vx*Time.deltaTime);
+        
 
-            elapse_time += Time.deltaTime;
+        while(Projectile.position.x <= Target.position.x)
+        {
+            Projectile.Translate(new Vector2((Vx + (gravity * Mathf.Sin(correctAngle * Mathf.Deg2Rad) * elapse_time)), (Vy - (gravity * Mathf.Cos(correctAngle * Mathf.Deg2Rad) * elapse_time)))* Time.deltaTime * DataManager.Instance.granadeSpeed);
+            //Projectile.Translate(Vx*Time.deltaTime, (Vy - (gravity * elapse_time)) * Time.deltaTime);
+            
+            elapse_time += Time.deltaTime * DataManager.Instance.granadeSpeed ;
 
             yield return null;
         }

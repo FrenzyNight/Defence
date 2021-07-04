@@ -9,6 +9,7 @@ public class TargetMove : MonoBehaviour
     private Vector2 point;
 
     private bool des = false;
+    private bool isLock = false;
 
     Transform tr;
     Transform castle;
@@ -25,8 +26,9 @@ public class TargetMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetMouseButtonUp(0)) // 타겟 완료시
+        if(Input.GetMouseButtonUp(0) && !isLock) // 타겟 완료시
         {
+            isLock = true;
             StartCoroutine(Delay());
         }
         TargetMoving();
@@ -38,7 +40,7 @@ public class TargetMove : MonoBehaviour
 
     void TargetMoving()
     {
-        if(Input.GetMouseButton(0))
+        if(Input.GetMouseButton(0) && !isLock)
         {
             if(EventSystem.current.IsPointerOverGameObject() == false)
             {
@@ -46,6 +48,7 @@ public class TargetMove : MonoBehaviour
                 //point.x -= tr.transform.position.x;
                 //point.y -= tr.transform.position.y;
                 tr.position = point;
+                
             }
         }
     }
@@ -53,7 +56,7 @@ public class TargetMove : MonoBehaviour
     IEnumerator Delay()
     {
         Instantiate(granadePrefab, castle.position, Quaternion.identity);
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(4f);
         des = true;
     }
 
