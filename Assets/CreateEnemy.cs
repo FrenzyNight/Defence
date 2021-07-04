@@ -50,7 +50,7 @@ public class CreateEnemy : MonoBehaviour
 
         if(DataManager.Instance.Wave % 5 == 0)
         {
-            DataManager.Instance.enemyInterval *= 0.9f;
+            DataManager.Instance.enemyInterval *= 0.8f;
         }
 
         

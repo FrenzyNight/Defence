@@ -32,15 +32,14 @@ public class Castle : MonoBehaviour
         {
             SceneManager.LoadScene("GameOver");
         }
+
+        if(DataManager.Instance.NowExp >= DataManager.Instance.MaxExp)
+        {
+            LevelUP();
+        }
        Fire();
     }
 
-    void CreateBullet()
-    {
-        mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Instantiate(prefabBullet, tr.position, Quaternion.identity);
-        
-    }
 
     IEnumerator Delay()
     {
@@ -66,16 +65,17 @@ public class Castle : MonoBehaviour
         }
     }
 
-    /*
-    private void OnTriggerEnter2D(Collider2D collision)
+    void LevelUP()
     {
-        if(collision.tag == "enemy")
-        {
-            DataManager.Instance.NowHp -= DataManager.Instance.enemyDamge;
-            //GuageBar.fillAmount -= Damge / MaxHp; //게이지를 데미지만큼 감소
-            Destroy(collision.gameObject);
-        }
+        DataManager.Instance.MaxHp *= 1.2f;
+        DataManager.Instance.NowHp = DataManager.Instance.MaxHp;
+
+        DataManager.Instance.bulletDamge *= 1.15f;
+        DataManager.Instance.bulletDelay *= 1.05f;
+
+        DataManager.Instance.Level += 1;
+        DataManager.Instance.NowExp -= DataManager.Instance.MaxExp;
+        DataManager.Instance.MaxExp *= 1.5f;
     }
-    */
 
 }

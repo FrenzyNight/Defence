@@ -43,4 +43,8 @@ public class DataManager : MonoBehaviour
    public bool isWave;
 
    public int money;
+
+   public int Level;
+   public float MaxExp;
+   public float NowExp;
 }
