@@ -31,6 +31,7 @@ public class BulletMove : MonoBehaviour
         if(collision.tag == "enemy")
         {
             collision.gameObject.GetComponent<EnemyMove>().EnemyHp -= DataManager.Instance.bulletDamge;
+            collision.gameObject.GetComponent<Transform>().Translate(Vector2.right * DataManager.Instance.bulletNuckback);
             
             Destroy(gameObject);
         }

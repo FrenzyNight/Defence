@@ -31,6 +31,7 @@ public class CreateEnemy : MonoBehaviour
             DataManager.Instance.isWave = false;
             isStart = false;
             StagePanel.SetActive(true);
+            GameObject.Find("SkillManager").GetComponent<SkillSet>().isCool = false;
             SkillPanel.SetActive(false);
         }
     }

@@ -137,17 +137,17 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3080}
     - Class: 114
-      Script: {instanceID: 3594}
+      Script: {instanceID: 3592}
     - Class: 114
-      Script: {instanceID: 4098}
+      Script: {instanceID: 4096}
     - Class: 114
-      Script: {instanceID: 4408}
+      Script: {instanceID: 4406}
     - Class: 114
-      Script: {instanceID: 4882}
+      Script: {instanceID: 4880}
     - Class: 114
-      Script: {instanceID: 4958}
+      Script: {instanceID: 4956}
     - Class: 114
-      Script: {instanceID: 4988}
+      Script: {instanceID: 4986}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -253,7 +253,7 @@ ScriptsOnlyBuild:
     className: TMP_FontAsset
   - hash:
       serializedVersion: 2
-      Hash: a14710b59981686c9f7f57ddf367ebc7
+      Hash: 3cb965f510692f0dbce9b0b6d6b5e9d7
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: DataManager
@@ -721,7 +721,7 @@ ScriptsOnlyBuild:
     className: ActivationPlayableAsset
   - hash:
       serializedVersion: 2
-      Hash: fba7289a2f53b57338a0a9eb68b610ff
+      Hash: bd826847237a41a1b23cb2d0567ba1d0
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: TargetMove
@@ -739,7 +739,7 @@ ScriptsOnlyBuild:
     className: TouchInputModule
   - hash:
       serializedVersion: 2
-      Hash: c872ffafeb8c1c502d43aaa5fd736f86
+      Hash: 41d2a385e0357af1a8a5d4dede6868e0
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: SkillSet
@@ -753,4 +753,4 @@ ScriptsOnlyBuild:
   scenePathNames:
   - Assets/Scenes/MainScene.unity
   - Assets/Scenes/GameOver.unity
-  playerPath: C:/Users/lenovo/Desktop/game/Defence/exe/Defence.exe
+  playerPath: C:/Users/6500/Desktop/game/Defence/Exe/Defence.exe

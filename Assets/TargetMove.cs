@@ -2,12 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class TargetMove : MonoBehaviour
 {
     public GameObject granadePrefab;
     public GameObject Player;
     private Vector2 point;
+    public Button SkillButton;
+
+    private GameObject SkillManager;
 
     private bool des = false;
     private bool isLock = false;
@@ -18,6 +22,7 @@ public class TargetMove : MonoBehaviour
     void Start()
     {
         tr = GetComponent<Transform>();
+        SkillManager = GameObject.Find("SkillManager");
         castle = GameObject.Find("Castle").GetComponent<Transform>();
         point = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         point.x -= tr.transform.position.x;
@@ -33,6 +38,8 @@ public class TargetMove : MonoBehaviour
             isLock = true;
             StartCoroutine(Delay());
             Player.GetComponent<Castle>().isDelay = false;
+            SkillManager.GetComponent<SkillSet>().StartCooltime();
+
         }
         TargetMoving();
         if(des)
@@ -60,9 +67,11 @@ public class TargetMove : MonoBehaviour
         des = true;
     }
 
+    
+
     void Targeting()
     {
-        
+
         Destroy(gameObject);
     }
 }

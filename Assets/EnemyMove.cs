@@ -34,7 +34,7 @@ public class EnemyMove : MonoBehaviour
     {
         tr.Translate(Vector2.left * speed * Time.deltaTime);
         HP.transform.position = Camera.main.WorldToScreenPoint(transform.position);
-        HpTrans.Translate(new Vector2(10f,60f));
+        HpTrans.Translate(new Vector2(10f,95f));
         
         Bar.fillAmount = EnemyHp / DataManager.Instance.enemyMaxHp;
         Death();

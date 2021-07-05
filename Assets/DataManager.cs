@@ -29,6 +29,7 @@ public class DataManager : MonoBehaviour
    public float bulletSpeed;
    public float bulletDamge;
    public float bulletDelay;
+   public float bulletNuckback;
    
    public float enemyMaxHp;
    public float enemySpeed;
@@ -51,4 +52,6 @@ public class DataManager : MonoBehaviour
    public float granadeSpeed;
 
    public bool isStop;
+
+   public float skill1cooltime;
 }
