@@ -36,4 +36,16 @@ public class GameManager : MonoBehaviour
         LvText.text = "Lv. " + DataManager.Instance.Level.ToString();
         expText.text = "Exp : " + DataManager.Instance.NowExp.ToString("0.#") + " / " + DataManager.Instance.MaxExp.ToString("0.#");
     }
+
+    public void GameStopMenu()
+    {
+        DataManager.Instance.isStop = true;
+        Time.timeScale = 0;
+    }
+
+    public void BackToGame()
+    {
+        DataManager.Instance.isStop = false;
+        Time.timeScale = 1;
+    }
 }

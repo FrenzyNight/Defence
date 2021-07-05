@@ -6,6 +6,7 @@ using UnityEngine.EventSystems;
 public class TargetMove : MonoBehaviour
 {
     public GameObject granadePrefab;
+    public GameObject Player;
     private Vector2 point;
 
     private bool des = false;
@@ -21,6 +22,7 @@ public class TargetMove : MonoBehaviour
         point = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         point.x -= tr.transform.position.x;
         point.y -= tr.transform.position.y;
+        Player = GameObject.Find("Castle");
     }
 
     // Update is called once per frame
@@ -30,6 +32,7 @@ public class TargetMove : MonoBehaviour
         {
             isLock = true;
             StartCoroutine(Delay());
+            Player.GetComponent<Castle>().isDelay = false;
         }
         TargetMoving();
         if(des)
@@ -42,21 +45,18 @@ public class TargetMove : MonoBehaviour
     {
         if(Input.GetMouseButton(0) && !isLock)
         {
-            if(EventSystem.current.IsPointerOverGameObject() == false)
-            {
+            //if(EventSystem.current.IsPointerOverGameObject() == false)
+            //{
                 point = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                //point.x -= tr.transform.position.x;
-                //point.y -= tr.transform.position.y;
                 tr.position = point;
-                
-            }
+            //}
         }
     }
 
     IEnumerator Delay()
     {
         Instantiate(granadePrefab, castle.position, Quaternion.identity);
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(0.1f);
         des = true;
     }
 

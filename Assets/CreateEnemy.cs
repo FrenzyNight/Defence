@@ -6,6 +6,7 @@ public class CreateEnemy : MonoBehaviour
 {
     public GameObject prefabEnemy;
     public GameObject StagePanel;
+    public GameObject SkillPanel;
     public Vector2 limitMin;
     public Vector2 limitMax;
 
@@ -30,6 +31,7 @@ public class CreateEnemy : MonoBehaviour
             DataManager.Instance.isWave = false;
             isStart = false;
             StagePanel.SetActive(true);
+            SkillPanel.SetActive(false);
         }
     }
 
@@ -61,20 +63,22 @@ public class CreateEnemy : MonoBehaviour
 
     void Create()
     {
-        
-        count++;
-
-        float r = Random.Range(limitMin.y, limitMax.y);
-        Vector2 creatingPoint = new Vector2(limitMin.x, r);
-
-        Instantiate(prefabEnemy, creatingPoint, Quaternion.identity);  
-         
-        isStart = true;
-        if(count >= mobcount)
+        if(!DataManager.Instance.isStop)
         {
-            isCreate = false;
-            CancelInvoke("Create");
-            //DataManager.Instance.isWave = false;
+            count++;
+
+            float r = Random.Range(limitMin.y, limitMax.y);
+            Vector2 creatingPoint = new Vector2(limitMin.x, r);
+
+            Instantiate(prefabEnemy, creatingPoint, Quaternion.identity);  
+            
+            isStart = true;
+            if(count >= mobcount)
+            {
+                isCreate = false;
+                CancelInvoke("Create");
+                //DataManager.Instance.isWave = false;
+            }
         }
     }
 

@@ -6,6 +6,7 @@ using UnityEngine.EventSystems;
 public class SkillSet : MonoBehaviour
 {
     public GameObject Target;
+    public GameObject Player;
 
     public Vector2 mousePosition;
 
@@ -15,7 +16,7 @@ public class SkillSet : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        Player = GameObject.Find("Castle");
     }
 
     // Update is called once per frame
@@ -30,6 +31,7 @@ public class SkillSet : MonoBehaviour
     public void ReadyToMakeTarget()
     {
         isReady = true;
+        Player.GetComponent<Castle>().isDelay = true;
     }
 
     void MakeTarget()
@@ -41,6 +43,7 @@ public class SkillSet : MonoBehaviour
                 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 Instantiate(Target, mousePosition , Quaternion.identity);
                 isReady = false;
+                
             }
         }
     }

@@ -13,7 +13,7 @@ public class Castle : MonoBehaviour
     Transform tr;
     public GameObject prefabBullet;
 
-    private bool isDelay = false;
+    public bool isDelay = false;
 
     // Start is called before the first frame update
     void Start()
@@ -40,20 +40,13 @@ public class Castle : MonoBehaviour
        Fire();
     }
 
-
-    IEnumerator Delay()
-    {
-        yield return new WaitForSeconds(0.05f + 1/DataManager.Instance.bulletDelay);
-        isDelay = false;
-    }
-
     void Fire()
     {
         if(Input.GetMouseButton(0) && DataManager.Instance.isWave)
         {
             if(EventSystem.current.IsPointerOverGameObject() == false)
             {
-                if(!isDelay)
+                if(!isDelay && !DataManager.Instance.isStop)
                 {
                     isDelay = true;
                     mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -63,6 +56,12 @@ public class Castle : MonoBehaviour
                 }
             }
         }
+    }
+
+    IEnumerator Delay()
+    {
+        yield return new WaitForSeconds(0.05f + 1/DataManager.Instance.bulletDelay);
+        isDelay = false;
     }
 
     void LevelUP()

@@ -21,10 +21,19 @@ public class BulletMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        tr.Translate(point.normalized * DataManager.Instance.bulletSpeed * Time.deltaTime);
+        if(!DataManager.Instance.isStop)
+            tr.Translate(point.normalized * DataManager.Instance.bulletSpeed * Time.deltaTime);
         //transform.position = Vector2.MoveTowards(transform.position, point, Time.deltaTime * DataManager.Instance.bulletSpeed);
     }
 
-    
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.tag == "enemy")
+        {
+            collision.gameObject.GetComponent<EnemyMove>().EnemyHp -= DataManager.Instance.bulletDamge;
+            
+            Destroy(gameObject);
+        }
+    }
 
 }

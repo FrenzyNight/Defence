@@ -49,4 +49,6 @@ public class DataManager : MonoBehaviour
    public float NowExp;
 
    public float granadeSpeed;
+
+   public bool isStop;
 }
