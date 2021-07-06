@@ -8,12 +8,21 @@ using UnityEngine.EventSystems;
 public class Castle : MonoBehaviour
 {
     
+    
     public Vector2 mousePosition;
 
     Transform tr;
     public GameObject prefabBullet;
 
     public bool isDelay = false;
+
+    public GameObject LevelUpPanel;
+
+
+    public GameObject[] ButtonPrefabs;
+    private int RandomIndex;
+
+    private GameObject button1;
 
     // Start is called before the first frame update
     void Start()
@@ -48,6 +57,7 @@ public class Castle : MonoBehaviour
             {
                 if(!isDelay && !DataManager.Instance.isStop)
                 {
+                    
                     isDelay = true;
                     mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                     Instantiate(prefabBullet, tr.position, Quaternion.identity);
@@ -66,15 +76,35 @@ public class Castle : MonoBehaviour
 
     void LevelUP()
     {
+        /*
         DataManager.Instance.MaxHp *= 1.2f;
         DataManager.Instance.NowHp = DataManager.Instance.MaxHp;
 
         DataManager.Instance.bulletDamge *= 1.15f;
         DataManager.Instance.bulletDelay *= 1.05f;
 
+        */
+
+        GameObject.Find("GameManager").GetComponent<GameManager>().GameStopMenu();
+        LevelUpPanel.SetActive(true);
+        LevelUpPanel.transform.SetAsLastSibling();
+
+        RandomIndex = Random.Range(0,4);
+        button1 = Instantiate(ButtonPrefabs[RandomIndex], LevelUpPanel.GetComponent<Transform>().position, Quaternion.identity, GameObject.Find("Panel_levelUP").transform);  
+        button1.GetComponent<Transform>().Translate(new Vector2(0,150f));
+
+        RandomIndex = Random.Range(0,4);
+        button1 = Instantiate(ButtonPrefabs[RandomIndex], LevelUpPanel.GetComponent<Transform>().position, Quaternion.identity, GameObject.Find("Panel_levelUP").transform);  
+        button1.GetComponent<Transform>().Translate(new Vector2(0,-150f));
+
+        RandomIndex = Random.Range(0,4);
+        button1 = Instantiate(ButtonPrefabs[RandomIndex], LevelUpPanel.GetComponent<Transform>().position, Quaternion.identity, GameObject.Find("Panel_levelUP").transform);  
+        //button1.GetComponent<Transform>().Translate(new Vector2(0,200f));
+
         DataManager.Instance.Level += 1;
         DataManager.Instance.NowExp -= DataManager.Instance.MaxExp;
-        DataManager.Instance.MaxExp *= 1.5f;
+        DataManager.Instance.MaxExp *= 1.1f;
+
     }
 
 }

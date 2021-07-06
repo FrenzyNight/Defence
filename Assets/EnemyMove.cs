@@ -15,7 +15,7 @@ public class EnemyMove : MonoBehaviour
 
     private Image Bar;
 
-    private Transform HpTrans;
+    //private Transform HpTrans;
 
     // Start is called before the first frame update
     void Start()
@@ -24,7 +24,7 @@ public class EnemyMove : MonoBehaviour
         EnemyHp = DataManager.Instance.enemyMaxHp;
         speed = DataManager.Instance.enemySpeed;
         HP =  Instantiate(HpImg, tr.position, Quaternion.identity, GameObject.Find("Canvas_Enemy").transform);  
-        HpTrans = HP.GetComponent<Transform>();
+        //HpTrans = HP.GetComponent<Transform>();
         Bar = HP.GetComponent<Image>();
         Bar.fillAmount = 1;
     }
@@ -34,7 +34,7 @@ public class EnemyMove : MonoBehaviour
     {
         tr.Translate(Vector2.left * speed * Time.deltaTime);
         HP.transform.position = Camera.main.WorldToScreenPoint(transform.position);
-        HpTrans.Translate(new Vector2(10f,95f));
+        HP.GetComponent<Transform>().Translate(new Vector2(10f,95f));
         
         Bar.fillAmount = EnemyHp / DataManager.Instance.enemyMaxHp;
         Death();
