@@ -9,6 +9,8 @@ ScriptsOnlyBuild:
     - EnemyMove
     - Explosion
     - GameManager
+    - Gun
+    - LevelUpEffects
     - ParabolaMove
     - SkillSet
     - TargetMove
@@ -62,15 +64,15 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1436}
     - Class: 114
-      Script: {instanceID: 2076}
+      Script: {instanceID: 2116}
     - Class: 114
-      Script: {instanceID: 2448}
+      Script: {instanceID: 2488}
     - Class: 114
-      Script: {instanceID: 2594}
+      Script: {instanceID: 2634}
     - Class: 114
-      Script: {instanceID: 2766}
+      Script: {instanceID: 2806}
     - Class: 114
-      Script: {instanceID: 2978}
+      Script: {instanceID: 3018}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -115,39 +117,43 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1436}
     - Class: 114
-      Script: {instanceID: 1788}
+      Script: {instanceID: 1828}
     - Class: 114
-      Script: {instanceID: 1846}
+      Script: {instanceID: 1886}
     - Class: 114
-      Script: {instanceID: 2076}
+      Script: {instanceID: 2116}
     - Class: 114
-      Script: {instanceID: 2240}
+      Script: {instanceID: 2280}
     - Class: 114
-      Script: {instanceID: 2448}
+      Script: {instanceID: 2488}
     - Class: 114
-      Script: {instanceID: 2594}
+      Script: {instanceID: 2634}
     - Class: 114
-      Script: {instanceID: 2712}
+      Script: {instanceID: 2752}
     - Class: 114
-      Script: {instanceID: 2766}
+      Script: {instanceID: 2806}
     - Class: 114
-      Script: {instanceID: 2848}
+      Script: {instanceID: 2888}
     - Class: 114
-      Script: {instanceID: 2978}
+      Script: {instanceID: 3018}
     - Class: 114
-      Script: {instanceID: 3080}
+      Script: {instanceID: 3120}
     - Class: 114
-      Script: {instanceID: 3592}
+      Script: {instanceID: 3632}
     - Class: 114
-      Script: {instanceID: 4096}
+      Script: {instanceID: 4136}
     - Class: 114
-      Script: {instanceID: 4406}
+      Script: {instanceID: 4446}
     - Class: 114
-      Script: {instanceID: 4880}
+      Script: {instanceID: 4908}
     - Class: 114
-      Script: {instanceID: 4956}
+      Script: {instanceID: 4922}
     - Class: 114
-      Script: {instanceID: 4986}
+      Script: {instanceID: 4930}
+    - Class: 114
+      Script: {instanceID: 5000}
+    - Class: 114
+      Script: {instanceID: 5030}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -613,7 +619,7 @@ ScriptsOnlyBuild:
     className: ControlTrack
   - hash:
       serializedVersion: 2
-      Hash: d17886f948da9b6c17397a0775f4f7a8
+      Hash: 0a4329d540d246dd9f40d864eaaadbb3
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Castle
@@ -703,6 +709,12 @@ ScriptsOnlyBuild:
     className: TMP_ScrollbarEventHandler
   - hash:
       serializedVersion: 2
+      Hash: 72fa1f69a7ee076affc833e9197f44df
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: LevelUpEffects
+  - hash:
+      serializedVersion: 2
       Hash: 8220b46879dc5e37db1b940c938f5744
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -713,6 +725,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameManager
+  - hash:
+      serializedVersion: 2
+      Hash: d17886f948da9b6c17397a0775f4f7a8
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Gun
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
