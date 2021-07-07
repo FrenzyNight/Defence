@@ -24,6 +24,7 @@ public class Castle : MonoBehaviour
 
     private GameObject button1;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -76,35 +77,28 @@ public class Castle : MonoBehaviour
 
     void LevelUP()
     {
-        /*
-        DataManager.Instance.MaxHp *= 1.2f;
-        DataManager.Instance.NowHp = DataManager.Instance.MaxHp;
+        if(DataManager.Instance.Level < DataManager.Instance.MaxLevel)
+        {
+            GameObject.Find("GameManager").GetComponent<GameManager>().GameStopMenu();
+            LevelUpPanel.SetActive(true);
+            LevelUpPanel.transform.SetAsLastSibling();
 
-        DataManager.Instance.bulletDamge *= 1.15f;
-        DataManager.Instance.bulletDelay *= 1.05f;
+            RandomIndex = Random.Range(0,5);
+            button1 = Instantiate(ButtonPrefabs[RandomIndex], LevelUpPanel.GetComponent<Transform>().position, Quaternion.identity, GameObject.Find("Panel_levelUP").transform);  
+            button1.GetComponent<Transform>().Translate(new Vector2(0,150f));
 
-        */
+            RandomIndex = Random.Range(0,5);
+            button1 = Instantiate(ButtonPrefabs[RandomIndex], LevelUpPanel.GetComponent<Transform>().position, Quaternion.identity, GameObject.Find("Panel_levelUP").transform);  
+            button1.GetComponent<Transform>().Translate(new Vector2(0,-150f));
 
-        GameObject.Find("GameManager").GetComponent<GameManager>().GameStopMenu();
-        LevelUpPanel.SetActive(true);
-        LevelUpPanel.transform.SetAsLastSibling();
+            RandomIndex = Random.Range(0,5);
+            button1 = Instantiate(ButtonPrefabs[RandomIndex], LevelUpPanel.GetComponent<Transform>().position, Quaternion.identity, GameObject.Find("Panel_levelUP").transform);  
+            //button1.GetComponent<Transform>().Translate(new Vector2(0,200f));
 
-        RandomIndex = Random.Range(0,5);
-        button1 = Instantiate(ButtonPrefabs[RandomIndex], LevelUpPanel.GetComponent<Transform>().position, Quaternion.identity, GameObject.Find("Panel_levelUP").transform);  
-        button1.GetComponent<Transform>().Translate(new Vector2(0,150f));
-
-        RandomIndex = Random.Range(0,5);
-        button1 = Instantiate(ButtonPrefabs[RandomIndex], LevelUpPanel.GetComponent<Transform>().position, Quaternion.identity, GameObject.Find("Panel_levelUP").transform);  
-        button1.GetComponent<Transform>().Translate(new Vector2(0,-150f));
-
-        RandomIndex = Random.Range(0,5);
-        button1 = Instantiate(ButtonPrefabs[RandomIndex], LevelUpPanel.GetComponent<Transform>().position, Quaternion.identity, GameObject.Find("Panel_levelUP").transform);  
-        //button1.GetComponent<Transform>().Translate(new Vector2(0,200f));
-
-        DataManager.Instance.Level += 1;
-        DataManager.Instance.NowExp -= DataManager.Instance.MaxExp;
-        DataManager.Instance.MaxExp *= 1.4f;
-
+            DataManager.Instance.Level += 1;
+            DataManager.Instance.NowExp -= DataManager.Instance.MaxExp;
+            DataManager.Instance.MaxExp *= 1.2f;
+        }
     }
 
 }

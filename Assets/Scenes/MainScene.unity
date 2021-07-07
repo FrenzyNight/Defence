@@ -1768,6 +1768,12 @@ MonoBehaviour:
   waveText: {fileID: 2071366091}
   expText: {fileID: 694030979}
   LvText: {fileID: 1777556870}
+  LEVEL: 0
+  WAVE: 0
+  MAXHP: 0
+  NOWHP: 0
+  MAXEXP: 0
+  NOWEXP: 0
 --- !u!1 &951536888
 GameObject:
   m_ObjectHideFlags: 0
@@ -2687,7 +2693,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1629178997
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2712,10 +2718,12 @@ MonoBehaviour:
   NowHp: 100
   Wave: 1
   isWave: 0
-  money: 0
+  money: 50
   Level: 1
-  MaxExp: 20
+  MaxExp: 30
   NowExp: 0
+  MaxLevel: 10
+  MaxLevelUpCost: 50
   granadeSpeed: 2
   isStop: 0
   skill1cooltime: 2
@@ -2888,8 +2896,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 451.038, y: 6.6878}
-  m_SizeDelta: {x: 214.844, y: 98.244}
+  m_AnchoredPosition: {x: 429.62, y: 6.9049}
+  m_SizeDelta: {x: 257.68, y: 97.81}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1781072747
 GameObject:

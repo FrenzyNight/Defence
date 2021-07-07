@@ -8,6 +8,8 @@ public class LevelUpEffects : MonoBehaviour
     private Button btn;
 
     public GameObject GunPrefab;
+
+    
  
     // Start is called before the first frame update
     void Awake()
