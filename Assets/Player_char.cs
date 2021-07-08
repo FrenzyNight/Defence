@@ -9,6 +9,11 @@ public class Player_char : MonoBehaviour
 {
     public GameObject bulletPrefab; //총알 오브젝트
     public Vector2 mousePosition; //마우스 위치
+    
+    public AudioClip audioFire;
+
+    AudioSource audioSource;
+    
     WaveManager wm;
     public int level; //레벨
     public float growrate; //성장률
@@ -37,6 +42,9 @@ public class Player_char : MonoBehaviour
 
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
+        audioSource.clip = audioFire;
+
         tr = GetComponent<Transform>();
         wm = GameObject.Find("WaveManager").GetComponent<WaveManager>();
 
@@ -69,6 +77,7 @@ public class Player_char : MonoBehaviour
                 {
                     
                     isDelay = true;
+                    audioSource.Play();
                     //mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                     Instantiate(bulletPrefab, tr.position, Quaternion.identity);
             

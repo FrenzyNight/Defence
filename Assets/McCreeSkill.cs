@@ -22,10 +22,17 @@ public class McCreeSkill : MonoBehaviour
     public bool sk1ready, sk2ready, sk3ready;
     
     WaveManager wm;
+
+    public AudioClip audioFire;
+
+    AudioSource audioSource;
     
     // Start is called before the first frame update
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
+        audioSource.clip = audioFire;
+
         tr = GetComponent<Transform>();
         player = GetComponent<Player_char>();
         wm = GameObject.Find("WaveManager").GetComponent<WaveManager>();
@@ -93,10 +100,11 @@ public class McCreeSkill : MonoBehaviour
         skillBtn1.interactable = true;
     }
 
-    IEnumerator Create3Bullet()
+    IEnumerator Create3Bullet() 
     {
         for(int i=0;i<3;i++)
         {
+            audioSource.Play();
             Instantiate(bulletPrefab, tr.position, Quaternion.identity);
             yield return new WaitForSeconds(0.1f);
 
