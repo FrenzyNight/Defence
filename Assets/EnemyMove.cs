@@ -6,8 +6,13 @@ using UnityEngine.UI;
 public class EnemyMove : MonoBehaviour
 {
     Transform tr;
-    private float speed;
+    public float speed;
     public float EnemyHp;
+    public float enemyNowHp;
+
+    public float enemyDamage;
+
+    public float attackspeed;
 
     
     public GameObject HpImg;
@@ -15,16 +20,25 @@ public class EnemyMove : MonoBehaviour
 
     private Image Bar;
 
+    Player_char player;
+
+    public bool isMove;
+    public bool isAttack;
+
+
     //private Transform HpTrans;
 
     // Start is called before the first frame update
     void Start()
     { 
+        EnemyHp = GameObject.Find("WaveManager").GetComponent<CreateEnemy>().monsterMaxHp;
+        isMove = true;
+        player = GameObject.FindWithTag("Player").GetComponent<Player_char>();
         tr = GetComponent<Transform>();
-        EnemyHp = DataManager.Instance.enemyMaxHp;
-        speed = DataManager.Instance.enemySpeed;
+        enemyNowHp = EnemyHp;
+        
         HP =  Instantiate(HpImg, tr.position, Quaternion.identity, GameObject.Find("Canvas_Enemy").transform);  
-        //HpTrans = HP.GetComponent<Transform>();
+        
         Bar = HP.GetComponent<Image>();
         Bar.fillAmount = 1;
     }
@@ -32,44 +46,53 @@ public class EnemyMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        tr.Translate(Vector2.left * speed * Time.deltaTime);
-        HP.transform.position = Camera.main.WorldToScreenPoint(transform.position);
-        HP.GetComponent<Transform>().Translate(new Vector2(10f,95f));
-        
-        Bar.fillAmount = EnemyHp / DataManager.Instance.enemyMaxHp;
+        if(isMove)
+        {
+            tr.Translate(Vector2.left * speed * Time.deltaTime);
+            HP.transform.position = Camera.main.WorldToScreenPoint(transform.position);
+            HP.GetComponent<Transform>().Translate(new Vector2(10f,95f));
+        }
+        Bar.fillAmount = enemyNowHp / EnemyHp ;
         Death();
     }
 
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        /*
-        if(collision.tag == "bullet")
+        if(collision.tag == "Wall")
         {
-            EnemyHp -= DataManager.Instance.bulletDamge;
+            isMove = false;
             
-            Destroy(collision.gameObject);
+            InvokeRepeating("EnemyAttack",1.5f, attackspeed);
         }
-        */
 
-        if(collision.tag == "Player")
+       
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if(collision.tag == "Wall")
         {
-            DataManager.Instance.NowHp -= DataManager.Instance.enemyDamge;
-            Destroy(Bar);
-            Destroy(HP);
-            Destroy(gameObject);
+            isMove = true;
+            CancelInvoke("EnemyAttack");
         }
+    }
+
+    void EnemyAttack()
+    {
+        player.nowHp -= enemyDamage;
     }
 
 
     void Death()
     {
-        if(EnemyHp <= 0)
+        if(enemyNowHp <= 0)
         {
             Destroy(Bar);
             Destroy(HP);
             Destroy(gameObject);
             DataManager.Instance.money += 2;
-            DataManager.Instance.NowExp += 5;
+            player.nowExp += 5;
         }
     }
 }

@@ -4,11 +4,19 @@ using UnityEngine;
 
 public class Explosion : MonoBehaviour
 {
-    public float DamgeMag;
+    public float damageRat; // 데미지 배율
+
+    public float gravity; // 빨아들이는 힘
+    public float effectTime; // 지속시간
+    Player_char player;
+    Transform tr;
+
     // Start is called before the first frame update
     void Start()
     {
-        Destroy(gameObject, 0.6f);
+        tr = GetComponent<Transform>();
+        player = GameObject.FindWithTag("Player").GetComponent<Player_char>();
+        Destroy(gameObject, effectTime);
     }
 
     // Update is called once per frame
@@ -21,7 +29,16 @@ public class Explosion : MonoBehaviour
     {
         if(collision.tag == "enemy")
         {
-            collision.gameObject.GetComponent<EnemyMove>().EnemyHp -= DataManager.Instance.bulletDamge * DamgeMag;
+            collision.gameObject.GetComponent<EnemyMove>().enemyNowHp -= player.damage * damageRat;
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if(collision.tag == "enemy")
+        {
+            Vector2 v = tr.position - collision.gameObject.GetComponent<Transform>().position;
+            collision.gameObject.GetComponent<Transform>().Translate(v.normalized *gravity* Time.deltaTime);
         }
     }
 }

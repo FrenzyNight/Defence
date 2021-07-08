@@ -5,10 +5,11 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    public Text HpText;
+    
     public Image GuageBar;
     public Image ExpBar;
-
+    
+    public Text HpText;
     public Text scoreText;
     public Text waveText;
     public Text expText;

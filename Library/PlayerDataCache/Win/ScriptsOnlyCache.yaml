@@ -2,18 +2,20 @@ ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
     - BulletMove
-    - Castle
     - CleanBullet
     - CreateEnemy
     - DataManager
     - EnemyMove
     - Explosion
     - GameManager
-    - Gun
-    - LevelUpEffects
+    - McCreeSkill
+    - MenuManager
+    - OverManager
     - ParabolaMove
+    - Player_char
     - SkillSet
     - TargetMove
+    - WaveManager
     Unity.2D.Animation.Editor.dll:
     - UnityEditor.U2D.Animation.BoneGizmo
     Unity.2D.IK.Editor.dll:
@@ -64,15 +66,19 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1436}
     - Class: 114
-      Script: {instanceID: 2116}
+      Script: {instanceID: 1666}
     - Class: 114
-      Script: {instanceID: 2488}
+      Script: {instanceID: 2078}
     - Class: 114
-      Script: {instanceID: 2634}
+      Script: {instanceID: 2450}
     - Class: 114
-      Script: {instanceID: 2806}
+      Script: {instanceID: 2596}
     - Class: 114
-      Script: {instanceID: 3018}
+      Script: {instanceID: 2768}
+    - Class: 114
+      Script: {instanceID: 2980}
+    - Class: 114
+      Script: {instanceID: 3082}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -80,6 +86,59 @@ ScriptsOnlyBuild:
     - Class: 157
       Script: {instanceID: 0}
     - Class: 196
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
+    Assets/Scenes/MainMenu.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 1436}
+    - Class: 114
+      Script: {instanceID: 1790}
+    - Class: 114
+      Script: {instanceID: 2078}
+    - Class: 114
+      Script: {instanceID: 2450}
+    - Class: 114
+      Script: {instanceID: 2596}
+    - Class: 114
+      Script: {instanceID: 2768}
+    - Class: 114
+      Script: {instanceID: 2980}
+    - Class: 114
+      Script: {instanceID: 3082}
+    - Class: 114
+      Script: {instanceID: 4254}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 212
       Script: {instanceID: 0}
     - Class: 213
       Script: {instanceID: 0}
@@ -117,43 +176,43 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1436}
     - Class: 114
-      Script: {instanceID: 1828}
+      Script: {instanceID: 1790}
     - Class: 114
-      Script: {instanceID: 1886}
+      Script: {instanceID: 1848}
     - Class: 114
-      Script: {instanceID: 2116}
+      Script: {instanceID: 2078}
     - Class: 114
-      Script: {instanceID: 2280}
+      Script: {instanceID: 2242}
     - Class: 114
-      Script: {instanceID: 2488}
+      Script: {instanceID: 2450}
     - Class: 114
-      Script: {instanceID: 2634}
+      Script: {instanceID: 2596}
     - Class: 114
-      Script: {instanceID: 2752}
+      Script: {instanceID: 2714}
     - Class: 114
-      Script: {instanceID: 2806}
+      Script: {instanceID: 2768}
     - Class: 114
-      Script: {instanceID: 2888}
+      Script: {instanceID: 2850}
     - Class: 114
-      Script: {instanceID: 3018}
+      Script: {instanceID: 2980}
     - Class: 114
-      Script: {instanceID: 3120}
+      Script: {instanceID: 3082}
     - Class: 114
-      Script: {instanceID: 3632}
+      Script: {instanceID: 3594}
     - Class: 114
-      Script: {instanceID: 4136}
+      Script: {instanceID: 4410}
     - Class: 114
-      Script: {instanceID: 4446}
+      Script: {instanceID: 4886}
     - Class: 114
-      Script: {instanceID: 4908}
+      Script: {instanceID: 4964}
     - Class: 114
-      Script: {instanceID: 4922}
+      Script: {instanceID: 4994}
     - Class: 114
-      Script: {instanceID: 4930}
+      Script: {instanceID: 17500}
     - Class: 114
-      Script: {instanceID: 5000}
+      Script: {instanceID: 17510}
     - Class: 114
-      Script: {instanceID: 5030}
+      Script: {instanceID: 45808}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -241,6 +300,12 @@ ScriptsOnlyBuild:
     className: Slider
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: OverManager
+  - hash:
+      serializedVersion: 2
       Hash: 3164bc883ff663a5cdb32d1ef7e7c0c5
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -259,7 +324,7 @@ ScriptsOnlyBuild:
     className: TMP_FontAsset
   - hash:
       serializedVersion: 2
-      Hash: 3cb965f510692f0dbce9b0b6d6b5e9d7
+      Hash: d30f72e169946b7feb1fa73478b43b88
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: DataManager
@@ -307,7 +372,7 @@ ScriptsOnlyBuild:
     className: RawImage
   - hash:
       serializedVersion: 2
-      Hash: 7c69142e4ba77852b266ebc7a4c04548
+      Hash: b0a96385604ea99b6a0b5c8596c224d4
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: EnemyMove
@@ -367,7 +432,7 @@ ScriptsOnlyBuild:
     className: TextMeshProUGUI
   - hash:
       serializedVersion: 2
-      Hash: f09fdd6b2f289ef6548365e40d2ebf20
+      Hash: 16b9e2e63bff4840b69c010c7ff13be9
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Explosion
@@ -409,7 +474,7 @@ ScriptsOnlyBuild:
     className: LimbSolver2D
   - hash:
       serializedVersion: 2
-      Hash: b9cf8802673606f6d1184b1530d8550b
+      Hash: 8243cf84713c8a8bb04381628e37d6bd
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ParabolaMove
@@ -667,6 +732,12 @@ ScriptsOnlyBuild:
     className: TMP_Settings
   - hash:
       serializedVersion: 2
+      Hash: 097159337e731f2f13da26789ceb14e2
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: MenuManager
+  - hash:
+      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Unity.2D.Animation.Runtime.dll
     namespaceName: UnityEngine.U2D.Animation
@@ -679,7 +750,7 @@ ScriptsOnlyBuild:
     className: SpriteLibraryAsset
   - hash:
       serializedVersion: 2
-      Hash: ee338905b09ac354441a4716287ff5dd
+      Hash: 645d2837ee5c1f29e189641131baae7c
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: CreateEnemy
@@ -721,7 +792,7 @@ ScriptsOnlyBuild:
     className: SignalEmitter
   - hash:
       serializedVersion: 2
-      Hash: d4dcff4421d2153632d10c34628bc15f
+      Hash: 06c743c65e3682a2965ffc8afb3be0c9
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameManager
@@ -739,7 +810,7 @@ ScriptsOnlyBuild:
     className: ActivationPlayableAsset
   - hash:
       serializedVersion: 2
-      Hash: bd826847237a41a1b23cb2d0567ba1d0
+      Hash: f209d8f75229578dc49523ea911d5248
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: TargetMove
@@ -767,8 +838,27 @@ ScriptsOnlyBuild:
     assemblyName: Unity.2D.IK.Runtime.dll
     namespaceName: UnityEngine.U2D.IK
     className: FabrikSolver2D
+  - hash:
+      serializedVersion: 2
+      Hash: b17d827faa6e40fcb78ecc67258c92f9
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Player_char
+  - hash:
+      serializedVersion: 2
+      Hash: 314c7f0c7318b147365c5dd373c4fedc
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: WaveManager
+  - hash:
+      serializedVersion: 2
+      Hash: 577fa52514a4ac2dcfd3cd7fb3c102d6
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: McCreeSkill
   platform: 5
   scenePathNames:
+  - Assets/Scenes/MainMenu.unity
   - Assets/Scenes/MainScene.unity
   - Assets/Scenes/GameOver.unity
   playerPath: C:/Users/6500/Desktop/game/Defence/Exe/Defence.exe

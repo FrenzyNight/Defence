@@ -112,4 +112,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52226ebe24cac154185e440173fd00e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DamgeMag: 1.5
+  damageRat: 0.5
+  gravity: 6
+  effectTime: 0.3

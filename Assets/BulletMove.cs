@@ -7,12 +7,17 @@ public class BulletMove : MonoBehaviour
     private Vector2 point;
     
     Transform tr;
+    WaveManager wm;
+    Player_char player;
     
 
     // Start is called before the first frame update
     void Start()
     {
         tr = GetComponent<Transform>();
+        wm = GameObject.Find("WaveManager").GetComponent<WaveManager>();
+        player = GameObject.FindWithTag("Player").GetComponent<Player_char>();
+
         point = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         point.x -= tr.transform.position.x;
         point.y -= tr.transform.position.y;
@@ -21,8 +26,8 @@ public class BulletMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!DataManager.Instance.isStop)
-            tr.Translate(point.normalized * DataManager.Instance.bulletSpeed * Time.deltaTime);
+        if(!wm.isStop)
+            tr.Translate(point.normalized * player.bulletspeed * Time.deltaTime);
         //transform.position = Vector2.MoveTowards(transform.position, point, Time.deltaTime * DataManager.Instance.bulletSpeed);
     }
 
@@ -30,8 +35,8 @@ public class BulletMove : MonoBehaviour
     {
         if(collision.tag == "enemy")
         {
-            collision.gameObject.GetComponent<EnemyMove>().EnemyHp -= DataManager.Instance.bulletDamge;
-            collision.gameObject.GetComponent<Transform>().Translate(Vector2.right * DataManager.Instance.bulletNuckback);
+            collision.gameObject.GetComponent<EnemyMove>().enemyNowHp -= player.damage;
+            collision.gameObject.GetComponent<Transform>().Translate(Vector2.right * player.bulletnuckback);
             
             Destroy(gameObject);
         }

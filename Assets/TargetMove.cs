@@ -7,71 +7,73 @@ using UnityEngine.UI;
 public class TargetMove : MonoBehaviour
 {
     public GameObject granadePrefab;
-    public GameObject Player;
+    Player_char player;
     private Vector2 point;
-    public Button SkillButton;
-
-    private GameObject SkillManager;
-
-    private bool des = false;
+   
     private bool isLock = false;
 
     Transform tr;
-    Transform castle;
+    Transform playertr;
+
+    McCreeSkill mc;
+
     // Start is called before the first frame update
     void Start()
     {
         tr = GetComponent<Transform>();
-        SkillManager = GameObject.Find("SkillManager");
-        castle = GameObject.Find("Castle").GetComponent<Transform>();
+        player = GameObject.FindWithTag("Player").GetComponent<Player_char>();
+        
+        playertr = GameObject.FindWithTag("Player").GetComponent<Transform>();
+
+        mc = GameObject.FindWithTag("Player").GetComponent<McCreeSkill>();
+
+
         point = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         point.x -= tr.transform.position.x;
         point.y -= tr.transform.position.y;
-        Player = GameObject.Find("Castle");
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetMouseButtonUp(0) && !isLock) // 타겟 완료시
-        {
-            isLock = true;
-            StartCoroutine(Delay());
-            Player.GetComponent<Castle>().isDelay = false;
-            SkillManager.GetComponent<SkillSet>().StartCooltime();
-
-        }
         TargetMoving();
-        if(des)
-        {
-            Targeting();
-        }
+        LockOn();
     }
 
     void TargetMoving()
     {
         if(Input.GetMouseButton(0) && !isLock)
         {
-            //if(EventSystem.current.IsPointerOverGameObject() == false)
-            //{
+            if(EventSystem.current.IsPointerOverGameObject() == false)
+            {
                 point = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                //point.x -= tr.transform.position.x;
+                //point.y -= tr.transform.position.y;
                 tr.position = point;
-            //}
+            }
         }
     }
 
-    IEnumerator Delay()
+    void MakeGranade()
     {
-        Instantiate(granadePrefab, castle.position, Quaternion.identity);
-        yield return new WaitForSeconds(0.1f);
-        des = true;
+        Instantiate(granadePrefab, playertr.position, Quaternion.identity);
     }
 
     
-
-    void Targeting()
+    void LockOn()
     {
+        if(Input.GetMouseButtonUp(0) && !isLock) // 타겟 완료시
+        {
+            isLock = true;
+            Invoke("MakeGranade", 0.1f);
+            player.isSkill = false;
+            
+            mc.SKill2CoolDown();
+            Destroy(gameObject, 0.2f);
+            
+        }
 
-        Destroy(gameObject);
+        
     }
 }

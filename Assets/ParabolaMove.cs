@@ -10,7 +10,7 @@ public class ParabolaMove : MonoBehaviour
 
     public float gravity = 9.8f;
 
-    public Transform Projectile;
+    Transform Projectile;
     //private Transform myTransform;
 
     private Vector2 vec;

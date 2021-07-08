@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 862066935252926625}
   - component: {fileID: 578024144279752975}
-  - component: {fileID: 3550676512159407800}
+  - component: {fileID: -3399257964693155827}
   m_Layer: 0
   m_Name: Target
   m_TagString: target
@@ -83,7 +83,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3550676512159407800
+--- !u!114 &-3399257964693155827
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -96,4 +96,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   granadePrefab: {fileID: 7467456646200057094, guid: 28da67542b61042408d7c08e25e47a7b, type: 3}
-  Player: {fileID: 0}

@@ -98,8 +98,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1.53, y: 3.17}
+  m_Offset: {x: 0, y: 0.008860469}
+  m_Size: {x: 1.53, y: 3.5775774}
   m_Direction: 0
 --- !u!114 &-3034036771078821837
 MonoBehaviour:
@@ -113,9 +113,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c628baa0ba3bac4296ec6e0839b61a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemyHp: 0
+  speed: 2
+  EnemyHp: 100
+  enemyNowHp: 0
+  enemyDamage: 5
+  attackspeed: 2
   HpImg: {fileID: 8222506220886026821, guid: c5129206fc2c52243bce7473972ff4f9, type: 3}
-  HP: {fileID: 0}
+  isMove: 0
 --- !u!50 &-1311553157899544098
 Rigidbody2D:
   serializedVersion: 4

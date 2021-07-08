@@ -8,11 +8,7 @@ TagManager:
   - bullet
   - mapsize
   - target
-  - Btn_shotspeedup
-  - Btn_hpup
-  - Btn_fullhp
-  - Btn_damgeup
-  - Btn_addgun
+  - Wall
   layers:
   - Default
   - TransparentFX

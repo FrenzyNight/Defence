@@ -15,56 +15,54 @@ public class CreateEnemy : MonoBehaviour
     private int count;
     public int mobcount;
 
+    public float sponInterval;
+    public float monsterMaxHp;
+
+    WaveManager wm;
+
 
     // Start is called before the first frame update
     void Start()
     {
         isStart = false;
         isCreate = false;
+
+        wm = GetComponent<WaveManager>();
     }
 
     void Update()
     {
-        if(DataManager.Instance.isWave&& isStart && !isCreate && GameObject.FindWithTag("enemy") == null) // 웨이브 종료(클리어)시
+        if(wm.isWave&& isStart && !isCreate && GameObject.FindWithTag("enemy") == null) // 웨이브 종료(클리어)시
         {
-            DataManager.Instance.Wave += 1;
-            DataManager.Instance.isWave = false;
+            wm.wave += 1;
+            wm.isWave = false;
             isStart = false;
             StagePanel.SetActive(true);
-            GameObject.Find("SkillManager").GetComponent<SkillSet>().isCool = false;
             SkillPanel.SetActive(false);
+
+
         }
     }
 
     public void StartWave()
     {
-        DataManager.Instance.isWave = true;
+        wm.isWave = true;
         isCreate = true;
 
-        if(DataManager.Instance.Wave % 2 == 0)
+        if(wm.wave % 3 == 0)
         {
-            DataManager.Instance.enemyDamge *= 1.2f;
-        }
-        
-        if(DataManager.Instance.Wave % 3 == 0)
-        {
-            DataManager.Instance.enemyMaxHp *= 1.2f;
+            monsterMaxHp += 10f;
+            sponInterval -= 0.05f;
         }
 
-        if(DataManager.Instance.Wave % 5 == 0)
-        {
-            DataManager.Instance.enemyInterval *= 0.8f;
-        }
-
-        
         count = 0;
-        mobcount = 5 + (DataManager.Instance.Wave * 3);
-        InvokeRepeating("Create",1f,DataManager.Instance.enemyInterval);
+        mobcount = 10 + (wm.wave * 3);
+        InvokeRepeating("Create",1f, 0.1f + sponInterval);
     }
 
     void Create()
     {
-        if(!DataManager.Instance.isStop)
+        if(!wm.isStop)
         {
             count++;
 
@@ -78,7 +76,6 @@ public class CreateEnemy : MonoBehaviour
             {
                 isCreate = false;
                 CancelInvoke("Create");
-                //DataManager.Instance.isWave = false;
             }
         }
     }
