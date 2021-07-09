@@ -9,6 +9,7 @@ public class McCreeSkill : MonoBehaviour
 {
     public GameObject bulletPrefab;
     public GameObject Target;
+    public GameObject sk3tg;
     Transform tr;
     public Vector2 mousePosition;
 
@@ -50,6 +51,10 @@ public class McCreeSkill : MonoBehaviour
         else if(sk2ready)
         {
             Skill2trigger();
+        }
+        else if(sk3ready)
+        {
+            Skill3trigger();
         }
 
 
@@ -150,4 +155,26 @@ public class McCreeSkill : MonoBehaviour
 
     }
 
+    void Skill3trigger()
+    {
+        if(Input.GetMouseButtonDown(0))
+        {
+            if(EventSystem.current.IsPointerOverGameObject() == false)
+            {
+                sk3ready = false;
+                //mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                Instantiate(Target, tr.position , Quaternion.identity);
+            }
+        }
+    }
+
+    public void SKill3CoolDown()
+    {
+        StartCoroutine(Skill3Delay());
+    }
+    IEnumerator Skill3Delay()
+    {
+        yield return new WaitForSeconds(sk3ct);
+        skillBtn3.interactable = true;
+    }
 }
