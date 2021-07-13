@@ -10,6 +10,7 @@ public class McCreeSkill : MonoBehaviour
     public GameObject bulletPrefab;
     public GameObject Target;
     public GameObject sk3tg;
+    public GameObject sk3bullet;
     Transform tr;
     public Vector2 mousePosition;
 
@@ -56,8 +57,6 @@ public class McCreeSkill : MonoBehaviour
         {
             Skill3trigger();
         }
-
-
     }
 
     public void SetButton()
@@ -151,7 +150,13 @@ public class McCreeSkill : MonoBehaviour
     }
 
     public void Skill3() // 러시안룰렛 : 6가지 랜덤한 효과(이펙트)를 가진 강력한 총할중 하나 발사
-    {
+    {   
+        if(!player.isSkill)
+        {
+            skillBtn3.interactable = false;
+            sk3ready = true;
+            player.isSkill = true;
+        }
 
     }
 
@@ -163,7 +168,8 @@ public class McCreeSkill : MonoBehaviour
             {
                 sk3ready = false;
                 //mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                Instantiate(Target, tr.position , Quaternion.identity);
+                Instantiate(sk3tg, tr.position , Quaternion.identity);
+                Instantiate(sk3bullet, tr.position , Quaternion.identity);
             }
         }
     }

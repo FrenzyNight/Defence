@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class RussianBulletMove : MonoBehaviour
 {
@@ -14,6 +15,9 @@ public class RussianBulletMove : MonoBehaviour
 
     public float skilldamagerate;
     private float angle;
+
+    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,8 +35,32 @@ public class RussianBulletMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!wm.isStop)
-            tr.Translate(point.normalized * player.bulletspeed * Time.deltaTime);
+        Rotation();
+        Fire();
+    }
+
+    void Fire()
+    {
+        if(!wm.isStop && !player.isSkill)
+            tr.Translate(point.normalized * skillspeed * Time.deltaTime, 0);
+    }
+
+    void Rotation()
+    {
+        if(!wm.isStop && player.isSkill)
+        {
+            if(Input.GetMouseButton(0))
+            {
+                if(EventSystem.current.IsPointerOverGameObject() == false)
+                {
+                    point = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                    point.x -= tr.transform.position.x;
+                    point.y -= tr.transform.position.y;
+                    angle = Mathf.Atan2(point.y, point.x) * Mathf.Rad2Deg;
+                    tr.eulerAngles = new Vector3(0,0,angle);
+                }
+            }
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

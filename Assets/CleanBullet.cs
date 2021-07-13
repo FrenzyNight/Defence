@@ -20,7 +20,7 @@ public class CleanBullet : MonoBehaviour
     {
         if(other.tag == "bullet")
         {
-            Destroy(other.gameObject);
+            Destroy(other.gameObject, 0.5f);
         }
     }
 }

@@ -12,6 +12,7 @@ public class EffectMove : MonoBehaviour
     bool isLock = false;
     McCreeSkill mc;
     Player_char player;
+    Transform playertr;
 
 
     // Start is called before the first frame update
@@ -19,6 +20,7 @@ public class EffectMove : MonoBehaviour
     {
         tr = GetComponent<Transform>();
         player = GameObject.FindWithTag("Player").GetComponent<Player_char>();
+        playertr = GameObject.FindWithTag("Player").GetComponent<Transform>();
         
         mc = GameObject.FindWithTag("Player").GetComponent<McCreeSkill>();
 
@@ -54,7 +56,7 @@ public class EffectMove : MonoBehaviour
         if(Input.GetMouseButtonUp(0) && !isLock) // 타겟 완료시
         {
             isLock = true;
-            Invoke("MakeRussian", 0.1f);
+            //Invoke("MakeRussian", 0.15f);
             player.isSkill = false;
             
             mc.SKill3CoolDown();

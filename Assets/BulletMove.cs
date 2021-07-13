@@ -5,6 +5,7 @@ using UnityEngine;
 public class BulletMove : MonoBehaviour
 {
     private Vector2 point;
+    private float angle;
     
     Transform tr;
     WaveManager wm;
@@ -21,13 +22,15 @@ public class BulletMove : MonoBehaviour
         point = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         point.x -= tr.transform.position.x;
         point.y -= tr.transform.position.y;
+        angle = Mathf.Atan2(point.y, point.x) * Mathf.Rad2Deg - 90f;
+        tr.eulerAngles = new Vector3(0,0,angle);
     }
 
     // Update is called once per frame
     void Update()
     {
         if(!wm.isStop)
-            tr.Translate(point.normalized * player.bulletspeed * Time.deltaTime);
+            tr.Translate(point.normalized * player.bulletspeed * Time.deltaTime,0);
         //transform.position = Vector2.MoveTowards(transform.position, point, Time.deltaTime * DataManager.Instance.bulletSpeed);
     }
 
