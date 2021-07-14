@@ -15,12 +15,14 @@ public class RussianBulletMove : MonoBehaviour
 
     public float skilldamagerate;
     private float angle;
+    private bool isFire;
 
     
 
     // Start is called before the first frame update
     void Start()
     {
+        isFire = false;
         tr = GetComponent<Transform>();
         wm = GameObject.Find("WaveManager").GetComponent<WaveManager>();
         player = GameObject.FindWithTag("Player").GetComponent<Player_char>();
@@ -37,17 +39,21 @@ public class RussianBulletMove : MonoBehaviour
     {
         Rotation();
         Fire();
+        if(Input.GetMouseButtonUp(0) && !isFire)
+        {
+            isFire = true;
+        }
     }
 
     void Fire()
     {
-        if(!wm.isStop && !player.isSkill)
+        if(!wm.isStop && isFire)
             tr.Translate(point.normalized * skillspeed * Time.deltaTime, 0);
     }
 
     void Rotation()
     {
-        if(!wm.isStop && player.isSkill)
+        if(!wm.isStop && !isFire)
         {
             if(Input.GetMouseButton(0))
             {
