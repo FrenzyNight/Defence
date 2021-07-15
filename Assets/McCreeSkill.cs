@@ -39,7 +39,7 @@ public class McCreeSkill : MonoBehaviour
         player = GetComponent<Player_char>();
         wm = GameObject.Find("WaveManager").GetComponent<WaveManager>();
         
-        
+        //SetButton();
     }
 
     // Update is called once per frame

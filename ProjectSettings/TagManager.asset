@@ -9,6 +9,14 @@ TagManager:
   - mapsize
   - target
   - Wall
+  - Btn_shotspeedup
+  - Btn_hpup
+  - Btn_addgun
+  - Btn_fullhp
+  - Btn_damgeup
+  - blaster
+  - rock
+  - boss
   layers:
   - Default
   - TransparentFX

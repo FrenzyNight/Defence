@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8240031027359356312}
   - component: {fileID: 4536232452920976350}
-  - component: {fileID: 7443224845583365035}
-  - component: {fileID: 7880125870863103990}
   - component: {fileID: 716856459752628501}
+  - component: {fileID: 7736857942997272599}
+  - component: {fileID: 4466064378123682790}
   m_Layer: 0
   m_Name: McCree
   m_TagString: Player
@@ -28,8 +28,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7458345308210695365}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.2, y: -0.6, z: 0}
-  m_LocalScale: {x: -1, y: 1, z: 1}
+  m_LocalPosition: {x: -9.4401, y: -0.8402, z: 0}
+  m_LocalScale: {x: -0.8, y: 0.8, z: 0.8}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -85,62 +85,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7443224845583365035
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7458345308210695365}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed934e8739326cf499babb243003e8f8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 2828384327144627900, guid: 13abcf223fd8a2d498f10621074590fe, type: 3}
-  mousePosition: {x: 0, y: 0}
-  audioFire: {fileID: 8300000, guid: c69cb28f1741f274891972f7d6c0563d, type: 3}
-  level: 1
-  growrate: 4
-  damage: 65
-  FPS: 1.8
-  bulletspeed: 75
-  bulletnuckback: 0.3
-  isDelay: 0
-  isSkill: 0
-  nowExp: 0
-  maxExp: 40
-  nowHp: 0
-  maxHp: 100
-  growHp: 0
-  growDamage: 0
---- !u!114 &7880125870863103990
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7458345308210695365}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a2515b2a04b3856468890b340ec56a0f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 2828384327144627900, guid: 13abcf223fd8a2d498f10621074590fe, type: 3}
-  Target: {fileID: 4788533351553971025, guid: 40750acc271606b4a94bf67152ac77a1, type: 3}
-  sk3tg: {fileID: 8625220454439380292, guid: 5d5d838206ca8a94fa4e3a7562aade39, type: 3}
-  sk3bullet: {fileID: 6482270930504680062, guid: 38117aef2a7c58d4ab2ed6bc0b2e9f91, type: 3}
-  mousePosition: {x: 0, y: 0}
-  skillBtn1: {fileID: 0}
-  skillBtn2: {fileID: 0}
-  skillBtn3: {fileID: 0}
-  sk1ct: 3
-  sk2ct: 5
-  sk3ct: 10
-  sk1ready: 0
-  sk2ready: 0
-  sk3ready: 0
-  audioFire: {fileID: 8300000, guid: c69cb28f1741f274891972f7d6c0563d, type: 3}
 --- !u!82 &716856459752628501
 AudioSource:
   m_ObjectHideFlags: 0
@@ -237,3 +181,60 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &7736857942997272599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7458345308210695365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed934e8739326cf499babb243003e8f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 2828384327144627900, guid: 13abcf223fd8a2d498f10621074590fe, type: 3}
+  mousePosition: {x: 0, y: 0}
+  audioFire: {fileID: 8300000, guid: c69cb28f1741f274891972f7d6c0563d, type: 3}
+  level: 1
+  growrate: 4
+  damage: 65
+  FPS: 2.2
+  bulletspeed: 100
+  bulletnuckback: 0.3
+  isDelay: 0
+  isSkill: 0
+  nowExp: 0
+  maxExp: 50
+  nowHp: 0
+  maxHp: 100
+  growHp: 0
+  growDamage: 0
+  characterIndex: 0
+--- !u!114 &4466064378123682790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7458345308210695365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2515b2a04b3856468890b340ec56a0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 2828384327144627900, guid: 13abcf223fd8a2d498f10621074590fe, type: 3}
+  Target: {fileID: 4788533351553971025, guid: 40750acc271606b4a94bf67152ac77a1, type: 3}
+  sk3tg: {fileID: 8625220454439380292, guid: 5d5d838206ca8a94fa4e3a7562aade39, type: 3}
+  sk3bullet: {fileID: 6482270930504680062, guid: 38117aef2a7c58d4ab2ed6bc0b2e9f91, type: 3}
+  mousePosition: {x: 0, y: 0}
+  skillBtn1: {fileID: 0}
+  skillBtn2: {fileID: 0}
+  skillBtn3: {fileID: 0}
+  sk1ct: 3
+  sk2ct: 5
+  sk3ct: 10
+  sk1ready: 0
+  sk2ready: 0
+  sk3ready: 0
+  audioFire: {fileID: 8300000, guid: c69cb28f1741f274891972f7d6c0563d, type: 3}

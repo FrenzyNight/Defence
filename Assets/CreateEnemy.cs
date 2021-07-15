@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CreateEnemy : MonoBehaviour
 {
+    public GameObject BossPrefab;
     public GameObject[] prefabEnemy;
     public GameObject StagePanel;
     public GameObject SkillPanel;
@@ -21,6 +22,8 @@ public class CreateEnemy : MonoBehaviour
 
     WaveManager wm;
 
+    public Vector2 BossSponPoint;
+
 
     // Start is called before the first frame update
     void Start()
@@ -33,7 +36,7 @@ public class CreateEnemy : MonoBehaviour
 
     void Update()
     {
-        if(wm.isWave&& isStart && !isCreate && GameObject.FindWithTag("enemy") == null) // 웨이브 종료(클리어)시
+        if(wm.isWave&& isStart && !isCreate && GameObject.FindWithTag("enemy") == null && GameObject.FindWithTag("boss")==null ) // 웨이브 종료(클리어)시
         {
             wm.wave += 1;
             wm.isWave = false;
@@ -58,7 +61,14 @@ public class CreateEnemy : MonoBehaviour
 
         count = 0;
         mobcount = 10 + (wm.wave * 3);
-        InvokeRepeating("Create",1f, 0.1f + sponInterval);
+        if(wm.wave % 5 == 0 || wm.wave == 1) //boss전
+        {
+            CreateBoss();
+        }
+        else
+        {
+            InvokeRepeating("Create",1f, 0.1f + sponInterval);
+        }
     }
 
     void Create()
@@ -81,9 +91,20 @@ public class CreateEnemy : MonoBehaviour
         }
     }
 
+    void CreateBoss()
+    {
+        isStart = true;
+        Instantiate(BossPrefab, BossSponPoint, Quaternion.identity);
+        isCreate = false;
+    }
+
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.white;
         Gizmos.DrawLine(limitMin, limitMax);
+
+        Gizmos.color = Color.red;
+        Gizmos.DrawSphere(BossSponPoint, 0.2f);
     }
+
 }

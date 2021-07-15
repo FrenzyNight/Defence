@@ -52,7 +52,6 @@ public class EnemyRagedAttack : MonoBehaviour
     void EnemyAttack()
     {
         player.nowHp -= enemyDamage;
-        
     }
 
 }

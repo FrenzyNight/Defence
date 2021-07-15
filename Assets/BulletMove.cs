@@ -43,6 +43,23 @@ public class BulletMove : MonoBehaviour
             
             Destroy(gameObject);
         }
+        else if(collision.tag == "blaster")
+        {
+            collision.gameObject.GetComponent<Blaster>().HP -= player.damage;
+            Destroy(gameObject);
+        }
+        else if(collision.tag == "rock")
+        {
+            collision.gameObject.GetComponent<RockMove>().HP -= player.damage;
+            Destroy(gameObject);
+        }
+        else if(collision.tag == "boss")
+        {
+            collision.gameObject.GetComponent<Boss>().BossNowHP -= player.damage;
+            Destroy(gameObject);
+        }
+
+
     }
 
 }
