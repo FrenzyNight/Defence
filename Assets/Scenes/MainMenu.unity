@@ -231,27 +231,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e37f8f32792d8348a7cc7c7064b2b3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletSpeed: 30
-  bulletDamge: 2
-  bulletDelay: 3
-  bulletNuckback: 0.1
-  enemyMaxHp: 10
-  enemySpeed: 2
-  enemyInterval: 0.5
-  enemyDamge: 30
-  MaxHp: 100
-  NowHp: 100
-  Wave: 1
-  isWave: 0
   money: 50
-  Level: 1
-  MaxExp: 30
-  NowExp: 0
-  MaxLevel: 10
-  MaxLevelUpCost: 50
-  granadeSpeed: 2
-  isStop: 0
-  skill1cooltime: 2
+  Characters:
+  - {fileID: 7458345308210695365, guid: fb69257244c8f6448abe002102354e8e, type: 3}
+  growRateUpgrade:
+  - 0
+  upgradecost: 32000000
 --- !u!4 &120584927
 Transform:
   m_ObjectHideFlags: 0

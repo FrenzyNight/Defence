@@ -6,9 +6,10 @@ ScriptsOnlyBuild:
     - CreateEnemy
     - DataManager
     - EffectMove
+    - EnemyMeeleAttack
     - EnemyMove
+    - EnemyRagedAttack
     - Explosion
-    - GameManager
     - McCreeSkill
     - MenuManager
     - OverManager
@@ -73,19 +74,19 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1436}
     - Class: 114
-      Script: {instanceID: 1720}
+      Script: {instanceID: 1666}
     - Class: 114
-      Script: {instanceID: 2134}
+      Script: {instanceID: 2080}
     - Class: 114
-      Script: {instanceID: 2506}
+      Script: {instanceID: 2452}
     - Class: 114
-      Script: {instanceID: 2652}
+      Script: {instanceID: 2598}
     - Class: 114
-      Script: {instanceID: 2824}
+      Script: {instanceID: 2770}
     - Class: 114
-      Script: {instanceID: 3036}
+      Script: {instanceID: 2982}
     - Class: 114
-      Script: {instanceID: 3138}
+      Script: {instanceID: 3084}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -115,28 +116,56 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 48
       Script: {instanceID: 0}
+    - Class: 70
+      Script: {instanceID: 0}
+    - Class: 74
+      Script: {instanceID: 0}
     - Class: 81
+      Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
+    - Class: 91
+      Script: {instanceID: 0}
+    - Class: 95
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
       Script: {instanceID: 1436}
     - Class: 114
-      Script: {instanceID: 1846}
+      Script: {instanceID: 1672}
     - Class: 114
-      Script: {instanceID: 2134}
+      Script: {instanceID: 1792}
     - Class: 114
-      Script: {instanceID: 2506}
+      Script: {instanceID: 2080}
     - Class: 114
-      Script: {instanceID: 2652}
+      Script: {instanceID: 2452}
     - Class: 114
-      Script: {instanceID: 2824}
+      Script: {instanceID: 2598}
     - Class: 114
-      Script: {instanceID: 3036}
+      Script: {instanceID: 2716}
     - Class: 114
-      Script: {instanceID: 3138}
+      Script: {instanceID: 2770}
     - Class: 114
-      Script: {instanceID: 4312}
+      Script: {instanceID: 2852}
+    - Class: 114
+      Script: {instanceID: 2982}
+    - Class: 114
+      Script: {instanceID: 3084}
+    - Class: 114
+      Script: {instanceID: 3222}
+    - Class: 114
+      Script: {instanceID: 3598}
+    - Class: 114
+      Script: {instanceID: 4258}
+    - Class: 114
+      Script: {instanceID: 4372}
+    - Class: 114
+      Script: {instanceID: 4940}
+    - Class: 114
+      Script: {instanceID: 4972}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -191,43 +220,45 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1436}
     - Class: 114
-      Script: {instanceID: 1726}
+      Script: {instanceID: 1672}
     - Class: 114
-      Script: {instanceID: 1904}
+      Script: {instanceID: 1850}
     - Class: 114
-      Script: {instanceID: 2134}
+      Script: {instanceID: 2080}
     - Class: 114
-      Script: {instanceID: 2298}
+      Script: {instanceID: 2244}
     - Class: 114
-      Script: {instanceID: 2506}
+      Script: {instanceID: 2452}
     - Class: 114
-      Script: {instanceID: 2652}
+      Script: {instanceID: 2598}
+    - Class: 114
+      Script: {instanceID: 2716}
     - Class: 114
       Script: {instanceID: 2770}
     - Class: 114
-      Script: {instanceID: 2824}
+      Script: {instanceID: 2852}
     - Class: 114
-      Script: {instanceID: 2906}
+      Script: {instanceID: 2982}
     - Class: 114
-      Script: {instanceID: 3036}
+      Script: {instanceID: 3084}
     - Class: 114
-      Script: {instanceID: 3138}
+      Script: {instanceID: 3222}
     - Class: 114
-      Script: {instanceID: 3276}
+      Script: {instanceID: 3598}
     - Class: 114
-      Script: {instanceID: 3652}
+      Script: {instanceID: 4372}
     - Class: 114
-      Script: {instanceID: 4426}
+      Script: {instanceID: 4416}
     - Class: 114
-      Script: {instanceID: 4470}
+      Script: {instanceID: 4680}
     - Class: 114
-      Script: {instanceID: 4734}
+      Script: {instanceID: 4940}
     - Class: 114
-      Script: {instanceID: 4948}
+      Script: {instanceID: 4972}
     - Class: 114
-      Script: {instanceID: 4994}
+      Script: {instanceID: 25216}
     - Class: 114
-      Script: {instanceID: 5026}
+      Script: {instanceID: 25220}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -345,7 +376,7 @@ ScriptsOnlyBuild:
     className: TMP_FontAsset
   - hash:
       serializedVersion: 2
-      Hash: d30f72e169946b7feb1fa73478b43b88
+      Hash: 2304f8a530eef96361dd22d23b46694a
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: DataManager
@@ -393,7 +424,7 @@ ScriptsOnlyBuild:
     className: RawImage
   - hash:
       serializedVersion: 2
-      Hash: b0a96385604ea99b6a0b5c8596c224d4
+      Hash: 0e5d133306538d21d9437be8bb4b8ca4
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: EnemyMove
@@ -495,7 +526,7 @@ ScriptsOnlyBuild:
     className: LimbSolver2D
   - hash:
       serializedVersion: 2
-      Hash: 8243cf84713c8a8bb04381628e37d6bd
+      Hash: 0361ace502a02e189624b61982e93e28
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ParabolaMove
@@ -561,7 +592,7 @@ ScriptsOnlyBuild:
     className: TextContainer
   - hash:
       serializedVersion: 2
-      Hash: f3354326252f120b33ddb617b8f8d8f5
+      Hash: a32869c596cda071bbf945fdb057ce62
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Player_char
@@ -711,12 +742,6 @@ ScriptsOnlyBuild:
     className: ControlTrack
   - hash:
       serializedVersion: 2
-      Hash: 0a4329d540d246dd9f40d864eaaadbb3
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: Castle
-  - hash:
-      serializedVersion: 2
       Hash: 3165968ba45c74472d279ba04455fccb
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -783,7 +808,7 @@ ScriptsOnlyBuild:
     className: SpriteLibraryAsset
   - hash:
       serializedVersion: 2
-      Hash: 645d2837ee5c1f29e189641131baae7c
+      Hash: fb48f4300ec33d8c51a4f06a41a66c95
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: CreateEnemy
@@ -819,22 +844,10 @@ ScriptsOnlyBuild:
     className: WaveManager
   - hash:
       serializedVersion: 2
-      Hash: 72fa1f69a7ee076affc833e9197f44df
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: LevelUpEffects
-  - hash:
-      serializedVersion: 2
       Hash: 8220b46879dc5e37db1b940c938f5744
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: SignalEmitter
-  - hash:
-      serializedVersion: 2
-      Hash: 06c743c65e3682a2965ffc8afb3be0c9
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: GameManager
   - hash:
       serializedVersion: 2
       Hash: 9f381833fdcd620b5da373eb35dbc5c9
@@ -871,9 +884,21 @@ ScriptsOnlyBuild:
     assemblyName: Unity.2D.IK.Runtime.dll
     namespaceName: UnityEngine.U2D.IK
     className: FabrikSolver2D
+  - hash:
+      serializedVersion: 2
+      Hash: db7d45febbead2eba7a86c7f479376b4
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: EnemyMeeleAttack
+  - hash:
+      serializedVersion: 2
+      Hash: ebf23a5d0ac3ef41630ded8f52d8e0a3
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: EnemyRagedAttack
   platform: 5
   scenePathNames:
   - Assets/Scenes/MainMenu.unity
   - Assets/Scenes/MainScene.unity
   - Assets/Scenes/GameOver.unity
-  playerPath: C:/Users/6500/Desktop/game/Defence/Exe/Defence.exe
+  playerPath: C:/Users/lenovo/Desktop/game/Defence/exe/Defence.exe

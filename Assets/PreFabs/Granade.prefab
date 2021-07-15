@@ -98,5 +98,5 @@ MonoBehaviour:
   Target: {fileID: 0}
   Angle: 30
   gravity: 9.8
-  Projectile: {fileID: 0}
+  granadeSpeed: 3
   explosionPrefab: {fileID: 2813326216008537490, guid: 2c2ef8c0e21d5fa4298caa44330a17a6, type: 3}

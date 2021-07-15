@@ -7,14 +7,9 @@ public class EnemyMove : MonoBehaviour
 {
     Transform tr;
     public float speed;
-    public float EnemyHp;
+    private float EnemyHp;
     public float enemyNowHp;
 
-    public float enemyDamage;
-
-    public float attackspeed;
-
-    
     public GameObject HpImg;
     private GameObject HP;
 
@@ -23,7 +18,6 @@ public class EnemyMove : MonoBehaviour
     Player_char player;
 
     public bool isMove;
-    public bool isAttack;
 
 
     //private Transform HpTrans;
@@ -55,34 +49,6 @@ public class EnemyMove : MonoBehaviour
         Bar.fillAmount = enemyNowHp / EnemyHp ;
         Death();
     }
-
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if(collision.tag == "Wall")
-        {
-            isMove = false;
-            
-            InvokeRepeating("EnemyAttack",1.5f, attackspeed);
-        }
-
-       
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if(collision.tag == "Wall")
-        {
-            isMove = true;
-            CancelInvoke("EnemyAttack");
-        }
-    }
-
-    void EnemyAttack()
-    {
-        player.nowHp -= enemyDamage;
-    }
-
 
     void Death()
     {

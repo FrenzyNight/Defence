@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 2754784609630949253}
   - component: {fileID: 2754784609630949250}
   - component: {fileID: 2754784609630949251}
-  - component: {fileID: -3034036771078821837}
   - component: {fileID: -1311553157899544098}
+  - component: {fileID: -3034036771078821837}
+  - component: {fileID: 6819972978128714574}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: enemy
@@ -101,25 +102,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0.008860469}
   m_Size: {x: 1.53, y: 3.5775774}
   m_Direction: 0
---- !u!114 &-3034036771078821837
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2754784609630949248}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c628baa0ba3bac4296ec6e0839b61a7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 2
-  EnemyHp: 100
-  enemyNowHp: 0
-  enemyDamage: 5
-  attackspeed: 2
-  HpImg: {fileID: 8222506220886026821, guid: c5129206fc2c52243bce7473972ff4f9, type: 3}
-  isMove: 0
 --- !u!50 &-1311553157899544098
 Rigidbody2D:
   serializedVersion: 4
@@ -141,3 +123,33 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-3034036771078821837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2754784609630949248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c628baa0ba3bac4296ec6e0839b61a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 2
+  enemyNowHp: 0
+  HpImg: {fileID: 8222506220886026821, guid: c5129206fc2c52243bce7473972ff4f9, type: 3}
+  isMove: 0
+--- !u!114 &6819972978128714574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2754784609630949248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4ee1d79234942349b32d56c11f4ccb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyDamage: 5
+  attackspeed: 2

@@ -26,35 +26,12 @@ public class DataManager : MonoBehaviour
        }
    }
 
-   public float bulletSpeed;
-   public float bulletDamge;
-   public float bulletDelay;
-   public float bulletNuckback;
    
-   public float enemyMaxHp;
-   public float enemySpeed;
-   public float enemyInterval;
-   public float enemyDamge;
+    public int money;
 
-   public float MaxHp;
-   public float NowHp;
+    public GameObject[] Characters;
+    public float[] growRateUpgrade;
 
-   public int Wave;
+    public int[] upgradecost;
 
-   public bool isWave;
-
-   public int money;
-
-   public int Level;
-   public float MaxExp;
-   public float NowExp;
-   public int MaxLevel;
-
-   public int MaxLevelUpCost;
-
-   public float granadeSpeed;
-
-   public bool isStop;
-
-   public float skill1cooltime;
 }

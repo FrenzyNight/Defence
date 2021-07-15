@@ -9,12 +9,14 @@ public class ParabolaMove : MonoBehaviour
     private float correctAngle;
 
     public float gravity = 9.8f;
+    public float granadeSpeed;
 
     Transform Projectile;
     //private Transform myTransform;
 
     private Vector2 vec;
     public GameObject explosionPrefab;
+    WaveManager wm;
     
     void Awake()
     {
@@ -24,7 +26,7 @@ public class ParabolaMove : MonoBehaviour
         vec = Target.position;
 
         Vector2 v = Target.position - Projectile.position;
-        
+        wm = GameObject.Find("WaveManager").GetComponent<WaveManager>();
         correctAngle = Mathf.Atan2(v.y, v.x) * Mathf.Rad2Deg;
 
         //Angle += correctAngle;
@@ -63,11 +65,11 @@ public class ParabolaMove : MonoBehaviour
 
         while(Projectile.position.x <= vec.x)
         {
-            if(!DataManager.Instance.isStop)
+            if(!wm.isStop)
             {
-                Projectile.Translate(new Vector2((Vx + (gravity * Mathf.Sin(correctAngle * Mathf.Deg2Rad) * elapse_time)), (Vy - (gravity * Mathf.Cos(correctAngle * Mathf.Deg2Rad) * elapse_time)))* Time.deltaTime * DataManager.Instance.granadeSpeed);
+                Projectile.Translate(new Vector2((Vx + (gravity * Mathf.Sin(correctAngle * Mathf.Deg2Rad) * elapse_time)), (Vy - (gravity * Mathf.Cos(correctAngle * Mathf.Deg2Rad) * elapse_time)))* Time.deltaTime * granadeSpeed);
                  
-                elapse_time += Time.deltaTime * DataManager.Instance.granadeSpeed ;
+                elapse_time += Time.deltaTime * granadeSpeed ;
 
                 yield return null;
             }

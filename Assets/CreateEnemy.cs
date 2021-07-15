@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CreateEnemy : MonoBehaviour
 {
-    public GameObject prefabEnemy;
+    public GameObject[] prefabEnemy;
     public GameObject StagePanel;
     public GameObject SkillPanel;
     public Vector2 limitMin;
@@ -17,6 +17,7 @@ public class CreateEnemy : MonoBehaviour
 
     public float sponInterval;
     public float monsterMaxHp;
+    private int enemyIndex;
 
     WaveManager wm;
 
@@ -68,8 +69,8 @@ public class CreateEnemy : MonoBehaviour
 
             float r = Random.Range(limitMin.y, limitMax.y);
             Vector2 creatingPoint = new Vector2(limitMin.x, r);
-
-            Instantiate(prefabEnemy, creatingPoint, Quaternion.identity);  
+            enemyIndex = Random.Range(0,2);
+            Instantiate(prefabEnemy[enemyIndex], creatingPoint, Quaternion.identity);  
             
             isStart = true;
             if(count >= mobcount)

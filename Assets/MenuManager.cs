@@ -19,17 +19,17 @@ public class MenuManager : MonoBehaviour
     void Update()
     {
         moneyText.text = "Money : " + DataManager.Instance.money.ToString();
-        UpgradeText.text = "현재 MaxLevel : " + DataManager.Instance.MaxLevel.ToString() + "\n";
-        UpgradeText.text += "업그레이드 비용 : " + DataManager.Instance.MaxLevelUpCost.ToString();
+        UpgradeText.text = "현재 성장률 : " + (4+DataManager.Instance.growRateUpgrade[0]).ToString() + "\n";
+        UpgradeText.text += "업그레이드 비용 : " + DataManager.Instance.upgradecost[0].ToString();
     }
 
     public void UpgradeButton()
     {
-        if(DataManager.Instance.money >= DataManager.Instance.MaxLevelUpCost)
+        if(DataManager.Instance.money >= DataManager.Instance.upgradecost[0])
         {
-            DataManager.Instance.money -= DataManager.Instance.MaxLevelUpCost;
-            DataManager.Instance.MaxLevel += 1;
-            DataManager.Instance.MaxLevelUpCost *= 2;
+            DataManager.Instance.growRateUpgrade[0] += 0.5f;
+            DataManager.Instance.money -= DataManager.Instance.upgradecost[0];
+            DataManager.Instance.upgradecost[0] *= 2;
         }
     }
 

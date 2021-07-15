@@ -39,11 +39,13 @@ public class Player_char : MonoBehaviour
     public float growHp;
     public float growDamage;
 
+    public int characterIndex;
 
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
         audioSource.clip = audioFire;
+        growrate += DataManager.Instance.growRateUpgrade[characterIndex];
 
         tr = GetComponent<Transform>();
         wm = GameObject.Find("WaveManager").GetComponent<WaveManager>();
@@ -108,7 +110,7 @@ public class Player_char : MonoBehaviour
         if(nowHp <= 0)
         {
             //You Die
-
+            SceneManager.LoadScene("GameOver");
         }
     }
 
