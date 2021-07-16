@@ -61,7 +61,7 @@ public class CreateEnemy : MonoBehaviour
 
         count = 0;
         mobcount = 10 + (wm.wave * 3);
-        if(wm.wave % 5 == 0 || wm.wave == 1) //boss전
+        if(wm.wave % 5 == 0 )// || wm.wave == 1) //boss전
         {
             CreateBoss();
         }

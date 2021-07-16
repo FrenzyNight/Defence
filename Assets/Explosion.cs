@@ -31,6 +31,21 @@ public class Explosion : MonoBehaviour
         {
             collision.gameObject.GetComponent<EnemyMove>().enemyNowHp -= player.damage * damageRat;
         }
+        else if(collision.tag == "blaster")
+        {
+            collision.gameObject.GetComponent<Blaster>().HP -= player.damage * damageRat;
+            
+        }
+        else if(collision.tag == "rock")
+        {
+            collision.gameObject.GetComponent<RockMove>().HP -= player.damage * damageRat;
+           
+        }
+        else if(collision.tag == "boss")
+        {
+            collision.gameObject.GetComponent<Boss>().BossNowHP -= player.damage * damageRat;
+            
+        }
     }
 
     private void OnTriggerStay2D(Collider2D collision)

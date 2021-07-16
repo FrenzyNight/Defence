@@ -41,9 +41,9 @@ public class Blaster : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(HP <= 0)
+        if(HP <= 0 || !wm.isWave)
         {
-            CancelInvoke("Attac");
+            CancelInvoke("Attack");
             Destroy(gameObject);
         }
         
@@ -51,6 +51,8 @@ public class Blaster : MonoBehaviour
         {
             child.transform.Translate(point.normalized * laserSpeed * Time.deltaTime,0);
         }
+
+        
     }
 
     void Attack()
