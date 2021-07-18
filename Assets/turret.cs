@@ -9,10 +9,18 @@ public class turret : MonoBehaviour
     WaveManager wm;
     public float turretDamage;
     public float turretNuckback;
+    public float FPS;
+
+    public AudioClip audioFire;
+
+    AudioSource audioSource;
     // Start is called before the first frame update
     void Start()
     {
         wm = GameObject.Find("WaveManager").GetComponent<WaveManager>();
+    
+        audioSource = GetComponent<AudioSource>();
+        audioSource.clip = audioFire;
     }
 
     // Update is called once per frame
@@ -23,8 +31,9 @@ public class turret : MonoBehaviour
             CancelInvoke("Fire");
             if(wm.isWave)
             {
+                float firstDelay = Random.Range(0.1f,0.55f);
                 target = FindNearestEnemy();
-                InvokeRepeating("Fire",0.5f, 1f);
+                InvokeRepeating("Fire",firstDelay, 1/FPS);
             }
         }
     }
@@ -51,14 +60,19 @@ public class turret : MonoBehaviour
     {
         if(!wm.isStop && wm.isWave)
         {
-            if(target.tag == "enemy")
+            if(target!= null)
             {
-                target.GetComponent<EnemyMove>().enemyNowHp -= turretDamage;
-                target.GetComponent<Transform>().Translate(Vector2.right * turretNuckback);
-            }
-            else if(target.tag == "boss")
-            {
-                target.GetComponent<Boss>().BossNowHP -= turretDamage;
+                if(target.tag == "enemy")
+                {
+                    audioSource.Play();
+                    target.GetComponent<EnemyMove>().enemyNowHp -= turretDamage;
+                    target.GetComponent<Transform>().Translate(Vector2.right * turretNuckback);
+                }
+                else if(target.tag == "boss")
+                {
+                    audioSource.Play();
+                    target.GetComponent<Boss>().BossNowHP -= turretDamage;
+                }
             }
         }
     }

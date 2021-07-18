@@ -102,6 +102,8 @@ public class Player_char : MonoBehaviour
             maxHp += growHp;
             damage += growDamage;
             nowHp = maxHp;
+
+            wm.CallMercenary();
         }
     }
 
@@ -111,6 +113,11 @@ public class Player_char : MonoBehaviour
         {
             //You Die
             SceneManager.LoadScene("GameOver");
+        }
+
+        if(nowHp > maxHp)
+        {
+            nowHp = maxHp;
         }
     }
 

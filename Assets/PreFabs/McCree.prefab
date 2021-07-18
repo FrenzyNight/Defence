@@ -198,14 +198,14 @@ MonoBehaviour:
   audioFire: {fileID: 8300000, guid: c69cb28f1741f274891972f7d6c0563d, type: 3}
   level: 1
   growrate: 4
-  damage: 65
+  damage: 50
   FPS: 2.2
   bulletspeed: 80
   bulletnuckback: 0.3
   isDelay: 0
   isSkill: 0
   nowExp: 0
-  maxExp: 50
+  maxExp: 100
   nowHp: 0
   maxHp: 100
   growHp: 0
@@ -233,7 +233,7 @@ MonoBehaviour:
   skillBtn3: {fileID: 0}
   sk1ct: 3
   sk2ct: 5
-  sk3ct: 10
+  sk3ct: 15
   sk1ready: 0
   sk2ready: 0
   sk3ready: 0

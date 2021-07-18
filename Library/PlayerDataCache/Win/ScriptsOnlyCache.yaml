@@ -21,7 +21,10 @@ ScriptsOnlyBuild:
     - RockMove
     - RussianBulletMove
     - TargetMove
+    - Turret_assist
+    - Turret_bullet
     - WaveManager
+    - turret
     Unity.2D.Animation.Editor.dll:
     - UnityEditor.U2D.Animation.BoneGizmo
     Unity.2D.IK.Editor.dll:
@@ -42,8 +45,10 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -78,19 +83,19 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1436}
     - Class: 114
-      Script: {instanceID: 1668}
+      Script: {instanceID: 1730}
     - Class: 114
-      Script: {instanceID: 2084}
+      Script: {instanceID: 2146}
     - Class: 114
-      Script: {instanceID: 2456}
+      Script: {instanceID: 2518}
     - Class: 114
-      Script: {instanceID: 2604}
+      Script: {instanceID: 2666}
     - Class: 114
-      Script: {instanceID: 2776}
+      Script: {instanceID: 2838}
     - Class: 114
-      Script: {instanceID: 2988}
+      Script: {instanceID: 3050}
     - Class: 114
-      Script: {instanceID: 3090}
+      Script: {instanceID: 3152}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -139,37 +144,37 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1436}
     - Class: 114
-      Script: {instanceID: 1674}
+      Script: {instanceID: 1736}
     - Class: 114
-      Script: {instanceID: 1794}
+      Script: {instanceID: 1856}
     - Class: 114
-      Script: {instanceID: 2084}
+      Script: {instanceID: 2146}
     - Class: 114
-      Script: {instanceID: 2456}
+      Script: {instanceID: 2518}
     - Class: 114
-      Script: {instanceID: 2604}
+      Script: {instanceID: 2666}
     - Class: 114
-      Script: {instanceID: 2722}
+      Script: {instanceID: 2784}
     - Class: 114
-      Script: {instanceID: 2776}
+      Script: {instanceID: 2838}
     - Class: 114
-      Script: {instanceID: 2858}
+      Script: {instanceID: 2920}
     - Class: 114
-      Script: {instanceID: 2988}
+      Script: {instanceID: 3050}
     - Class: 114
-      Script: {instanceID: 3090}
+      Script: {instanceID: 3152}
     - Class: 114
-      Script: {instanceID: 3232}
+      Script: {instanceID: 3294}
     - Class: 114
-      Script: {instanceID: 3608}
+      Script: {instanceID: 3670}
     - Class: 114
-      Script: {instanceID: 4266}
+      Script: {instanceID: 4330}
     - Class: 114
-      Script: {instanceID: 4380}
+      Script: {instanceID: 4444}
     - Class: 114
-      Script: {instanceID: 4948}
+      Script: {instanceID: 5012}
     - Class: 114
-      Script: {instanceID: 4980}
+      Script: {instanceID: 5044}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -228,53 +233,59 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1436}
     - Class: 114
-      Script: {instanceID: 1674}
+      Script: {instanceID: 1736}
     - Class: 114
-      Script: {instanceID: 1852}
+      Script: {instanceID: 1914}
     - Class: 114
-      Script: {instanceID: 1860}
+      Script: {instanceID: 1922}
     - Class: 114
-      Script: {instanceID: 2084}
+      Script: {instanceID: 2146}
     - Class: 114
-      Script: {instanceID: 2248}
+      Script: {instanceID: 2310}
     - Class: 114
-      Script: {instanceID: 2456}
+      Script: {instanceID: 2518}
     - Class: 114
-      Script: {instanceID: 2584}
+      Script: {instanceID: 2646}
     - Class: 114
-      Script: {instanceID: 2604}
+      Script: {instanceID: 2666}
     - Class: 114
-      Script: {instanceID: 2722}
+      Script: {instanceID: 2784}
     - Class: 114
-      Script: {instanceID: 2776}
+      Script: {instanceID: 2838}
     - Class: 114
-      Script: {instanceID: 2858}
+      Script: {instanceID: 2920}
     - Class: 114
-      Script: {instanceID: 2988}
+      Script: {instanceID: 3050}
     - Class: 114
-      Script: {instanceID: 3090}
-    - Class: 114
-      Script: {instanceID: 3170}
-    - Class: 114
-      Script: {instanceID: 3226}
+      Script: {instanceID: 3152}
     - Class: 114
       Script: {instanceID: 3232}
     - Class: 114
-      Script: {instanceID: 3608}
+      Script: {instanceID: 3288}
     - Class: 114
-      Script: {instanceID: 4380}
+      Script: {instanceID: 3294}
     - Class: 114
-      Script: {instanceID: 4386}
+      Script: {instanceID: 3670}
     - Class: 114
-      Script: {instanceID: 4426}
+      Script: {instanceID: 3828}
     - Class: 114
-      Script: {instanceID: 4690}
+      Script: {instanceID: 4444}
     - Class: 114
-      Script: {instanceID: 4718}
+      Script: {instanceID: 4450}
     - Class: 114
-      Script: {instanceID: 4948}
+      Script: {instanceID: 4490}
     - Class: 114
-      Script: {instanceID: 4980}
+      Script: {instanceID: 4754}
+    - Class: 114
+      Script: {instanceID: 4782}
+    - Class: 114
+      Script: {instanceID: 5012}
+    - Class: 114
+      Script: {instanceID: 5044}
+    - Class: 114
+      Script: {instanceID: 35834}
+    - Class: 114
+      Script: {instanceID: 35908}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -728,6 +739,12 @@ ScriptsOnlyBuild:
     className: EventTrigger
   - hash:
       serializedVersion: 2
+      Hash: b2aa8783165aac7e14d52e0425f5d01a
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: turret
+  - hash:
+      serializedVersion: 2
       Hash: 87cef3c82381dc586f6772c3e27561b6
     assemblyName: Unity.2D.Animation.Runtime.dll
     namespaceName: UnityEngine.Experimental.U2D.Animation
@@ -884,7 +901,7 @@ ScriptsOnlyBuild:
     className: TMP_ScrollbarEventHandler
   - hash:
       serializedVersion: 2
-      Hash: 314c7f0c7318b147365c5dd373c4fedc
+      Hash: 5f193ec48f4226a3bd0f5e9e9eb736ac
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: WaveManager
@@ -936,9 +953,21 @@ ScriptsOnlyBuild:
     assemblyName: Unity.2D.IK.Runtime.dll
     namespaceName: UnityEngine.U2D.IK
     className: FabrikSolver2D
+  - hash:
+      serializedVersion: 2
+      Hash: cf479f2f2686f065c40640633c743e60
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Turret_assist
+  - hash:
+      serializedVersion: 2
+      Hash: 90844deda081c5f9183e888df0a0b020
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Turret_bullet
   platform: 5
   scenePathNames:
   - Assets/Scenes/MainMenu.unity
   - Assets/Scenes/MainScene.unity
   - Assets/Scenes/GameOver.unity
-  playerPath: C:/Users/lenovo/Desktop/game/Defence/exe/Defence.exe
+  playerPath: C:/Users/6500/Desktop/game/Defence/Exe/Defence.exe

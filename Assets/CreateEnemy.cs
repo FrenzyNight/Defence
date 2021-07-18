@@ -53,11 +53,10 @@ public class CreateEnemy : MonoBehaviour
         wm.isWave = true;
         isCreate = true;
 
-        if(wm.wave % 3 == 0)
-        {
-            monsterMaxHp += 10f;
-            sponInterval -= 0.05f;
-        }
+        
+        monsterMaxHp *= 1.05f;
+        sponInterval -= 0.05f;
+        
 
         count = 0;
         mobcount = 10 + (wm.wave * 3);

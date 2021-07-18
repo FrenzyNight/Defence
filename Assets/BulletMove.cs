@@ -58,8 +58,6 @@ public class BulletMove : MonoBehaviour
             collision.gameObject.GetComponent<Boss>().BossNowHP -= player.damage;
             Destroy(gameObject);
         }
-
-
     }
 
 }
