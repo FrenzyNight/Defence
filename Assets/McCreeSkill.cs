@@ -16,8 +16,6 @@ public class McCreeSkill : MonoBehaviour
 
     public Button skillBtn1, skillBtn2, skillBtn3;
 
-    //public bool isSkill;
-
     Player_char player;
 
     public float sk1ct, sk2ct, sk3ct; // skill 1 cool time
@@ -39,7 +37,7 @@ public class McCreeSkill : MonoBehaviour
         player = GetComponent<Player_char>();
         wm = GameObject.Find("WaveManager").GetComponent<WaveManager>();
         
-        //SetButton();
+        SetButton();
     }
 
     // Update is called once per frame
@@ -61,9 +59,9 @@ public class McCreeSkill : MonoBehaviour
 
     public void SetButton()
     {
-        skillBtn1 = GameObject.Find("Button_skill1").GetComponent<Button>();
-        skillBtn2 = GameObject.Find("Button_skill2").GetComponent<Button>();
-        skillBtn3 = GameObject.Find("Button_skill3").GetComponent<Button>();
+        skillBtn1 = GameObject.Find("Canvas_skill").transform.GetChild(0).transform.Find("Button_skill1").GetComponent<Button>();
+        skillBtn2 = GameObject.Find("Canvas_skill").transform.GetChild(0).transform.Find("Button_skill2").GetComponent<Button>();
+        skillBtn3 = GameObject.Find("Canvas_skill").transform.GetChild(0).transform.Find("Button_skill3").GetComponent<Button>();
 
         skillBtn1.onClick.AddListener(Skill1);
         skillBtn2.onClick.AddListener(Skill2);
@@ -88,7 +86,6 @@ public class McCreeSkill : MonoBehaviour
             {
                 sk1ready = false;
 
-                
                 StartCoroutine(Create3Bullet());
                 
                 player.isSkill = false;

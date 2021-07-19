@@ -56,7 +56,8 @@ public class EnemyMove : MonoBehaviour
         {
             Destroy(Bar);
             Destroy(HP);
-            Destroy(gameObject);
+            gameObject.SetActive(false);
+            Destroy(gameObject,0.2f);
             DataManager.Instance.money += 2;
             player.nowExp += 5;
         }

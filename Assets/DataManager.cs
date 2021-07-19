@@ -29,6 +29,8 @@ public class DataManager : MonoBehaviour
    
     public int money;
 
+    public int selectedChar;
+
     public GameObject[] Characters;
     public float[] growRateUpgrade;
 

@@ -25,13 +25,19 @@ public class WaveManager : MonoBehaviour
     WaveManager wm;
 
     public Vector2 PlayerSponPoint;
-    public GameObject PlayerCharPrefab;
+    GameObject PlayerCharPrefab;
     public GameObject[] mercenary; //용병단
     
     // Start is called before the first frame update
+
+    void Awake()
+    {
+        PlayerCharPrefab = DataManager.Instance.Characters[DataManager.Instance.selectedChar];
+        Instantiate(PlayerCharPrefab, PlayerSponPoint, Quaternion.identity);
+    }
     void Start()
     {
-        //Instantiate(PlayerCharPrefab, PlayerSponPoint, Quaternion.identity);
+        
         player = GameObject.FindWithTag("Player").GetComponent<Player_char>();
         
 

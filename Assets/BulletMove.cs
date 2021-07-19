@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class BulletMove : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class BulletMove : MonoBehaviour
     private float angle;
     
     Transform tr;
+    Transform effectTr;
     WaveManager wm;
     Player_char player;
     
@@ -38,9 +40,10 @@ public class BulletMove : MonoBehaviour
     {
         if(collision.tag == "enemy")
         {
+            effectTr = collision.gameObject.GetComponent<Transform>();
             collision.gameObject.GetComponent<EnemyMove>().enemyNowHp -= player.damage;
-            collision.gameObject.GetComponent<Transform>().Translate(Vector2.right * player.bulletnuckback);
-            
+            //collision.gameObject.GetComponent<Transform>().Translate(Vector2.right * player.bulletnuckback);
+            collision.gameObject.transform.DOMove( new Vector2(effectTr.position.x+player.bulletnuckback, effectTr.position.y), 0.05f);
             Destroy(gameObject);
         }
         else if(collision.tag == "blaster")
