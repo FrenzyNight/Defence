@@ -41,6 +41,11 @@ public class Explosion : MonoBehaviour
             collision.gameObject.GetComponent<RockMove>().HP -= player.damage * damageRat;
            
         }
+        else if(collision.tag == "bomb")
+        {
+            collision.gameObject.GetComponent<BombMove>().bombHP -= player.damage * damageRat;
+           
+        }
         else if(collision.tag == "boss")
         {
             collision.gameObject.GetComponent<Boss>().BossNowHP -= player.damage * damageRat;

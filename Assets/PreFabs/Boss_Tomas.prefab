@@ -131,6 +131,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Blaster: {fileID: 2983471927447932935, guid: 8408330e5e226bc4a89426c49e646de6, type: 3}
   Rock: {fileID: 3876297335762142385, guid: ae90e81cf3c70d7449a5c09793280902, type: 3}
+  Bomb: {fileID: 3953456071072004049, guid: 38802f4ce827ec548ae835ba1a1c6e3c, type: 3}
 --- !u!50 &6773249742255554854
 Rigidbody2D:
   serializedVersion: 4

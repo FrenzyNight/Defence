@@ -88,6 +88,11 @@ public class RussianBulletMove : MonoBehaviour
             collision.gameObject.GetComponent<RockMove>().HP -= player.damage * (skilldamagerate / 100);
             
         }
+        else if(collision.tag == "bomb")
+        {
+            collision.gameObject.GetComponent<BombMove>().bombHP -= player.damage * (skilldamagerate / 100);
+            
+        }
         else if(collision.tag == "boss")
         {
             collision.gameObject.GetComponent<Boss>().BossNowHP -= player.damage * (skilldamagerate / 100);

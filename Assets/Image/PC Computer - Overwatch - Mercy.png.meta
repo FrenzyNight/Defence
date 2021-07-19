@@ -5,6 +5,9 @@ TextureImporter:
   - first:
       213: -1821382837620601113
     second: PC Computer - Overwatch - Mercy_0
+  - first:
+      213: 343852862504718836
+    second: PC Computer - Overwatch - Mercy_1
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -122,6 +125,27 @@ TextureImporter:
       bones: []
       spriteID: 7ee81a395f529b6e0800000000000000
       internalID: -1821382837620601113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Overwatch - Mercy_1
+      rect:
+        serializedVersion: 2
+        x: 1585
+        y: 3166
+        width: 446
+        height: 438
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f1589c4b5c95c400800000000000000
+      internalID: 343852862504718836
       vertices: []
       indices: 
       edges: []

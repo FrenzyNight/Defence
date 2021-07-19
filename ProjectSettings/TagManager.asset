@@ -17,6 +17,7 @@ TagManager:
   - blaster
   - rock
   - boss
+  - bomb
   layers:
   - Default
   - TransparentFX

@@ -6,6 +6,7 @@ public class BossAttack : MonoBehaviour
 {
     public GameObject Blaster;
     public GameObject Rock;
+    public GameObject Bomb;
 
     Transform tr;
     Transform playerTr;
@@ -27,14 +28,15 @@ public class BossAttack : MonoBehaviour
         playerTr = GameObject.FindWithTag("Player").GetComponent<Transform>();
         wm = GameObject.Find("WaveManager").GetComponent<WaveManager>();
 
-        StartCoroutine(sponBlaster());
+        StartCoroutine(AttackStart());
     }
 
 
-    IEnumerator sponBlaster()
+    IEnumerator AttackStart()
     {
         while(true)
         {
+            //3~10개 블라스터 소환
             rnd = Random.Range(3,10);
             for(int i=0;i<rnd;i++)
             {
@@ -52,10 +54,13 @@ public class BossAttack : MonoBehaviour
                 }
             }
             yield return new WaitForSeconds(2f);
+            //2초간 후딜레이
+
+            // 3~10개의 투석 투척
             rnd = Random.Range(3,10);
             for(int i=0;i<rnd;i++)
             {
-                yield return new WaitForSeconds(1f);
+                yield return new WaitForSeconds(0.6f);
                 randY = Random.Range(0.5f,4f);
                 plusminus = Random.Range(0,2);
                 if(plusminus == 0)
@@ -66,6 +71,18 @@ public class BossAttack : MonoBehaviour
                 Instantiate(Rock, spontr, Quaternion.identity);
             }
             yield return new WaitForSeconds(2f);
+            //후딜레이 2초
+
+            
+            yield return new WaitForSeconds(0.5f);
+        
+            //spontr = new Vector2(tr.position.x, tr.position.y + randY);
+            for(int i = 0;i<5;i++)
+            {
+                Instantiate(Bomb, new Vector2(tr.position.x, tr.position.y + 5f - (2.5f * i)), Quaternion.identity);
+            }
+            yield return new WaitForSeconds(2f);
+            //후딜레이 2초
         }
     }
 }

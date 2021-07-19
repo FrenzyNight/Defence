@@ -2,6 +2,7 @@ ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
     - Blaster
+    - BombMove
     - Boss
     - BossAttack
     - BulletMove
@@ -13,6 +14,8 @@ ScriptsOnlyBuild:
     - EnemyMove
     - EnemyRagedAttack
     - Explosion
+    - HealEffectMove
+    - Healer_type1
     - McCreeSkill
     - MenuManager
     - OverManager
@@ -45,10 +48,8 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -83,19 +84,19 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1436}
     - Class: 114
-      Script: {instanceID: 1730}
+      Script: {instanceID: 1736}
     - Class: 114
-      Script: {instanceID: 2146}
+      Script: {instanceID: 2154}
     - Class: 114
-      Script: {instanceID: 2518}
+      Script: {instanceID: 2526}
     - Class: 114
-      Script: {instanceID: 2666}
+      Script: {instanceID: 2674}
     - Class: 114
-      Script: {instanceID: 2838}
+      Script: {instanceID: 2846}
     - Class: 114
-      Script: {instanceID: 3050}
+      Script: {instanceID: 3058}
     - Class: 114
-      Script: {instanceID: 3152}
+      Script: {instanceID: 3160}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -144,37 +145,37 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1436}
     - Class: 114
-      Script: {instanceID: 1736}
+      Script: {instanceID: 1742}
     - Class: 114
-      Script: {instanceID: 1856}
+      Script: {instanceID: 1864}
     - Class: 114
-      Script: {instanceID: 2146}
+      Script: {instanceID: 2154}
     - Class: 114
-      Script: {instanceID: 2518}
+      Script: {instanceID: 2526}
     - Class: 114
-      Script: {instanceID: 2666}
+      Script: {instanceID: 2674}
     - Class: 114
-      Script: {instanceID: 2784}
+      Script: {instanceID: 2792}
     - Class: 114
-      Script: {instanceID: 2838}
+      Script: {instanceID: 2846}
     - Class: 114
-      Script: {instanceID: 2920}
+      Script: {instanceID: 2928}
     - Class: 114
-      Script: {instanceID: 3050}
+      Script: {instanceID: 3058}
     - Class: 114
-      Script: {instanceID: 3152}
+      Script: {instanceID: 3160}
     - Class: 114
-      Script: {instanceID: 3294}
+      Script: {instanceID: 3302}
     - Class: 114
-      Script: {instanceID: 3670}
+      Script: {instanceID: 3682}
     - Class: 114
-      Script: {instanceID: 4330}
+      Script: {instanceID: 4342}
     - Class: 114
-      Script: {instanceID: 4444}
+      Script: {instanceID: 4456}
     - Class: 114
-      Script: {instanceID: 5012}
+      Script: {instanceID: 5024}
     - Class: 114
-      Script: {instanceID: 5044}
+      Script: {instanceID: 5056}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -233,59 +234,65 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1436}
     - Class: 114
-      Script: {instanceID: 1736}
+      Script: {instanceID: 1742}
     - Class: 114
-      Script: {instanceID: 1914}
+      Script: {instanceID: 1830}
     - Class: 114
       Script: {instanceID: 1922}
     - Class: 114
-      Script: {instanceID: 2146}
+      Script: {instanceID: 1930}
     - Class: 114
-      Script: {instanceID: 2310}
+      Script: {instanceID: 2154}
     - Class: 114
-      Script: {instanceID: 2518}
+      Script: {instanceID: 2318}
     - Class: 114
-      Script: {instanceID: 2646}
+      Script: {instanceID: 2526}
     - Class: 114
-      Script: {instanceID: 2666}
+      Script: {instanceID: 2654}
     - Class: 114
-      Script: {instanceID: 2784}
+      Script: {instanceID: 2674}
     - Class: 114
-      Script: {instanceID: 2838}
+      Script: {instanceID: 2792}
     - Class: 114
-      Script: {instanceID: 2920}
+      Script: {instanceID: 2846}
     - Class: 114
-      Script: {instanceID: 3050}
+      Script: {instanceID: 2928}
     - Class: 114
-      Script: {instanceID: 3152}
+      Script: {instanceID: 3058}
     - Class: 114
-      Script: {instanceID: 3232}
+      Script: {instanceID: 3160}
     - Class: 114
-      Script: {instanceID: 3288}
+      Script: {instanceID: 3240}
     - Class: 114
-      Script: {instanceID: 3294}
+      Script: {instanceID: 3296}
     - Class: 114
-      Script: {instanceID: 3670}
+      Script: {instanceID: 3302}
     - Class: 114
-      Script: {instanceID: 3828}
+      Script: {instanceID: 3432}
     - Class: 114
-      Script: {instanceID: 4444}
+      Script: {instanceID: 3542}
     - Class: 114
-      Script: {instanceID: 4450}
+      Script: {instanceID: 3682}
     - Class: 114
-      Script: {instanceID: 4490}
+      Script: {instanceID: 3840}
     - Class: 114
-      Script: {instanceID: 4754}
+      Script: {instanceID: 4456}
     - Class: 114
-      Script: {instanceID: 4782}
+      Script: {instanceID: 4462}
     - Class: 114
-      Script: {instanceID: 5012}
+      Script: {instanceID: 4502}
     - Class: 114
-      Script: {instanceID: 5044}
+      Script: {instanceID: 4766}
     - Class: 114
-      Script: {instanceID: 35834}
+      Script: {instanceID: 4794}
     - Class: 114
-      Script: {instanceID: 35908}
+      Script: {instanceID: 5024}
+    - Class: 114
+      Script: {instanceID: 5056}
+    - Class: 114
+      Script: {instanceID: 18146}
+    - Class: 114
+      Script: {instanceID: 23692}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -397,6 +404,12 @@ ScriptsOnlyBuild:
     className: Shadow
   - hash:
       serializedVersion: 2
+      Hash: 90844deda081c5f9183e888df0a0b020
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Turret_bullet
+  - hash:
+      serializedVersion: 2
       Hash: 300fd99066f8c288e85f5e81ce65fe34
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -415,7 +428,7 @@ ScriptsOnlyBuild:
     className: CleanBullet
   - hash:
       serializedVersion: 2
-      Hash: 87f4075df61332e05a35017ee9dc1953
+      Hash: bbb61cf4afb31603bb3f24a77917753b
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: BossAttack
@@ -655,6 +668,12 @@ ScriptsOnlyBuild:
     className: ContentSizeFitter
   - hash:
       serializedVersion: 2
+      Hash: cf479f2f2686f065c40640633c743e60
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Turret_assist
+  - hash:
+      serializedVersion: 2
       Hash: caa533b001ae39b864ba8425019e2268
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -677,6 +696,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.TestRunner.dll
     namespaceName: UnityEngine.TestTools.TestRunner.Callbacks
     className: PlayerQuitHandler
+  - hash:
+      serializedVersion: 2
+      Hash: e3b36f834559e310e874bb68f90462e4
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Healer_type1
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -955,19 +980,19 @@ ScriptsOnlyBuild:
     className: FabrikSolver2D
   - hash:
       serializedVersion: 2
-      Hash: cf479f2f2686f065c40640633c743e60
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: Turret_assist
+    className: HealEffectMove
   - hash:
       serializedVersion: 2
-      Hash: 90844deda081c5f9183e888df0a0b020
+      Hash: f2ec2616dac9e8749bdea407d1744d14
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: Turret_bullet
+    className: BombMove
   platform: 5
   scenePathNames:
   - Assets/Scenes/MainMenu.unity
   - Assets/Scenes/MainScene.unity
   - Assets/Scenes/GameOver.unity
-  playerPath: C:/Users/6500/Desktop/game/Defence/Exe/Defence.exe
+  playerPath: C:/Users/lenovo/Desktop/game/Defence/exe/Defence.exe
