@@ -127,7 +127,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.3
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -224,11 +224,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rocketPrefab: {fileID: 416208713803670184, guid: e59726701b4c8d0448aa0254a2c6796d, type: 3}
+  APBulletPrefab: {fileID: 552958654639407898, guid: 9b5241da086ef744caa491062bb24aad, type: 3}
+  NormalBulletPrefab: {fileID: 2828384327144627900, guid: 13abcf223fd8a2d498f10621074590fe, type: 3}
+  ApEffect: {fileID: 4763227606966571482, guid: d486a17644c275646813e6fa1dc3d5d4, type: 3}
   skillBtn1: {fileID: 0}
   skillBtn2: {fileID: 0}
   skillBtn3: {fileID: 0}
   sk1ct: 1
-  sk2ct: 0
+  sk2ct: 10
   sk3ct: 0
   sk1ready: 0
   sk2ready: 0

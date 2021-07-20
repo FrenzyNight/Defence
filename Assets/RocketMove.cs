@@ -43,10 +43,10 @@ public class RocketMove : MonoBehaviour
         if(collision.tag == "enemy")
         {   
             effectTr = collision.gameObject.GetComponent<Transform>();
-            collision.gameObject.transform.DOMove( new Vector2(effectTr.position.x+nuckback, effectTr.position.y), 0.3f);
+            collision.gameObject.transform.DOMove( new Vector2(effectTr.position.x+nuckback, effectTr.position.y), 0.5f);
             
             gameObject.SetActive(false);
-            Invoke("CreateEffect", 0.2f);
+            Invoke("CreateEffect", 0.4f);
             
             
         }

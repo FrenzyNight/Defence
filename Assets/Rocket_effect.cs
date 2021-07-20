@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class Rocket_effect : MonoBehaviour
 {
@@ -24,6 +25,7 @@ public class Rocket_effect : MonoBehaviour
         if(collision.tag == "enemy")
         {
             collision.gameObject.GetComponent<EnemyMove>().enemyNowHp -= player.damage * damageRat/100;
+            collision.gameObject.transform.DOShakePosition(0.05f, 0.2f , 2, 45f);
             
         }
         else if(collision.tag == "blaster")

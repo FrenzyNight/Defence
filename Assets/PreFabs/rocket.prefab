@@ -84,7 +84,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rocketeffect: {fileID: 8133773317418197781, guid: 7a380cbca2f281e4b9f209601b9f2e7e, type: 3}
-  rocketSpeed: 35
+  rocketSpeed: 40
   nuckback: 1.5
 --- !u!1 &6369855044107253798
 GameObject:

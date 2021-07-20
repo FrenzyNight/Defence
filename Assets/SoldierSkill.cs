@@ -8,8 +8,12 @@ using UnityEngine.EventSystems;
 public class SoldierSkill : MonoBehaviour
 {
     public GameObject rocketPrefab;
+    public GameObject APBulletPrefab;
+    public GameObject NormalBulletPrefab;
 
-    
+    public GameObject ApEffect;
+
+    GameObject apeffectimg;
     Transform tr;
     Vector2 mousePosition;
 
@@ -18,6 +22,7 @@ public class SoldierSkill : MonoBehaviour
     //public bool isSkill;
 
     Player_char player;
+    Transform playerTr;
 
     public float sk1ct, sk2ct, sk3ct; // skill 1 cool time
     public bool sk1ready, sk2ready, sk3ready;
@@ -33,6 +38,7 @@ public class SoldierSkill : MonoBehaviour
         tr = GetComponent<Transform>();
         player = GetComponent<Player_char>();
         wm = GameObject.Find("WaveManager").GetComponent<WaveManager>();
+        playerTr = GetComponent<Transform>();
         
         SetButton();
     }
@@ -46,7 +52,7 @@ public class SoldierSkill : MonoBehaviour
         }
         else if(sk2ready)
         {
-            Skill2trigger();
+            StartCoroutine(Skill2trigger());
         }
         else if(sk3ready)
         {
@@ -85,7 +91,7 @@ public class SoldierSkill : MonoBehaviour
 
                 Instantiate(rocketPrefab, tr.position , Quaternion.identity);
 
-                yield return new WaitForSeconds(0.4f); //후딜
+                yield return new WaitForSeconds(0.3f); //후딜
                 player.isSkill = false;
                 
                 yield return new WaitForSeconds(sk1ct);
@@ -94,7 +100,7 @@ public class SoldierSkill : MonoBehaviour
         }
     }
 
-    public void Skill2() // 중력류탄 : 적들을 끌어모으는 수류탄을 던짐
+    public void Skill2() // 철갑탄 : 기본공격의 탄환을 5초(임시)간 데미지1.1배 넉백 0.9배의 AP탄으로 변경한다. 탄환은 한명의 적을 관통한다
     {
         if(!player.isSkill)
         {
@@ -104,16 +110,32 @@ public class SoldierSkill : MonoBehaviour
         }
     }
 
-    void Skill2trigger()
+    IEnumerator Skill2trigger()
     {
-        if(Input.GetMouseButtonDown(0))
-        {
-            if(EventSystem.current.IsPointerOverGameObject() == false)
-            {
-                sk2ready = false;
-                
-            }
-        }
+        
+        
+        sk2ready = false;
+
+        yield return new WaitForSeconds(0.4f); //선딜
+
+        apeffectimg = Instantiate(ApEffect, new Vector2(playerTr.position.x, playerTr.position.y + 2f), Quaternion.identity);
+
+        player.bulletPrefab = APBulletPrefab;
+        player.isSkill = false;
+        yield return new WaitForSeconds(5f); // 지속시간
+        
+        Destroy(apeffectimg);
+
+        player.isSkill = true;
+        yield return new WaitForSeconds(0.4f); // 후딜
+        player.bulletPrefab = NormalBulletPrefab;
+        player.isSkill = false;
+
+
+        yield return new WaitForSeconds(sk2ct);
+        skillBtn2.interactable = true;
+        
+        
     }
 
 

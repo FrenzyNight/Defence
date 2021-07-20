@@ -8,6 +8,9 @@ TextureImporter:
   - first:
       213: -731852392015148993
     second: PC Computer - Overwatch - Soldier 76_1
+  - first:
+      213: 1257435939611965667
+    second: PC Computer - Overwatch - Soldier 76_2
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -138,7 +141,7 @@ TextureImporter:
         width: 444
         height: 448
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -146,6 +149,27 @@ TextureImporter:
       bones: []
       spriteID: f38cae18020f7d5f0800000000000000
       internalID: -731852392015148993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Overwatch - Soldier 76_2
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 3250
+        width: 203
+        height: 323
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e8716c235f437110800000000000000
+      internalID: 1257435939611965667
       vertices: []
       indices: 
       edges: []

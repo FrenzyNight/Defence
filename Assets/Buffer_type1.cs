@@ -26,11 +26,6 @@ public class Buffer_type1 : MonoBehaviour
         StartCoroutine(Buff());
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     IEnumerator Buff()
     {

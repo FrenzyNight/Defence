@@ -1,10 +1,12 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - APBulletMove
     - Blaster
     - BombMove
     - Boss
     - BossAttack
+    - Buffer_type1
     - BulletMove
     - CleanBullet
     - CreateEnemy
@@ -22,12 +24,17 @@ ScriptsOnlyBuild:
     - ParabolaMove
     - Player_char
     - RockMove
+    - RocketMove
+    - Rocket_effect
     - RussianBulletMove
+    - SoldierSkill
     - TargetMove
     - Turret_assist
     - Turret_bullet
     - WaveManager
     - turret
+    DOTween.dll:
+    - DG.Tweening.Core.DOTweenSettings
     Unity.2D.Animation.Editor.dll:
     - UnityEditor.U2D.Animation.BoneGizmo
     Unity.2D.IK.Editor.dll:
@@ -82,21 +89,21 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1436}
+      Script: {instanceID: 1440}
     - Class: 114
-      Script: {instanceID: 1736}
+      Script: {instanceID: 1672}
     - Class: 114
-      Script: {instanceID: 2154}
+      Script: {instanceID: 2090}
     - Class: 114
-      Script: {instanceID: 2526}
+      Script: {instanceID: 2470}
     - Class: 114
-      Script: {instanceID: 2674}
+      Script: {instanceID: 2618}
     - Class: 114
-      Script: {instanceID: 2846}
+      Script: {instanceID: 2792}
     - Class: 114
-      Script: {instanceID: 3058}
+      Script: {instanceID: 3008}
     - Class: 114
-      Script: {instanceID: 3160}
+      Script: {instanceID: 3110}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -126,6 +133,12 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 48
       Script: {instanceID: 0}
+    - Class: 50
+      Script: {instanceID: 0}
+    - Class: 58
+      Script: {instanceID: 0}
+    - Class: 60
+      Script: {instanceID: 0}
     - Class: 70
       Script: {instanceID: 0}
     - Class: 74
@@ -143,39 +156,49 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1436}
+      Script: {instanceID: 1440}
     - Class: 114
-      Script: {instanceID: 1742}
+      Script: {instanceID: 1486}
     - Class: 114
-      Script: {instanceID: 1864}
+      Script: {instanceID: 1678}
     - Class: 114
-      Script: {instanceID: 2154}
+      Script: {instanceID: 1800}
     - Class: 114
-      Script: {instanceID: 2526}
+      Script: {instanceID: 2090}
     - Class: 114
-      Script: {instanceID: 2674}
+      Script: {instanceID: 2470}
+    - Class: 114
+      Script: {instanceID: 2618}
+    - Class: 114
+      Script: {instanceID: 2738}
     - Class: 114
       Script: {instanceID: 2792}
     - Class: 114
-      Script: {instanceID: 2846}
+      Script: {instanceID: 2802}
     - Class: 114
-      Script: {instanceID: 2928}
+      Script: {instanceID: 2876}
     - Class: 114
-      Script: {instanceID: 3058}
+      Script: {instanceID: 3008}
     - Class: 114
-      Script: {instanceID: 3160}
+      Script: {instanceID: 3110}
     - Class: 114
-      Script: {instanceID: 3302}
+      Script: {instanceID: 3254}
     - Class: 114
-      Script: {instanceID: 3682}
+      Script: {instanceID: 3514}
     - Class: 114
-      Script: {instanceID: 4342}
+      Script: {instanceID: 3642}
     - Class: 114
-      Script: {instanceID: 4456}
+      Script: {instanceID: 4310}
     - Class: 114
-      Script: {instanceID: 5024}
+      Script: {instanceID: 4320}
     - Class: 114
-      Script: {instanceID: 5056}
+      Script: {instanceID: 4428}
+    - Class: 114
+      Script: {instanceID: 4998}
+    - Class: 114
+      Script: {instanceID: 5030}
+    - Class: 114
+      Script: {instanceID: 34490}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -232,67 +255,53 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1436}
+      Script: {instanceID: 1440}
     - Class: 114
-      Script: {instanceID: 1742}
+      Script: {instanceID: 1766}
     - Class: 114
-      Script: {instanceID: 1830}
+      Script: {instanceID: 1858}
     - Class: 114
-      Script: {instanceID: 1922}
+      Script: {instanceID: 1866}
     - Class: 114
-      Script: {instanceID: 1930}
+      Script: {instanceID: 2090}
     - Class: 114
-      Script: {instanceID: 2154}
+      Script: {instanceID: 2254}
     - Class: 114
-      Script: {instanceID: 2318}
+      Script: {instanceID: 2470}
     - Class: 114
-      Script: {instanceID: 2526}
+      Script: {instanceID: 2598}
     - Class: 114
-      Script: {instanceID: 2654}
+      Script: {instanceID: 2618}
     - Class: 114
-      Script: {instanceID: 2674}
+      Script: {instanceID: 2660}
     - Class: 114
       Script: {instanceID: 2792}
     - Class: 114
-      Script: {instanceID: 2846}
+      Script: {instanceID: 2858}
     - Class: 114
-      Script: {instanceID: 2928}
+      Script: {instanceID: 3008}
     - Class: 114
-      Script: {instanceID: 3058}
+      Script: {instanceID: 3110}
     - Class: 114
-      Script: {instanceID: 3160}
+      Script: {instanceID: 3116}
     - Class: 114
-      Script: {instanceID: 3240}
+      Script: {instanceID: 3192}
     - Class: 114
-      Script: {instanceID: 3296}
+      Script: {instanceID: 3248}
     - Class: 114
-      Script: {instanceID: 3302}
+      Script: {instanceID: 3386}
     - Class: 114
-      Script: {instanceID: 3432}
+      Script: {instanceID: 3496}
     - Class: 114
-      Script: {instanceID: 3542}
+      Script: {instanceID: 3800}
     - Class: 114
-      Script: {instanceID: 3682}
+      Script: {instanceID: 4434}
     - Class: 114
-      Script: {instanceID: 3840}
+      Script: {instanceID: 4474}
     - Class: 114
-      Script: {instanceID: 4456}
+      Script: {instanceID: 4740}
     - Class: 114
-      Script: {instanceID: 4462}
-    - Class: 114
-      Script: {instanceID: 4502}
-    - Class: 114
-      Script: {instanceID: 4766}
-    - Class: 114
-      Script: {instanceID: 4794}
-    - Class: 114
-      Script: {instanceID: 5024}
-    - Class: 114
-      Script: {instanceID: 5056}
-    - Class: 114
-      Script: {instanceID: 18146}
-    - Class: 114
-      Script: {instanceID: 23692}
+      Script: {instanceID: 4768}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -324,6 +333,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: AnimationPlayableAsset
+  - hash:
+      serializedVersion: 2
+      Hash: 972b04f7769942b14c52294a40031722
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SoldierSkill
   - hash:
       serializedVersion: 2
       Hash: 77aaaaa51f7a8d8ff333a879741e47d2
@@ -416,7 +431,7 @@ ScriptsOnlyBuild:
     className: TMP_FontAsset
   - hash:
       serializedVersion: 2
-      Hash: 2304f8a530eef96361dd22d23b46694a
+      Hash: 312f8276c5c63b59f04b7c0320a5e83b
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: DataManager
@@ -530,6 +545,12 @@ ScriptsOnlyBuild:
     className: TimelineAsset
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: HealEffectMove
+  - hash:
+      serializedVersion: 2
       Hash: 760787567e1b60d64a3e421ab83ee14a
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -554,6 +575,12 @@ ScriptsOnlyBuild:
     className: GraphicRaycaster
   - hash:
       serializedVersion: 2
+      Hash: b041c22fc1e98f9fd9bd200dc7d6bc71
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: RocketMove
+  - hash:
+      serializedVersion: 2
       Hash: f40fedccd4adbc76605bea6d67537e4b
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -570,6 +597,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_SpriteAnimator
+  - hash:
+      serializedVersion: 2
+      Hash: cb50bc0434d7981e39621f18b9c14d9a
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Buffer_type1
   - hash:
       serializedVersion: 2
       Hash: 9b2d72155209a515197b0788f9f11a91
@@ -630,6 +663,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: Button
+  - hash:
+      serializedVersion: 2
+      Hash: f2ec2616dac9e8749bdea407d1744d14
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: BombMove
   - hash:
       serializedVersion: 2
       Hash: 349d08daa6108b9a28f8c38fd40ce96f
@@ -702,6 +741,18 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Healer_type1
+  - hash:
+      serializedVersion: 2
+      Hash: 704dcd31abc789439bc3f3cd10b58c2b
+    assemblyName: DOTween.dll
+    namespaceName: DG.Tweening.Core
+    className: DOTweenComponent
+  - hash:
+      serializedVersion: 2
+      Hash: 179648033371456981a3c08cb9f47477
+    assemblyName: DOTween.dll
+    namespaceName: DG.Tweening.Core
+    className: DOTweenSettings
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -866,7 +917,7 @@ ScriptsOnlyBuild:
     className: TMP_Settings
   - hash:
       serializedVersion: 2
-      Hash: 097159337e731f2f13da26789ceb14e2
+      Hash: b03cd07d67a695256cf45aeff964396d
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: MenuManager
@@ -876,6 +927,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.2D.Animation.Runtime.dll
     namespaceName: UnityEngine.U2D.Animation
     className: SpriteSkinEntity
+  - hash:
+      serializedVersion: 2
+      Hash: 275410522d77875a48a45d9378022268
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Rocket_effect
   - hash:
       serializedVersion: 2
       Hash: 12e3573d2c280e51b15ce58c999730a1
@@ -926,7 +983,7 @@ ScriptsOnlyBuild:
     className: TMP_ScrollbarEventHandler
   - hash:
       serializedVersion: 2
-      Hash: 5f193ec48f4226a3bd0f5e9e9eb736ac
+      Hash: 828ca1a2d9e2a043de03757a17ffd662
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: WaveManager
@@ -980,19 +1037,13 @@ ScriptsOnlyBuild:
     className: FabrikSolver2D
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: 17ebb1e91b6545bfa203691484380e7a
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: HealEffectMove
-  - hash:
-      serializedVersion: 2
-      Hash: f2ec2616dac9e8749bdea407d1744d14
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: BombMove
+    className: APBulletMove
   platform: 5
   scenePathNames:
   - Assets/Scenes/MainMenu.unity
   - Assets/Scenes/MainScene.unity
   - Assets/Scenes/GameOver.unity
-  playerPath: C:/Users/lenovo/Desktop/game/Defence/exe/Defence.exe
+  playerPath: C:/Users/6500/Desktop/game/Defence/Exe/Defence.exe

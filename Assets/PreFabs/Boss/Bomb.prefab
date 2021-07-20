@@ -98,8 +98,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bombDamage: 30
-  bombSpeed: 5
-  bombHP: 50
+  bombSpeed: 4
+  bombHP: 40
 --- !u!58 &-3720604890553743618
 CircleCollider2D:
   m_ObjectHideFlags: 0

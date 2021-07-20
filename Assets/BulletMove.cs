@@ -44,6 +44,7 @@ public class BulletMove : MonoBehaviour
             collision.gameObject.GetComponent<EnemyMove>().enemyNowHp -= player.damage;
             //collision.gameObject.GetComponent<Transform>().Translate(Vector2.right * player.bulletnuckback);
             collision.gameObject.transform.DOMove( new Vector2(effectTr.position.x+player.bulletnuckback, effectTr.position.y), 0.05f);
+            collision.gameObject.transform.DOShakePosition(0.05f, 0.1f , 1, 180f);
             Destroy(gameObject);
         }
         else if(collision.tag == "blaster")
