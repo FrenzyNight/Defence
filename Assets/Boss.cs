@@ -24,7 +24,6 @@ public class Boss : MonoBehaviour
         Bar = HP.GetComponent<Image>();
         Bar.fillAmount = 1;
         wm = GameObject.Find("WaveManager").GetComponent<WaveManager>();
-
     }
 
     // Update is called once per frame
@@ -42,8 +41,8 @@ public class Boss : MonoBehaviour
         {
             Destroy(Bar);
             Destroy(HP);
-            gameObject.SetActive(false);
             Destroy(gameObject, 0.3f);
+            gameObject.SetActive(false);
             DataManager.Instance.money += 500;
             player.nowExp += 100;
             player.ultimateGauge += 100;
