@@ -55,6 +55,24 @@ public class McCreeSkill : MonoBehaviour
         {
             Skill3trigger();
         }
+
+        KeyMaping();
+    }
+
+    void KeyMaping()
+    {
+        if(Input.GetKeyDown(KeyCode.Q) && !sk1ready)
+        {
+            Skill1();
+        }
+        if(Input.GetKeyDown(KeyCode.W) && !sk2ready)
+        {
+            Skill2();
+        }
+        if(Input.GetKeyDown(KeyCode.E) && !sk3ready)
+        {
+            Skill3();
+        }
     }
 
     public void SetButton()

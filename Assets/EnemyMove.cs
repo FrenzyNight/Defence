@@ -16,6 +16,7 @@ public class EnemyMove : MonoBehaviour
     private Image Bar;
 
     Player_char player;
+    WaveManager wm;
 
     public bool isMove;
 
@@ -29,6 +30,7 @@ public class EnemyMove : MonoBehaviour
         isMove = true;
         player = GameObject.FindWithTag("Player").GetComponent<Player_char>();
         tr = GetComponent<Transform>();
+        wm = GameObject.Find("WaveManager").GetComponent<WaveManager>();
         enemyNowHp = EnemyHp;
         
         HP =  Instantiate(HpImg, tr.position, Quaternion.identity, GameObject.Find("Canvas_Enemy").transform);  
@@ -60,6 +62,7 @@ public class EnemyMove : MonoBehaviour
             Destroy(gameObject,0.3f);
             DataManager.Instance.money += 2;
             player.nowExp += 5;
+            wm.Coin += 3;
         }
     }
 }

@@ -103,7 +103,7 @@ public class Player_char : MonoBehaviour
             damage += growDamage;
             nowHp = maxHp;
 
-            wm.CallMercenary();
+            //wm.CallMercenary();
         }
     }
 

@@ -39,13 +39,10 @@ ScriptsOnlyBuild:
     - UnityEditor.U2D.Animation.BoneGizmo
     Unity.2D.IK.Editor.dll:
     - UnityEditor.U2D.IK.IKEditorManager
-    - UnityEditor.U2D.IK.IKGizmos
     Unity.2D.IK.Runtime.dll:
     - UnityEditor.U2D.IK.IKEditorManagerHelper
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridPaintingState
-    - UnityEditor.Tilemaps.GridPaletteBrushes
-    - UnityEditor.Tilemaps.GridPalettes
     - UnityEditor.Tilemaps.SceneViewGridManager
     - UnityEditor.Tilemaps.SceneViewOpenTilePaletteHelper
     - UnityEditor.Tilemaps.TileDragAndDropManager
@@ -95,15 +92,15 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2090}
     - Class: 114
-      Script: {instanceID: 2470}
+      Script: {instanceID: 2472}
     - Class: 114
-      Script: {instanceID: 2618}
+      Script: {instanceID: 2620}
     - Class: 114
-      Script: {instanceID: 2792}
+      Script: {instanceID: 2794}
     - Class: 114
-      Script: {instanceID: 3008}
+      Script: {instanceID: 3010}
     - Class: 114
-      Script: {instanceID: 3110}
+      Script: {instanceID: 3112}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -166,39 +163,39 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2090}
     - Class: 114
-      Script: {instanceID: 2470}
+      Script: {instanceID: 2380}
     - Class: 114
-      Script: {instanceID: 2618}
+      Script: {instanceID: 2472}
     - Class: 114
-      Script: {instanceID: 2738}
+      Script: {instanceID: 2620}
     - Class: 114
-      Script: {instanceID: 2792}
+      Script: {instanceID: 2740}
     - Class: 114
-      Script: {instanceID: 2802}
+      Script: {instanceID: 2794}
     - Class: 114
-      Script: {instanceID: 2876}
+      Script: {instanceID: 2804}
     - Class: 114
-      Script: {instanceID: 3008}
+      Script: {instanceID: 2878}
     - Class: 114
-      Script: {instanceID: 3110}
+      Script: {instanceID: 3010}
     - Class: 114
-      Script: {instanceID: 3254}
+      Script: {instanceID: 3112}
     - Class: 114
-      Script: {instanceID: 3514}
+      Script: {instanceID: 3256}
     - Class: 114
-      Script: {instanceID: 3642}
+      Script: {instanceID: 3516}
     - Class: 114
-      Script: {instanceID: 4310}
+      Script: {instanceID: 3644}
     - Class: 114
-      Script: {instanceID: 4320}
+      Script: {instanceID: 4312}
     - Class: 114
-      Script: {instanceID: 4428}
+      Script: {instanceID: 4322}
     - Class: 114
-      Script: {instanceID: 4998}
+      Script: {instanceID: 4430}
     - Class: 114
-      Script: {instanceID: 5030}
+      Script: {instanceID: 5000}
     - Class: 114
-      Script: {instanceID: 34490}
+      Script: {instanceID: 5032}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -267,41 +264,41 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2254}
     - Class: 114
-      Script: {instanceID: 2470}
+      Script: {instanceID: 2472}
     - Class: 114
-      Script: {instanceID: 2598}
+      Script: {instanceID: 2600}
     - Class: 114
-      Script: {instanceID: 2618}
+      Script: {instanceID: 2620}
     - Class: 114
-      Script: {instanceID: 2660}
+      Script: {instanceID: 2662}
     - Class: 114
-      Script: {instanceID: 2792}
+      Script: {instanceID: 2794}
     - Class: 114
-      Script: {instanceID: 2858}
+      Script: {instanceID: 2860}
     - Class: 114
-      Script: {instanceID: 3008}
+      Script: {instanceID: 3010}
     - Class: 114
-      Script: {instanceID: 3110}
+      Script: {instanceID: 3112}
     - Class: 114
-      Script: {instanceID: 3116}
+      Script: {instanceID: 3118}
     - Class: 114
-      Script: {instanceID: 3192}
+      Script: {instanceID: 3194}
     - Class: 114
-      Script: {instanceID: 3248}
+      Script: {instanceID: 3250}
     - Class: 114
-      Script: {instanceID: 3386}
+      Script: {instanceID: 3388}
     - Class: 114
-      Script: {instanceID: 3496}
+      Script: {instanceID: 3498}
     - Class: 114
-      Script: {instanceID: 3800}
+      Script: {instanceID: 3802}
     - Class: 114
-      Script: {instanceID: 4434}
+      Script: {instanceID: 4436}
     - Class: 114
-      Script: {instanceID: 4474}
+      Script: {instanceID: 4476}
     - Class: 114
-      Script: {instanceID: 4740}
+      Script: {instanceID: 4742}
     - Class: 114
-      Script: {instanceID: 4768}
+      Script: {instanceID: 4770}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -501,6 +498,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.TestRunner.dll
     namespaceName: UnityEngine.TestTools
     className: EnumerableTestState
+  - hash:
+      serializedVersion: 2
+      Hash: 17ebb1e91b6545bfa203691484380e7a
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: APBulletMove
   - hash:
       serializedVersion: 2
       Hash: a1aa98c78061c6f03a8c124cda576e67
@@ -1035,15 +1038,9 @@ ScriptsOnlyBuild:
     assemblyName: Unity.2D.IK.Runtime.dll
     namespaceName: UnityEngine.U2D.IK
     className: FabrikSolver2D
-  - hash:
-      serializedVersion: 2
-      Hash: 17ebb1e91b6545bfa203691484380e7a
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: APBulletMove
   platform: 5
   scenePathNames:
   - Assets/Scenes/MainMenu.unity
   - Assets/Scenes/MainScene.unity
   - Assets/Scenes/GameOver.unity
-  playerPath: C:/Users/6500/Desktop/game/Defence/Exe/Defence.exe
+  playerPath: C:/Users/lenovo/Desktop/game/Defence/Build/exe/Defence.exe

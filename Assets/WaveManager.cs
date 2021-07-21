@@ -20,6 +20,7 @@ public class WaveManager : MonoBehaviour
     public Text waveText;
     public Text expText;
     public Text LvText;
+    public Text CostText;
 
     Player_char player;
     WaveManager wm;
@@ -27,6 +28,9 @@ public class WaveManager : MonoBehaviour
     public Vector2 PlayerSponPoint;
     GameObject PlayerCharPrefab;
     public GameObject[] mercenary; //용병단
+
+    public int Coin;
+    public int Cost;
     
     // Start is called before the first frame update
 
@@ -51,12 +55,13 @@ public class WaveManager : MonoBehaviour
         HpBar.fillAmount = player.nowHp / player.maxHp;
 
         HpText.text = "HP : " + player.nowHp.ToString("0.#") + " / " + player.maxHp.ToString("0.#");
-        moneyText.text = "Money : " + DataManager.Instance.money.ToString();
+        moneyText.text = "Coin : " + Coin.ToString();
         waveText.text = "Wave : " + wave.ToString();
 
         LvText.text = "Lv. " + player.level.ToString();
         expText.text = "Exp : " + player.nowExp.ToString("0.#") + " / " + player.maxExp.ToString("0.#");
         ExpBar.fillAmount = player.nowExp / player.maxExp;
+        CostText.text = "Cost : " + Cost.ToString();
     }
 
     public void GameStopMenu()
@@ -79,22 +84,31 @@ public class WaveManager : MonoBehaviour
 
     public void CallMercenary()
     {
-        int merNum = mercenary.Length;
-        int merInd = Random.Range(0,merNum);
+        if(Coin >= Cost)
+        {
+            int merNum = mercenary.Length;
+            int merInd = Random.Range(0,merNum);
 
-        float rndX = Random.Range(0.5f, 1.5f);
-        float rndY = Random.Range(1f, 3.5f);
+            float rndX = Random.Range(0.5f, 1.5f);
+            float rndY = Random.Range(1f, 3.5f);
 
-        int rndXpm = Random.Range(0,2);
-        int rndYpm = Random.Range(0,2);
+            int rndXpm = Random.Range(0,2);
+            int rndYpm = Random.Range(0,2);
 
-        if(rndXpm == 0)
-            rndX *= (-1f);
-        
+            if(rndXpm == 0)
+                rndX *= (-1f);
+            
 
-        if(rndYpm == 0)
-            rndY *= (-1f);
+            if(rndYpm == 0)
+                rndY *= (-1f);
 
-        Instantiate(mercenary[merInd], PlayerSponPoint + new Vector2(rndX,rndY), Quaternion.identity);
+            Instantiate(mercenary[merInd], PlayerSponPoint + new Vector2(rndX,rndY), Quaternion.identity);
+
+            Coin -= Cost;
+            Cost += 25;
+        }
     }
+
+
+
 }
