@@ -48,8 +48,6 @@ public class TargetMove : MonoBehaviour
             if(EventSystem.current.IsPointerOverGameObject() == false)
             {
                 point = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                //point.x -= tr.transform.position.x;
-                //point.y -= tr.transform.position.y;
                 tr.position = point;
             }
         }
@@ -73,7 +71,5 @@ public class TargetMove : MonoBehaviour
             Destroy(gameObject, 0.2f);
             
         }
-
-        
     }
 }

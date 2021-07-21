@@ -14153,6 +14153,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool GCHandle_get_IsAllocated_mEDA4DAC6AD6D88
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject * GCHandle_GetTarget_m5D5E23880FBFA12D1CED82AA07801D87CC69A724 (int32_t ___handle0, const RuntimeMethod* method);
 // System.Object System.Runtime.InteropServices.GCHandle::get_Target()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject * GCHandle_get_Target_m6C296AD6520ECDAFC9498E9387677F522871F883 (GCHandle_t757890BC4BBBEDE5A623A3C110013EDD24613603 * __this, const RuntimeMethod* method);
+// System.Void System.Runtime.InteropServices.GCHandle::set_Target(System.Object)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GCHandle_set_Target_mA85979DDB776D29B7B347DC63157BEF51B097098 (GCHandle_t757890BC4BBBEDE5A623A3C110013EDD24613603 * __this, RuntimeObject * ___value0, const RuntimeMethod* method);
 // System.IntPtr System.Runtime.InteropServices.GCHandle::GetAddrOfPinnedObject(System.Int32)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t GCHandle_GetAddrOfPinnedObject_mDE32D94210990C07FCE4222E487F30133541B47D (int32_t ___handle0, const RuntimeMethod* method);
 // System.IntPtr System.IntPtr::op_Explicit(System.Int32)
@@ -20329,6 +20331,45 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Exception_t * Exception_get_InnerException_m1
 		return L_0;
 	}
 }
+// System.Reflection.MethodBase System.Exception::get_TargetSite()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR MethodBase_t * Exception_get_TargetSite_m1E1786737747AE3DD2C3CF49315E9F1B2B1C0247 (Exception_t * __this, const RuntimeMethod* method)
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&StackTrace_t43C03122C6B2AAF0DCCF684B2D5FA6E673F02888_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	StackTrace_t43C03122C6B2AAF0DCCF684B2D5FA6E673F02888 * V_0 = NULL;
+	{
+		StackTrace_t43C03122C6B2AAF0DCCF684B2D5FA6E673F02888 * L_0 = (StackTrace_t43C03122C6B2AAF0DCCF684B2D5FA6E673F02888 *)il2cpp_codegen_object_new(StackTrace_t43C03122C6B2AAF0DCCF684B2D5FA6E673F02888_il2cpp_TypeInfo_var);
+		StackTrace__ctor_mDDB731F785396BB7FA158BEA552BD06B80351FEB(L_0, __this, (bool)1, /*hidden argument*/NULL);
+		V_0 = L_0;
+		StackTrace_t43C03122C6B2AAF0DCCF684B2D5FA6E673F02888 * L_1 = V_0;
+		NullCheck(L_1);
+		int32_t L_2;
+		L_2 = VirtFuncInvoker0< int32_t >::Invoke(4 /* System.Int32 System.Diagnostics.StackTrace::get_FrameCount() */, L_1);
+		if ((((int32_t)L_2) <= ((int32_t)0)))
+		{
+			goto IL_001e;
+		}
+	}
+	{
+		StackTrace_t43C03122C6B2AAF0DCCF684B2D5FA6E673F02888 * L_3 = V_0;
+		NullCheck(L_3);
+		StackFrame_t6018A5362C2E8F6F80F153F3D40623D213094E0F * L_4;
+		L_4 = VirtFuncInvoker1< StackFrame_t6018A5362C2E8F6F80F153F3D40623D213094E0F *, int32_t >::Invoke(5 /* System.Diagnostics.StackFrame System.Diagnostics.StackTrace::GetFrame(System.Int32) */, L_3, 0);
+		NullCheck(L_4);
+		MethodBase_t * L_5;
+		L_5 = VirtFuncInvoker0< MethodBase_t * >::Invoke(7 /* System.Reflection.MethodBase System.Diagnostics.StackFrame::GetMethod() */, L_4);
+		return L_5;
+	}
+
+IL_001e:
+	{
+		return (MethodBase_t *)NULL;
+	}
+}
 // System.String System.Exception::get_StackTrace()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* Exception_get_StackTrace_m66E7EFBB3658852BCB2960743DC9352D90C9EE48 (Exception_t * __this, const RuntimeMethod* method)
 {
@@ -20723,7 +20764,7 @@ IL_0028:
 	}
 	{
 		String_t* L_7;
-		L_7 = VirtFuncInvoker0< String_t* >::Invoke(9 /* System.String System.Exception::get_Source() */, __this);
+		L_7 = VirtFuncInvoker0< String_t* >::Invoke(10 /* System.String System.Exception::get_Source() */, __this);
 		__this->set__source_12(L_7);
 	}
 
@@ -21018,7 +21059,7 @@ IL_001e:
 		String_t* L_3;
 		L_3 = Environment_get_NewLine_mD145C8EE917C986BAA7C5243DEFAF4D333C521B4(/*hidden argument*/NULL);
 		String_t* L_4;
-		L_4 = VirtFuncInvoker0< String_t* >::Invoke(8 /* System.String System.Exception::get_StackTrace() */, __this);
+		L_4 = VirtFuncInvoker0< String_t* >::Invoke(9 /* System.String System.Exception::get_StackTrace() */, __this);
 		int32_t L_5 = __this->get__remoteStackIndex_9();
 		int32_t L_6 = L_5;
 		RuntimeObject * L_7 = Box(Int32_tFDE5F8CD43D10453F6A2E0C77FE48C6CC7009046_il2cpp_TypeInfo_var, &L_6);
@@ -23532,7 +23573,7 @@ IL_004f:
 IL_006b:
 	{
 		String_t* L_18;
-		L_18 = VirtFuncInvoker0< String_t* >::Invoke(8 /* System.String System.Exception::get_StackTrace() */, __this);
+		L_18 = VirtFuncInvoker0< String_t* >::Invoke(9 /* System.String System.Exception::get_StackTrace() */, __this);
 		if (!L_18)
 		{
 			goto IL_0085;
@@ -23543,7 +23584,7 @@ IL_006b:
 		String_t* L_20;
 		L_20 = Environment_get_NewLine_mD145C8EE917C986BAA7C5243DEFAF4D333C521B4(/*hidden argument*/NULL);
 		String_t* L_21;
-		L_21 = VirtFuncInvoker0< String_t* >::Invoke(8 /* System.String System.Exception::get_StackTrace() */, __this);
+		L_21 = VirtFuncInvoker0< String_t* >::Invoke(9 /* System.String System.Exception::get_StackTrace() */, __this);
 		String_t* L_22;
 		L_22 = String_Concat_m89EAB4C6A96B0E5C3F87300D6BE78D386B9EFC44(L_19, L_20, L_21, /*hidden argument*/NULL);
 		V_1 = L_22;
@@ -25157,7 +25198,7 @@ IL_0056:
 IL_0075:
 	{
 		String_t* L_19;
-		L_19 = VirtFuncInvoker0< String_t* >::Invoke(8 /* System.String System.Exception::get_StackTrace() */, __this);
+		L_19 = VirtFuncInvoker0< String_t* >::Invoke(9 /* System.String System.Exception::get_StackTrace() */, __this);
 		if (!L_19)
 		{
 			goto IL_008f;
@@ -25168,7 +25209,7 @@ IL_0075:
 		String_t* L_21;
 		L_21 = Environment_get_NewLine_mD145C8EE917C986BAA7C5243DEFAF4D333C521B4(/*hidden argument*/NULL);
 		String_t* L_22;
-		L_22 = VirtFuncInvoker0< String_t* >::Invoke(8 /* System.String System.Exception::get_StackTrace() */, __this);
+		L_22 = VirtFuncInvoker0< String_t* >::Invoke(9 /* System.String System.Exception::get_StackTrace() */, __this);
 		String_t* L_23;
 		L_23 = String_Concat_m89EAB4C6A96B0E5C3F87300D6BE78D386B9EFC44(L_20, L_21, L_22, /*hidden argument*/NULL);
 		V_0 = L_23;
@@ -25607,7 +25648,7 @@ IL_0056:
 IL_0075:
 	{
 		String_t* L_19;
-		L_19 = VirtFuncInvoker0< String_t* >::Invoke(8 /* System.String System.Exception::get_StackTrace() */, __this);
+		L_19 = VirtFuncInvoker0< String_t* >::Invoke(9 /* System.String System.Exception::get_StackTrace() */, __this);
 		if (!L_19)
 		{
 			goto IL_008f;
@@ -25618,7 +25659,7 @@ IL_0075:
 		String_t* L_21;
 		L_21 = Environment_get_NewLine_mD145C8EE917C986BAA7C5243DEFAF4D333C521B4(/*hidden argument*/NULL);
 		String_t* L_22;
-		L_22 = VirtFuncInvoker0< String_t* >::Invoke(8 /* System.String System.Exception::get_StackTrace() */, __this);
+		L_22 = VirtFuncInvoker0< String_t* >::Invoke(9 /* System.String System.Exception::get_StackTrace() */, __this);
 		String_t* L_23;
 		L_23 = String_Concat_m89EAB4C6A96B0E5C3F87300D6BE78D386B9EFC44(L_20, L_21, L_22, /*hidden argument*/NULL);
 		V_0 = L_23;
@@ -31938,6 +31979,24 @@ IL2CPP_EXTERN_C  RuntimeObject * GCHandle_get_Target_m6C296AD6520ECDAFC9498E9387
 	RuntimeObject * _returnValue;
 	_returnValue = GCHandle_get_Target_m6C296AD6520ECDAFC9498E9387677F522871F883(_thisAdjusted, method);
 	return _returnValue;
+}
+// System.Void System.Runtime.InteropServices.GCHandle::set_Target(System.Object)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GCHandle_set_Target_mA85979DDB776D29B7B347DC63157BEF51B097098 (GCHandle_t757890BC4BBBEDE5A623A3C110013EDD24613603 * __this, RuntimeObject * ___value0, const RuntimeMethod* method)
+{
+	{
+		RuntimeObject * L_0 = ___value0;
+		int32_t L_1 = __this->get_handle_0();
+		int32_t L_2;
+		L_2 = GCHandle_GetTargetHandle_m520B2968A9C8EA1DD8B4144B0F711E9310B3FC50(L_0, L_1, (-1), /*hidden argument*/NULL);
+		__this->set_handle_0(L_2);
+		return;
+	}
+}
+IL2CPP_EXTERN_C  void GCHandle_set_Target_mA85979DDB776D29B7B347DC63157BEF51B097098_AdjustorThunk (RuntimeObject * __this, RuntimeObject * ___value0, const RuntimeMethod* method)
+{
+	int32_t _offset = 1;
+	GCHandle_t757890BC4BBBEDE5A623A3C110013EDD24613603 * _thisAdjusted = reinterpret_cast<GCHandle_t757890BC4BBBEDE5A623A3C110013EDD24613603 *>(__this + _offset);
+	GCHandle_set_Target_mA85979DDB776D29B7B347DC63157BEF51B097098(_thisAdjusted, ___value0, method);
 }
 // System.IntPtr System.Runtime.InteropServices.GCHandle::AddrOfPinnedObject()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t GCHandle_AddrOfPinnedObject_m0604506F2BDCD2DC8C167FBC3BF3E965888F7589 (GCHandle_t757890BC4BBBEDE5A623A3C110013EDD24613603 * __this, const RuntimeMethod* method)

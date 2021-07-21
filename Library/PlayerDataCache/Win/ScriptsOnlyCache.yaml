@@ -2,6 +2,9 @@ ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
     - APBulletMove
+    - AtomicEffect
+    - AtomicMove
+    - AtomicTargetMove
     - Blaster
     - BombMove
     - Boss
@@ -39,10 +42,13 @@ ScriptsOnlyBuild:
     - UnityEditor.U2D.Animation.BoneGizmo
     Unity.2D.IK.Editor.dll:
     - UnityEditor.U2D.IK.IKEditorManager
+    - UnityEditor.U2D.IK.IKGizmos
     Unity.2D.IK.Runtime.dll:
     - UnityEditor.U2D.IK.IKEditorManagerHelper
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridPaintingState
+    - UnityEditor.Tilemaps.GridPaletteBrushes
+    - UnityEditor.Tilemaps.GridPalettes
     - UnityEditor.Tilemaps.SceneViewGridManager
     - UnityEditor.Tilemaps.SceneViewOpenTilePaletteHelper
     - UnityEditor.Tilemaps.TileDragAndDropManager
@@ -88,19 +94,19 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1440}
     - Class: 114
-      Script: {instanceID: 1672}
+      Script: {instanceID: 12852}
     - Class: 114
-      Script: {instanceID: 2090}
+      Script: {instanceID: 13270}
     - Class: 114
-      Script: {instanceID: 2472}
+      Script: {instanceID: 13650}
     - Class: 114
-      Script: {instanceID: 2620}
+      Script: {instanceID: 13798}
     - Class: 114
-      Script: {instanceID: 2794}
+      Script: {instanceID: 13972}
     - Class: 114
-      Script: {instanceID: 3010}
+      Script: {instanceID: 14188}
     - Class: 114
-      Script: {instanceID: 3112}
+      Script: {instanceID: 14290}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -155,47 +161,53 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1440}
     - Class: 114
-      Script: {instanceID: 1486}
+      Script: {instanceID: 12666}
     - Class: 114
-      Script: {instanceID: 1678}
+      Script: {instanceID: 12858}
     - Class: 114
-      Script: {instanceID: 1800}
+      Script: {instanceID: 12980}
     - Class: 114
-      Script: {instanceID: 2090}
+      Script: {instanceID: 13270}
     - Class: 114
-      Script: {instanceID: 2380}
+      Script: {instanceID: 13558}
     - Class: 114
-      Script: {instanceID: 2472}
+      Script: {instanceID: 13650}
     - Class: 114
-      Script: {instanceID: 2620}
+      Script: {instanceID: 13798}
     - Class: 114
-      Script: {instanceID: 2740}
+      Script: {instanceID: 13918}
     - Class: 114
-      Script: {instanceID: 2794}
+      Script: {instanceID: 13972}
     - Class: 114
-      Script: {instanceID: 2804}
+      Script: {instanceID: 13982}
     - Class: 114
-      Script: {instanceID: 2878}
+      Script: {instanceID: 14056}
     - Class: 114
-      Script: {instanceID: 3010}
+      Script: {instanceID: 14188}
     - Class: 114
-      Script: {instanceID: 3112}
+      Script: {instanceID: 14290}
     - Class: 114
-      Script: {instanceID: 3256}
+      Script: {instanceID: 14434}
     - Class: 114
-      Script: {instanceID: 3516}
+      Script: {instanceID: 14692}
     - Class: 114
-      Script: {instanceID: 3644}
+      Script: {instanceID: 14820}
     - Class: 114
-      Script: {instanceID: 4312}
+      Script: {instanceID: 15488}
     - Class: 114
-      Script: {instanceID: 4322}
+      Script: {instanceID: 15498}
     - Class: 114
-      Script: {instanceID: 4430}
+      Script: {instanceID: 15606}
     - Class: 114
-      Script: {instanceID: 5000}
+      Script: {instanceID: 16176}
     - Class: 114
-      Script: {instanceID: 5032}
+      Script: {instanceID: 16208}
+    - Class: 114
+      Script: {instanceID: 33754}
+    - Class: 114
+      Script: {instanceID: 36564}
+    - Class: 114
+      Script: {instanceID: 46876}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -254,51 +266,51 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1440}
     - Class: 114
-      Script: {instanceID: 1766}
+      Script: {instanceID: 12946}
     - Class: 114
-      Script: {instanceID: 1858}
+      Script: {instanceID: 13038}
     - Class: 114
-      Script: {instanceID: 1866}
+      Script: {instanceID: 13046}
     - Class: 114
-      Script: {instanceID: 2090}
+      Script: {instanceID: 13270}
     - Class: 114
-      Script: {instanceID: 2254}
+      Script: {instanceID: 13434}
     - Class: 114
-      Script: {instanceID: 2472}
+      Script: {instanceID: 13650}
     - Class: 114
-      Script: {instanceID: 2600}
+      Script: {instanceID: 13778}
     - Class: 114
-      Script: {instanceID: 2620}
+      Script: {instanceID: 13798}
     - Class: 114
-      Script: {instanceID: 2662}
+      Script: {instanceID: 13840}
     - Class: 114
-      Script: {instanceID: 2794}
+      Script: {instanceID: 13972}
     - Class: 114
-      Script: {instanceID: 2860}
+      Script: {instanceID: 14038}
     - Class: 114
-      Script: {instanceID: 3010}
+      Script: {instanceID: 14188}
     - Class: 114
-      Script: {instanceID: 3112}
+      Script: {instanceID: 14290}
     - Class: 114
-      Script: {instanceID: 3118}
+      Script: {instanceID: 14296}
     - Class: 114
-      Script: {instanceID: 3194}
+      Script: {instanceID: 14372}
     - Class: 114
-      Script: {instanceID: 3250}
+      Script: {instanceID: 14428}
     - Class: 114
-      Script: {instanceID: 3388}
+      Script: {instanceID: 14566}
     - Class: 114
-      Script: {instanceID: 3498}
+      Script: {instanceID: 14676}
     - Class: 114
-      Script: {instanceID: 3802}
+      Script: {instanceID: 14978}
     - Class: 114
-      Script: {instanceID: 4436}
+      Script: {instanceID: 15612}
     - Class: 114
-      Script: {instanceID: 4476}
+      Script: {instanceID: 15652}
     - Class: 114
-      Script: {instanceID: 4742}
+      Script: {instanceID: 15918}
     - Class: 114
-      Script: {instanceID: 4770}
+      Script: {instanceID: 15946}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -332,7 +344,7 @@ ScriptsOnlyBuild:
     className: AnimationPlayableAsset
   - hash:
       serializedVersion: 2
-      Hash: 972b04f7769942b14c52294a40031722
+      Hash: 20c954debf3b3c3ed103e4c95e5ba6ea
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: SoldierSkill
@@ -698,7 +710,7 @@ ScriptsOnlyBuild:
     className: Blaster
   - hash:
       serializedVersion: 2
-      Hash: a32869c596cda071bbf945fdb057ce62
+      Hash: 3ec5fc99f55f20d85f962f8526dafa0d
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Player_char
@@ -986,7 +998,7 @@ ScriptsOnlyBuild:
     className: TMP_ScrollbarEventHandler
   - hash:
       serializedVersion: 2
-      Hash: 828ca1a2d9e2a043de03757a17ffd662
+      Hash: 8ce19bf1c736f12f75b8e46eaf531ccd
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: WaveManager
@@ -1038,9 +1050,27 @@ ScriptsOnlyBuild:
     assemblyName: Unity.2D.IK.Runtime.dll
     namespaceName: UnityEngine.U2D.IK
     className: FabrikSolver2D
+  - hash:
+      serializedVersion: 2
+      Hash: 07307e1134affdaa3c6bf5d0fb3d9f6b
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: AtomicTargetMove
+  - hash:
+      serializedVersion: 2
+      Hash: eae5c587522a464f2d87a560b1090b77
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: AtomicMove
+  - hash:
+      serializedVersion: 2
+      Hash: 275410522d77875a48a45d9378022268
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: AtomicEffect
   platform: 5
   scenePathNames:
   - Assets/Scenes/MainMenu.unity
   - Assets/Scenes/MainScene.unity
   - Assets/Scenes/GameOver.unity
-  playerPath: C:/Users/lenovo/Desktop/game/Defence/Build/exe/Defence.exe
+  playerPath: C:/Users/6500/Desktop/game/Defence/Build/exe/Defence.exe

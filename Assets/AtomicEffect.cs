@@ -1,0 +1,53 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using DG.Tweening;
+
+public class AtomicEffect : MonoBehaviour
+{
+    public float damageRat; // 데미지 배율
+
+    public float effectTime; // 지속시간
+    Player_char player;
+    Transform tr;
+    SpriteRenderer sr;
+
+
+    void Start()
+    {
+        tr = GetComponent<Transform>();
+        player = GameObject.FindWithTag("Player").GetComponent<Player_char>();
+        sr = GetComponent<SpriteRenderer>();
+        sr.DOColor(new Color(sr.color.r, sr.color.g, sr.color.b, 0), effectTime);
+        Destroy(gameObject, effectTime+0.05f);
+    }
+
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.tag == "enemy")
+        {
+            collision.gameObject.GetComponent<EnemyMove>().enemyNowHp -= player.damage * damageRat/100;
+        }
+        else if(collision.tag == "blaster")
+        {
+            collision.gameObject.GetComponent<Blaster>().HP -= player.damage * damageRat/100;
+            
+        }
+        else if(collision.tag == "rock")
+        {
+            collision.gameObject.GetComponent<RockMove>().HP -= player.damage * damageRat/100;
+           
+        }
+        else if(collision.tag == "bomb")
+        {
+            collision.gameObject.GetComponent<BombMove>().bombHP -= player.damage * damageRat/100;
+           
+        }
+        else if(collision.tag == "boss")
+        {
+            collision.gameObject.GetComponent<Boss>().BossNowHP -= player.damage * damageRat/100;
+            
+        }
+    }
+}

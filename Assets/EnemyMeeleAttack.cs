@@ -44,5 +44,6 @@ public class EnemyMeeleAttack : MonoBehaviour
     void EnemyAttack()
     {
         player.nowHp -= enemyDamage;
+        player.ultimateGauge += 1;
     }
 }

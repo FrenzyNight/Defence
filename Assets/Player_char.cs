@@ -41,6 +41,8 @@ public class Player_char : MonoBehaviour
 
     public int characterIndex;
 
+    public float ultimateGauge;
+
     void Start()
     {
         audioSource = GetComponent<AudioSource>();

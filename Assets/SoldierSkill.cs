@@ -10,6 +10,7 @@ public class SoldierSkill : MonoBehaviour
     public GameObject rocketPrefab;
     public GameObject APBulletPrefab;
     public GameObject NormalBulletPrefab;
+    public GameObject sk3Target;
 
     public GameObject ApEffect;
 
@@ -28,6 +29,7 @@ public class SoldierSkill : MonoBehaviour
     public bool sk1ready, sk2ready, sk3ready;
     
     WaveManager wm;
+    Image skill3img;
 
     
     // Start is called before the first frame update
@@ -56,23 +58,25 @@ public class SoldierSkill : MonoBehaviour
         }
         else if(sk3ready)
         {
-            Skill3trigger();
+            StartCoroutine(Skill3trigger());
         }
 
         KeyMaping();
+        skill3img.fillAmount = player.ultimateGauge / 100;
+        Skill3Check();
     }
 
     void KeyMaping()
     {
-        if(Input.GetKeyDown(KeyCode.Q) && !sk1ready)
+        if(Input.GetKeyDown(KeyCode.Q) && skillBtn1.interactable == true && !sk1ready)
         {
             Skill1();
         }
-        if(Input.GetKeyDown(KeyCode.W) && !sk2ready)
+        if(Input.GetKeyDown(KeyCode.W) && skillBtn2.interactable == true && !sk1ready)
         {
             Skill2();
         }
-        if(Input.GetKeyDown(KeyCode.E) && !sk3ready)
+        if(Input.GetKeyDown(KeyCode.E) && skillBtn3.interactable == true && !sk1ready)
         {
             Skill3();
         }
@@ -87,6 +91,10 @@ public class SoldierSkill : MonoBehaviour
         skillBtn1.onClick.AddListener(Skill1);
         skillBtn2.onClick.AddListener(Skill2);
         skillBtn3.onClick.AddListener(Skill3);
+
+        skill3img = skillBtn3.GetComponent<Image>();
+        skill3img.fillAmount = 0;
+        skillBtn3.interactable = false;
     }
 
     public void Skill1() // 로켓 런처
@@ -157,46 +165,39 @@ public class SoldierSkill : MonoBehaviour
     }
 
 
-    public void SKill2CoolDown()
+    void Skill3Check()
     {
-        StartCoroutine(Skill2Delay());
-    }
-    IEnumerator Skill2Delay()
-    {
-        yield return new WaitForSeconds(sk2ct);
-        skillBtn2.interactable = true;
+        if(player.ultimateGauge >= 100)
+        {
+            player.ultimateGauge = 100;
+            skillBtn3.interactable = true;
+        }
     }
 
-    public void Skill3() // 러시안룰렛 : 6가지 랜덤한 효과(이펙트)를 가진 강력한 총할중 하나 발사
+    public void Skill3() // 
     {   
         if(!player.isSkill)
         {
             skillBtn3.interactable = false;
             sk3ready = true;
             player.isSkill = true;
+            player.ultimateGauge -= 100;
         }
-
     }
 
-    void Skill3trigger()
+    IEnumerator Skill3trigger()
     {
         if(Input.GetMouseButtonDown(0))
         {
             if(EventSystem.current.IsPointerOverGameObject() == false)
             {
                 sk3ready = false;
-               
+
+                mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                Instantiate(sk3Target, mousePosition , Quaternion.identity);
+
+                yield return null;
             }
         }
-    }
-
-    public void SKill3CoolDown()
-    {
-        StartCoroutine(Skill3Delay());
-    }
-    IEnumerator Skill3Delay()
-    {
-        yield return new WaitForSeconds(sk3ct);
-        skillBtn3.interactable = true;
     }
 }

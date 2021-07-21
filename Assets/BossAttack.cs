@@ -79,7 +79,7 @@ public class BossAttack : MonoBehaviour
             //spontr = new Vector2(tr.position.x, tr.position.y + randY);
             for(int i = 0;i<5;i++)
             {
-                Instantiate(Bomb, new Vector2(tr.position.x, tr.position.y + 5f - (2.5f * i)), Quaternion.identity);
+                Instantiate(Bomb, new Vector2(tr.position.x, tr.position.y + 4f - (2f * i)), Quaternion.identity);
             }
             yield return new WaitForSeconds(2f);
             //후딜레이 2초

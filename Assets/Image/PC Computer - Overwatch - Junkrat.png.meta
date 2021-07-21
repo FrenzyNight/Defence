@@ -5,6 +5,12 @@ TextureImporter:
   - first:
       213: 1646711179550380960
     second: PC Computer - Overwatch - Junkrat_0
+  - first:
+      213: -4810700459386666231
+    second: PC Computer - Overwatch - Junkrat_1
+  - first:
+      213: 3129386886858901872
+    second: PC Computer - Overwatch - Junkrat_2
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -102,7 +108,7 @@ TextureImporter:
         width: 480
         height: 480
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -110,6 +116,48 @@ TextureImporter:
       bones: []
       spriteID: 0a3d3c8d71b4ad610800000000000000
       internalID: 1646711179550380960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Overwatch - Junkrat_1
+      rect:
+        serializedVersion: 2
+        x: 534
+        y: 4169
+        width: 490
+        height: 490
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 903037d9b65fc3db0800000000000000
+      internalID: -4810700459386666231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Overwatch - Junkrat_2
+      rect:
+        serializedVersion: 2
+        x: 537
+        y: 3127
+        width: 490
+        height: 490
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0798dfb1bc0dd6b20800000000000000
+      internalID: 3129386886858901872
       vertices: []
       indices: 
       edges: []

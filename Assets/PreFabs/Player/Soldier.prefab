@@ -115,6 +115,7 @@ MonoBehaviour:
   growHp: 0
   growDamage: 0
   characterIndex: 1
+  ultimateGauge: 100
 --- !u!82 &-8131350778483141749
 AudioSource:
   m_ObjectHideFlags: 0
@@ -226,6 +227,7 @@ MonoBehaviour:
   rocketPrefab: {fileID: 416208713803670184, guid: e59726701b4c8d0448aa0254a2c6796d, type: 3}
   APBulletPrefab: {fileID: 552958654639407898, guid: 9b5241da086ef744caa491062bb24aad, type: 3}
   NormalBulletPrefab: {fileID: 2828384327144627900, guid: 13abcf223fd8a2d498f10621074590fe, type: 3}
+  sk3Target: {fileID: 7381581924424820596, guid: 907d4020382fb184db678e95416d7e87, type: 3}
   ApEffect: {fileID: 4763227606966571482, guid: d486a17644c275646813e6fa1dc3d5d4, type: 3}
   skillBtn1: {fileID: 0}
   skillBtn2: {fileID: 0}

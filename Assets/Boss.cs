@@ -11,6 +11,7 @@ public class Boss : MonoBehaviour
     private GameObject HP;
     Player_char player;
     Transform tr;
+    WaveManager wm;
     private Image Bar;
     
     // Start is called before the first frame update
@@ -22,6 +23,7 @@ public class Boss : MonoBehaviour
         HP =  Instantiate(HpImg, tr.position, Quaternion.identity, GameObject.Find("Canvas_Enemy").transform);  
         Bar = HP.GetComponent<Image>();
         Bar.fillAmount = 1;
+        wm = GameObject.Find("WaveManager").GetComponent<WaveManager>();
 
     }
 
@@ -40,9 +42,12 @@ public class Boss : MonoBehaviour
         {
             Destroy(Bar);
             Destroy(HP);
-            Destroy(gameObject);
+            gameObject.SetActive(false);
+            Destroy(gameObject, 0.3f);
             DataManager.Instance.money += 500;
             player.nowExp += 100;
+            player.ultimateGauge += 100;
+            wm.Coin += 400;
         }
     }
 }

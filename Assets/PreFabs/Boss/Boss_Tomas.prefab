@@ -114,7 +114,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eea42bbba3d147544bf7e4c563b1929a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BossMaxHP: 2000
+  BossMaxHP: 1500
   BossNowHP: 0
   HpImg: {fileID: 8222506220886026821, guid: c5129206fc2c52243bce7473972ff4f9, type: 3}
 --- !u!114 &-8633567262198571231
