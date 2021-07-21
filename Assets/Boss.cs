@@ -41,8 +41,8 @@ public class Boss : MonoBehaviour
         {
             Destroy(Bar);
             Destroy(HP);
-            Destroy(gameObject, 0.3f);
-            gameObject.SetActive(false);
+            Destroy(gameObject);
+            //gameObject.SetActive(false);
             DataManager.Instance.money += 500;
             player.nowExp += 100;
             player.ultimateGauge += 100;
