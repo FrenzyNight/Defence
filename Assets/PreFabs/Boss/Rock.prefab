@@ -101,7 +101,7 @@ MonoBehaviour:
   Angle: 0
   rockSpeed: 0.5
   damage: 15
-  HP: 50
+  HP: 20
 --- !u!58 &-2063232567288337754
 CircleCollider2D:
   m_ObjectHideFlags: 0

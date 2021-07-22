@@ -41,10 +41,8 @@ public class CreateEnemy : MonoBehaviour
             wm.wave += 1;
             wm.isWave = false;
             isStart = false;
-            StagePanel.SetActive(true);
-            SkillPanel.SetActive(false);
 
-
+            Invoke("StartWave", 2f);
         }
     }
 
@@ -52,11 +50,12 @@ public class CreateEnemy : MonoBehaviour
     {
         wm.isWave = true;
         isCreate = true;
-
         
         monsterMaxHp *= 1.05f;
         sponInterval -= 0.05f;
         
+        if(sponInterval < 0)
+            sponInterval = 0;
 
         count = 0;
         mobcount = 10 + (wm.wave * 3);

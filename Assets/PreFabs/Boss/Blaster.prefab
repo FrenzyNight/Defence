@@ -136,7 +136,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
-  HP: 50
+  HP: 30
   laserSpeed: 500
 --- !u!1 &8183053577472079418
 GameObject:

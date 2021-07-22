@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Bullet: {fileID: 7070383516830715353, guid: fa0a96960b52bdf4ba92c3c78bb93ad7, type: 3}
-  FPS: 5
+  FPS: 3
   isDelay: 0
   audioFire: {fileID: 8300000, guid: dfebaeb8a683dd84a9178f1bbfa95af1, type: 3}
 --- !u!82 &8637971613391366419
