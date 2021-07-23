@@ -137,7 +137,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 2
   enemyNowHp: 0
-  HpImg: {fileID: 8222506220886026821, guid: c5129206fc2c52243bce7473972ff4f9, type: 3}
+  HpImg: {fileID: 4414483016604256276, guid: c5129206fc2c52243bce7473972ff4f9, type: 3}
   isMove: 0
 --- !u!114 &6819972978128714574
 MonoBehaviour:

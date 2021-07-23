@@ -8,8 +8,11 @@ public class MenuManager : MonoBehaviour
 {
     public Text moneyText;
     public Text UpgradeText;
-    public Text selectText;
     public Text selectText2;
+    public Image SelecteCharImg;
+
+    public Text CharNameText;
+    
 
     
     // Start is called before the first frame update
@@ -21,11 +24,14 @@ public class MenuManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        moneyText.text = "Money : " + DataManager.Instance.money.ToString();
+        moneyText.text = DataManager.Instance.money.ToString("#,##0");
         UpgradeText.text = "현재 성장률 : " + (4+DataManager.Instance.growRateUpgrade[DataManager.Instance.selectedChar]).ToString() + "\n";
         UpgradeText.text += "업그레이드 비용 : " + DataManager.Instance.upgradecost[DataManager.Instance.selectedChar].ToString();
-        selectText.text = "Select Char : " + DataManager.Instance.selectedChar.ToString();
+        
         selectText2.text = "Select Char : " + DataManager.Instance.selectedChar.ToString();
+    
+        SelecteCharImg.sprite = DataManager.Instance.Characters[DataManager.Instance.selectedChar].GetComponent<SpriteRenderer>().sprite;
+        CharNameText.text = DataManager.Instance.Characters[DataManager.Instance.selectedChar].GetComponent<Player_char>().charname;
     }
 
     public void UpgradeButton()
@@ -43,13 +49,17 @@ public class MenuManager : MonoBehaviour
         SceneManager.LoadScene("MainScene");
     }
 
-    public void SetChar_Mc()
+    public void SelectPlus()
     {
-        DataManager.Instance.selectedChar = 0;
+        DataManager.Instance.selectedChar++;
+        if(DataManager.Instance.selectedChar >= DataManager.Instance.Characters.Length)
+            DataManager.Instance.selectedChar = 0;
     }
 
-    public void SetChar_So()
+    public void SelectMinus()
     {
-        DataManager.Instance.selectedChar = 1;
+        DataManager.Instance.selectedChar--;
+        if(DataManager.Instance.selectedChar < 0)
+            DataManager.Instance.selectedChar = DataManager.Instance.Characters.Length-1;
     }
 }

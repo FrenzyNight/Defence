@@ -46,7 +46,7 @@ public class EnemyMove : MonoBehaviour
         {
             tr.Translate(Vector2.left * speed * Time.deltaTime);
             HP.transform.position = Camera.main.WorldToScreenPoint(transform.position);
-            HP.GetComponent<Transform>().Translate(new Vector2(10f,95f));
+            //HP.GetComponent<Transform>().Translate(new Vector2(10f,95f));
         }
         Bar.fillAmount = enemyNowHp / EnemyHp ;
         Death();

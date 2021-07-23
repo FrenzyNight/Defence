@@ -193,6 +193,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed934e8739326cf499babb243003e8f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  charname: "\uBE14\uB799\uD558\uD2B8"
   bulletPrefab: {fileID: 2828384327144627900, guid: 13abcf223fd8a2d498f10621074590fe, type: 3}
   mousePosition: {x: 0, y: 0}
   audioFire: {fileID: 8300000, guid: c69cb28f1741f274891972f7d6c0563d, type: 3}
@@ -211,6 +212,7 @@ MonoBehaviour:
   growHp: 0
   growDamage: 0
   characterIndex: 0
+  ultimateGauge: 0
 --- !u!114 &4466064378123682790
 MonoBehaviour:
   m_ObjectHideFlags: 0

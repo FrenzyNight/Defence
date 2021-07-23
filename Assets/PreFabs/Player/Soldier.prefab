@@ -97,6 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed934e8739326cf499babb243003e8f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  charname: "\uB625\uAF2C\uCDA9"
   bulletPrefab: {fileID: 2828384327144627900, guid: 13abcf223fd8a2d498f10621074590fe, type: 3}
   mousePosition: {x: 0, y: 0}
   audioFire: {fileID: 8300000, guid: dfebaeb8a683dd84a9178f1bbfa95af1, type: 3}

@@ -29,8 +29,8 @@ public class Boss : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        HP.transform.position = Camera.main.WorldToScreenPoint(transform.position);
-        HP.GetComponent<Transform>().Translate(new Vector2(10f,95f));
+        HP.transform.position = Camera.main.WorldToScreenPoint(transform. position);
+        //HP.GetComponent<Transform>().Translate(new Vector2(10f,95f));
         Bar.fillAmount = BossNowHP / BossMaxHP;
         Death();
     }

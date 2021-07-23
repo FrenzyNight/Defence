@@ -7,6 +7,7 @@ using UnityEngine.EventSystems;
 
 public class Player_char : MonoBehaviour
 {
+    public string charname;
     public GameObject bulletPrefab; //총알 오브젝트
     public Vector2 mousePosition; //마우스 위치
     
@@ -42,6 +43,7 @@ public class Player_char : MonoBehaviour
     public int characterIndex;
 
     public float ultimateGauge;
+    
 
     void Start()
     {

@@ -14,6 +14,9 @@ ScriptsOnlyBuild:
     - CleanBullet
     - CreateEnemy
     - DataManager
+    - DebuffBulletMove
+    - DebuffEffect
+    - Debuffer_type1
     - EffectMove
     - EnemyMeeleAttack
     - EnemyMove
@@ -94,19 +97,19 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1440}
     - Class: 114
-      Script: {instanceID: 1672}
+      Script: {instanceID: 1674}
     - Class: 114
-      Script: {instanceID: 2092}
+      Script: {instanceID: 2094}
     - Class: 114
-      Script: {instanceID: 2474}
+      Script: {instanceID: 2476}
     - Class: 114
-      Script: {instanceID: 2622}
+      Script: {instanceID: 2624}
     - Class: 114
-      Script: {instanceID: 2796}
+      Script: {instanceID: 2800}
     - Class: 114
-      Script: {instanceID: 3012}
+      Script: {instanceID: 3016}
     - Class: 114
-      Script: {instanceID: 3116}
+      Script: {instanceID: 3120}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -161,53 +164,53 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1440}
     - Class: 114
-      Script: {instanceID: 1486}
+      Script: {instanceID: 1488}
     - Class: 114
-      Script: {instanceID: 1678}
+      Script: {instanceID: 1680}
     - Class: 114
-      Script: {instanceID: 1762}
+      Script: {instanceID: 1764}
     - Class: 114
-      Script: {instanceID: 1802}
+      Script: {instanceID: 1804}
     - Class: 114
-      Script: {instanceID: 2092}
+      Script: {instanceID: 2094}
     - Class: 114
-      Script: {instanceID: 2382}
+      Script: {instanceID: 2384}
     - Class: 114
-      Script: {instanceID: 2474}
+      Script: {instanceID: 2476}
     - Class: 114
-      Script: {instanceID: 2622}
+      Script: {instanceID: 2624}
     - Class: 114
-      Script: {instanceID: 2742}
+      Script: {instanceID: 2746}
     - Class: 114
-      Script: {instanceID: 2796}
+      Script: {instanceID: 2800}
     - Class: 114
-      Script: {instanceID: 2806}
+      Script: {instanceID: 2810}
     - Class: 114
-      Script: {instanceID: 2880}
+      Script: {instanceID: 2884}
     - Class: 114
-      Script: {instanceID: 3012}
+      Script: {instanceID: 3016}
     - Class: 114
-      Script: {instanceID: 3022}
+      Script: {instanceID: 3026}
     - Class: 114
-      Script: {instanceID: 3116}
+      Script: {instanceID: 3120}
     - Class: 114
-      Script: {instanceID: 3260}
+      Script: {instanceID: 3264}
     - Class: 114
-      Script: {instanceID: 3520}
+      Script: {instanceID: 3524}
     - Class: 114
-      Script: {instanceID: 3648}
+      Script: {instanceID: 3652}
     - Class: 114
-      Script: {instanceID: 4316}
+      Script: {instanceID: 4320}
     - Class: 114
-      Script: {instanceID: 4326}
+      Script: {instanceID: 4330}
     - Class: 114
-      Script: {instanceID: 4434}
+      Script: {instanceID: 4438}
     - Class: 114
-      Script: {instanceID: 4828}
+      Script: {instanceID: 4834}
     - Class: 114
-      Script: {instanceID: 5006}
+      Script: {instanceID: 5012}
     - Class: 114
-      Script: {instanceID: 5038}
+      Script: {instanceID: 5044}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -266,51 +269,57 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1440}
     - Class: 114
-      Script: {instanceID: 1768}
+      Script: {instanceID: 1770}
     - Class: 114
-      Script: {instanceID: 1860}
+      Script: {instanceID: 1862}
     - Class: 114
-      Script: {instanceID: 1868}
+      Script: {instanceID: 1870}
     - Class: 114
-      Script: {instanceID: 2092}
+      Script: {instanceID: 2094}
     - Class: 114
-      Script: {instanceID: 2256}
+      Script: {instanceID: 2258}
     - Class: 114
-      Script: {instanceID: 2474}
+      Script: {instanceID: 2476}
     - Class: 114
-      Script: {instanceID: 2602}
+      Script: {instanceID: 2604}
     - Class: 114
-      Script: {instanceID: 2622}
+      Script: {instanceID: 2624}
     - Class: 114
-      Script: {instanceID: 2664}
+      Script: {instanceID: 2666}
     - Class: 114
-      Script: {instanceID: 2796}
+      Script: {instanceID: 2732}
     - Class: 114
-      Script: {instanceID: 2862}
+      Script: {instanceID: 2800}
     - Class: 114
-      Script: {instanceID: 3012}
+      Script: {instanceID: 2866}
     - Class: 114
-      Script: {instanceID: 3116}
+      Script: {instanceID: 3016}
     - Class: 114
-      Script: {instanceID: 3122}
+      Script: {instanceID: 3120}
     - Class: 114
-      Script: {instanceID: 3198}
+      Script: {instanceID: 3126}
     - Class: 114
-      Script: {instanceID: 3254}
+      Script: {instanceID: 3202}
     - Class: 114
-      Script: {instanceID: 3392}
+      Script: {instanceID: 3258}
     - Class: 114
-      Script: {instanceID: 3502}
+      Script: {instanceID: 3396}
     - Class: 114
-      Script: {instanceID: 3806}
+      Script: {instanceID: 3506}
     - Class: 114
-      Script: {instanceID: 4440}
+      Script: {instanceID: 3810}
     - Class: 114
-      Script: {instanceID: 4480}
+      Script: {instanceID: 4444}
     - Class: 114
-      Script: {instanceID: 4746}
+      Script: {instanceID: 4484}
     - Class: 114
-      Script: {instanceID: 4774}
+      Script: {instanceID: 4594}
+    - Class: 114
+      Script: {instanceID: 4752}
+    - Class: 114
+      Script: {instanceID: 4780}
+    - Class: 114
+      Script: {instanceID: 22502}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -578,6 +587,12 @@ ScriptsOnlyBuild:
     className: TextMeshProUGUI
   - hash:
       serializedVersion: 2
+      Hash: a73d30c6b4477c0f60f2de61f858eef5
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Debuffer_type1
+  - hash:
+      serializedVersion: 2
       Hash: 16b9e2e63bff4840b69c010c7ff13be9
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
@@ -722,7 +737,7 @@ ScriptsOnlyBuild:
     className: Blaster
   - hash:
       serializedVersion: 2
-      Hash: 3ec5fc99f55f20d85f962f8526dafa0d
+      Hash: dcdc6c152b94cdecb2af2f1d7593ce3f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Player_char
@@ -944,7 +959,7 @@ ScriptsOnlyBuild:
     className: TMP_Settings
   - hash:
       serializedVersion: 2
-      Hash: b03cd07d67a695256cf45aeff964396d
+      Hash: a908d51e5e13461ac849859f03afc5e2
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: MenuManager
@@ -996,6 +1011,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_SubMeshUI
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: DebuffBulletMove
   - hash:
       serializedVersion: 2
       Hash: fd68d84f33fad85aac38f2739c0ee270
@@ -1068,6 +1089,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.2D.IK.Runtime.dll
     namespaceName: UnityEngine.U2D.IK
     className: FabrikSolver2D
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: DebuffEffect
   platform: 5
   scenePathNames:
   - Assets/Scenes/MainMenu.unity
