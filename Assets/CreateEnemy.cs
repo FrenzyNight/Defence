@@ -39,15 +39,24 @@ public class CreateEnemy : MonoBehaviour
         if(wm.isWave&& isStart && !isCreate && GameObject.FindWithTag("enemy") == null && GameObject.FindWithTag("boss")==null ) // 웨이브 종료(클리어)시
         {
             wm.wave += 1;
-            wm.isWave = false;
-            isStart = false;
 
-            Invoke("StartWave", 2f);
+            if(wm.wave == 6)
+            {
+                GetComponent<ClearCheck>().Clear();
+            }
+            else
+            {
+                wm.isWave = false;
+                isStart = false;
+
+                Invoke("StartWave", 2f);
+            }
         }
     }
 
     public void StartWave()
     {
+        Time.timeScale = 1;
         wm.isWave = true;
         isCreate = true;
         

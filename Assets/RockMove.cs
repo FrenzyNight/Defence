@@ -51,8 +51,6 @@ public class RockMove : MonoBehaviour
 
         Angle = Random.Range(20f, 35.5f);
 
-        //Angle += 270;
-
         float target_Distance = Vector2.Distance(playerTr.position, tr.position);
 
         float projectile_Velocity = target_Distance / (Mathf.Sin(2*Angle*Mathf.Deg2Rad) / gravity) ;
@@ -77,6 +75,8 @@ public class RockMove : MonoBehaviour
 
                 yield return null;
             }
+            else
+                yield return null;
         }
     }
 

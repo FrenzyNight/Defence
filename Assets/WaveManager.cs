@@ -39,6 +39,7 @@ public class WaveManager : MonoBehaviour
 
     public Button MerBtn1, MerBtn2, MerBtn3; 
     int idx1, idx2, idx3;
+
     
     // Start is called before the first frame update
 
@@ -166,9 +167,10 @@ public class WaveManager : MonoBehaviour
         }
     }
 
-
     public void AdandplusResetNum()
     {
         resetNum++;
     }
+
+   
 }

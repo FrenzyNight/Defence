@@ -43,6 +43,7 @@ public class Player_char : MonoBehaviour
     public int characterIndex;
 
     public float ultimateGauge;
+    public bool isDead;
     
 
     void Start()
@@ -106,17 +107,16 @@ public class Player_char : MonoBehaviour
             maxHp += growHp;
             damage += growDamage;
             nowHp = maxHp;
-
-            //wm.CallMercenary();
         }
     }
 
     void Died()
     {
-        if(nowHp <= 0)
+        
+        if(nowHp <= 0 && !isDead)
         {
-            //You Die
-            SceneManager.LoadScene("GameOver");
+            isDead = true;
+            GameObject.Find("WaveManager").GetComponent<ClearCheck>().Failed();
         }
 
         if(nowHp > maxHp)

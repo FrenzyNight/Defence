@@ -36,4 +36,7 @@ public class DataManager : MonoBehaviour
 
     public int[] upgradecost;
 
+    public int playerLevel;
+
+    public float exp;
 }

@@ -36,7 +36,7 @@ public class BossAttack : MonoBehaviour
     {
         while(true)
         {
-            //3~10개 블라스터 소환
+            //3~9개 블라스터 소환
             rnd = Random.Range(3,10);
             for(int i=0;i<rnd;i++)
             {
@@ -56,19 +56,22 @@ public class BossAttack : MonoBehaviour
             yield return new WaitForSeconds(2f);
             //2초간 후딜레이
 
-            // 3~10개의 투석 투척
+            // 3~9개의 투석 투척
             rnd = Random.Range(3,10);
             for(int i=0;i<rnd;i++)
             {
-                yield return new WaitForSeconds(0.6f);
-                randY = Random.Range(0.5f,4f);
-                plusminus = Random.Range(0,2);
-                if(plusminus == 0)
+                if(wm.isWave && !wm.isStop)
                 {
-                    randY *= (-1);
+                    yield return new WaitForSeconds(0.6f);
+                    randY = Random.Range(0.5f,4f);
+                    plusminus = Random.Range(0,2);
+                    if(plusminus == 0)
+                    {
+                        randY *= (-1);
+                    }
+                    spontr = new Vector2(tr.position.x, tr.position.y + randY);
+                    Instantiate(Rock, spontr, Quaternion.identity);
                 }
-                spontr = new Vector2(tr.position.x, tr.position.y + randY);
-                Instantiate(Rock, spontr, Quaternion.identity);
             }
             yield return new WaitForSeconds(2f);
             //후딜레이 2초

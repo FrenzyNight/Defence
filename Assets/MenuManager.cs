@@ -10,6 +10,7 @@ public class MenuManager : MonoBehaviour
     public Text UpgradeText;
     public Text selectText2;
     public Image SelecteCharImg;
+    public Text LevelText;
 
     public Text CharNameText;
     
@@ -29,9 +30,20 @@ public class MenuManager : MonoBehaviour
         UpgradeText.text += "업그레이드 비용 : " + DataManager.Instance.upgradecost[DataManager.Instance.selectedChar].ToString();
         
         selectText2.text = "Select Char : " + DataManager.Instance.selectedChar.ToString();
-    
+
         SelecteCharImg.sprite = DataManager.Instance.Characters[DataManager.Instance.selectedChar].GetComponent<SpriteRenderer>().sprite;
         CharNameText.text = DataManager.Instance.Characters[DataManager.Instance.selectedChar].GetComponent<Player_char>().charname;
+    
+        LevelText.text = "Lv. " + DataManager.Instance.playerLevel.ToString();
+    }
+
+    void LevelUp()
+    {
+        if(DataManager.Instance.exp >= 100)
+        {
+            DataManager.Instance.playerLevel += 1;
+            DataManager.Instance.exp -= 100;
+        }
     }
 
     public void UpgradeButton()

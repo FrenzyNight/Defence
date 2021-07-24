@@ -57,8 +57,6 @@ public class ParabolaMove : MonoBehaviour
 
         float flightDuration = target_Distance / Vx;
 
-        //Projectile.rotation = Quaternion.LookRotation(Target.position - Projectile.position);
-
         float elapse_time = 0;
 
         
@@ -73,6 +71,8 @@ public class ParabolaMove : MonoBehaviour
 
                 yield return null;
             }
+            else
+                yield return null;
         }
 
         yield return new WaitForSeconds(0.03f);

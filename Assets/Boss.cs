@@ -43,7 +43,7 @@ public class Boss : MonoBehaviour
             Destroy(HP);
             Destroy(gameObject);
             //gameObject.SetActive(false);
-            DataManager.Instance.money += 500;
+            //DataManager.Instance.money += 500;
             player.nowExp += 100;
             player.ultimateGauge += 100;
             wm.Coin += 400;
