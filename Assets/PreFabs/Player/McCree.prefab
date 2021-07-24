@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 7458345308210695365}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -9.4401, y: -0.8402, z: 0}
-  m_LocalScale: {x: -0.8, y: 0.8, z: 0.8}
+  m_LocalScale: {x: -0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -74,12 +74,12 @@ SpriteRenderer:
   m_SortingLayerID: 44402303
   m_SortingLayer: 2
   m_SortingOrder: 2
-  m_Sprite: {fileID: 2479058456405361614, guid: 8ea6a03a5c9631c40aca47d08f9f32ae, type: 3}
+  m_Sprite: {fileID: -4896707147557875713, guid: b167536a19f9c974aa6e90b925de44dd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 5, y: 5.0024347}
+  m_Size: {x: 5.65, y: 7.04}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -194,6 +194,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   charname: "\uBE14\uB799\uD558\uD2B8"
+  profile: {fileID: 8999781029529400320, guid: 5ba13503eebdbf24b8a13d67d4c0f698, type: 3}
   bulletPrefab: {fileID: 2828384327144627900, guid: 13abcf223fd8a2d498f10621074590fe, type: 3}
   mousePosition: {x: 0, y: 0}
   audioFire: {fileID: 8300000, guid: c69cb28f1741f274891972f7d6c0563d, type: 3}
@@ -213,6 +214,7 @@ MonoBehaviour:
   growDamage: 0
   characterIndex: 0
   ultimateGauge: 0
+  isDead: 0
 --- !u!114 &4466064378123682790
 MonoBehaviour:
   m_ObjectHideFlags: 0

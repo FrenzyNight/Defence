@@ -31,7 +31,7 @@ public class MenuManager : MonoBehaviour
         
         selectText2.text = "Select Char : " + DataManager.Instance.selectedChar.ToString();
 
-        SelecteCharImg.sprite = DataManager.Instance.Characters[DataManager.Instance.selectedChar].GetComponent<SpriteRenderer>().sprite;
+        SelecteCharImg.sprite = DataManager.Instance.Characters[DataManager.Instance.selectedChar].GetComponent<Player_char>().profile;
         CharNameText.text = DataManager.Instance.Characters[DataManager.Instance.selectedChar].GetComponent<Player_char>().charname;
     
         LevelText.text = "Lv. " + DataManager.Instance.playerLevel.ToString();

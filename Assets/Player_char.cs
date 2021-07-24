@@ -8,6 +8,7 @@ using UnityEngine.EventSystems;
 public class Player_char : MonoBehaviour
 {
     public string charname;
+    public Sprite profile;
     public GameObject bulletPrefab; //총알 오브젝트
     public Vector2 mousePosition; //마우스 위치
     
