@@ -40,7 +40,7 @@ public class CreateEnemy : MonoBehaviour
         {
             wm.wave += 1;
 
-            if(wm.wave == 6)
+            if(wm.wave == 21)
             {
                 GetComponent<ClearCheck>().Clear();
             }

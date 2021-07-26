@@ -41,6 +41,8 @@ public class Player_char : MonoBehaviour
     public float growHp;
     public float growDamage;
 
+    public float criticalrate;
+
     public int characterIndex;
 
     public float ultimateGauge;

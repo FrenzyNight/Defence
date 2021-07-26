@@ -41,30 +41,53 @@ public class BulletMove : MonoBehaviour
         if(collision.tag == "enemy")
         {
             effectTr = collision.gameObject.GetComponent<Transform>();
-            collision.gameObject.GetComponent<EnemyMove>().enemyNowHp -= player.damage;
-            //collision.gameObject.GetComponent<Transform>().Translate(Vector2.right * player.bulletnuckback);
             collision.gameObject.transform.DOMove( new Vector2(effectTr.position.x+player.bulletnuckback, effectTr.position.y), 0.05f);
-            collision.gameObject.transform.DOShakePosition(0.05f, 0.1f , 1, 180f);
+            
+            if(Random.Range(0,101) <= player.criticalrate) // 크리티컬 발생
+            {
+                collision.gameObject.GetComponent<EnemyMove>().enemyNowHp -= (player.damage*1.5f);
+                collision.gameObject.transform.DOShakePosition(0.05f, 0.5f , 1, 180f);
+            }
+            else
+            {
+                collision.gameObject.GetComponent<EnemyMove>().enemyNowHp -= player.damage;
+                collision.gameObject.transform.DOShakePosition(0.05f, 0.1f , 1, 180f);
+            }
+        
             Destroy(gameObject);
         }
         else if(collision.tag == "blaster")
         {
-            collision.gameObject.GetComponent<Blaster>().HP -= player.damage;
+            if(Random.Range(0,101) <= player.criticalrate) // 크리티컬 발생
+                collision.gameObject.GetComponent<Blaster>().HP -= player.damage *1.5f;
+            else
+                collision.gameObject.GetComponent<Blaster>().HP -= player.damage;
             Destroy(gameObject);
         }
         else if(collision.tag == "rock")
         {
-            collision.gameObject.GetComponent<RockMove>().HP -= player.damage;
+            if(Random.Range(0,101) <= player.criticalrate)
+                collision.gameObject.GetComponent<RockMove>().HP -= player.damage * 1.5f;
+            else
+                collision.gameObject.GetComponent<RockMove>().HP -= player.damage;
             Destroy(gameObject);
         }
         else if(collision.tag == "bomb")
         {
-            collision.gameObject.GetComponent<BombMove>().bombHP -= player.damage;
+            if(Random.Range(0,101) <= player.criticalrate)
+                collision.gameObject.GetComponent<BombMove>().bombHP -= player.damage * 1.5f;
+            else
+                collision.gameObject.GetComponent<BombMove>().bombHP -= player.damage;
+
             Destroy(gameObject);
         }
         else if(collision.tag == "boss")
         {
-            collision.gameObject.GetComponent<Boss>().BossNowHP -= player.damage;
+            if(Random.Range(0,101) <= player.criticalrate)
+                collision.gameObject.GetComponent<Boss>().BossNowHP -= player.damage * 1.5f;
+            else
+                collision.gameObject.GetComponent<Boss>().BossNowHP -= player.damage;
+
             Destroy(gameObject);
         }
     }

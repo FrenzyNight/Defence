@@ -23,7 +23,7 @@ public class DebuffEffect : MonoBehaviour
     {
         if(enemy.tag == "enemy")
         {
-            enemy.GetComponent<EnemyMove>().speed *= 0.7f;
+            enemy.GetComponent<EnemyMove>().speed *= 0.8f;
         }
 
         Invoke("EndEffect", 2f);
@@ -33,7 +33,7 @@ public class DebuffEffect : MonoBehaviour
     {
         if(enemy.tag == "enemy")
         {
-            enemy.GetComponent<EnemyMove>().speed /= 0.7f;
+            enemy.GetComponent<EnemyMove>().speed /= 0.8f;
         }
         Destroy(gameObject);
     }

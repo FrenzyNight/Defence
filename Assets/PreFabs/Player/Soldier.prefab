@@ -116,6 +116,7 @@ MonoBehaviour:
   maxHp: 100
   growHp: 0
   growDamage: 0
+  criticalrate: 0
   characterIndex: 1
   ultimateGauge: 100
   isDead: 0

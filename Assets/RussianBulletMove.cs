@@ -73,30 +73,42 @@ public class RussianBulletMove : MonoBehaviour
     {
         if(collision.tag == "enemy")
         {
-            collision.gameObject.GetComponent<EnemyMove>().enemyNowHp -= player.damage * (skilldamagerate / 100);
-            //collision.gameObject.GetComponent<Transform>().Translate(Vector2.right * player.bulletnuckback);
-            
-            //Destroy(gameObject);
+            if(Random.Range(0,101) <= player.criticalrate) // 크리티컬 발생
+            {
+                collision.gameObject.GetComponent<EnemyMove>().enemyNowHp -= (player.damage * 1.5f * (skilldamagerate / 100));
+            }
+            else
+            {
+                collision.gameObject.GetComponent<EnemyMove>().enemyNowHp -= player.damage * (skilldamagerate / 100);
+            }
         }
         else if(collision.tag == "blaster")
         {
-            collision.gameObject.GetComponent<Blaster>().HP -= player.damage * (skilldamagerate / 100);
-            
+            if(Random.Range(0,101) <= player.criticalrate) // 크리티컬 발생
+                collision.gameObject.GetComponent<Blaster>().HP -= player.damage * 1.5f * (skilldamagerate / 100);
+            else
+                collision.gameObject.GetComponent<Blaster>().HP -= player.damage * (skilldamagerate / 100);
         }
         else if(collision.tag == "rock")
         {
-            collision.gameObject.GetComponent<RockMove>().HP -= player.damage * (skilldamagerate / 100);
-            
+            if(Random.Range(0,101) <= player.criticalrate)
+                collision.gameObject.GetComponent<RockMove>().HP -= player.damage * 1.5f * (skilldamagerate / 100);
+            else
+                collision.gameObject.GetComponent<RockMove>().HP -= player.damage *  (skilldamagerate / 100);
         }
         else if(collision.tag == "bomb")
         {
-            collision.gameObject.GetComponent<BombMove>().bombHP -= player.damage * (skilldamagerate / 100);
-            
+            if(Random.Range(0,101) <= player.criticalrate)
+                collision.gameObject.GetComponent<BombMove>().bombHP -= player.damage * 1.5f * (skilldamagerate / 100);
+            else
+                collision.gameObject.GetComponent<BombMove>().bombHP -= player.damage * (skilldamagerate / 100);
         }
         else if(collision.tag == "boss")
         {
-            collision.gameObject.GetComponent<Boss>().BossNowHP -= player.damage * (skilldamagerate / 100);
-            
+            if(Random.Range(0,101) <= player.criticalrate)
+                collision.gameObject.GetComponent<Boss>().BossNowHP -= player.damage * 1.5f * (skilldamagerate / 100);
+            else
+                collision.gameObject.GetComponent<Boss>().BossNowHP -= player.damage * (skilldamagerate / 100);
         }
     }
 }

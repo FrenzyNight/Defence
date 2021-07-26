@@ -71,7 +71,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 44402303
   m_SortingLayer: 2
-  m_SortingOrder: 2
+  m_SortingOrder: 1
   m_Sprite: {fileID: 281170257553721983, guid: 05d04c018a4ac3a43a0cea7780380be8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -98,6 +98,6 @@ MonoBehaviour:
   debuffbulet: {fileID: 4316983110859674386, guid: 072f0e3331ec5df4b955b5bf60e46feb, type: 3}
   debuffeffect: {fileID: 3129548306698447946, guid: 90073f3056c641849aeb199dfae39cb0, type: 3}
   Damage: 5
-  FPS: 2
+  FPS: 1.5
   bulletSpeed: 30
   target: {fileID: 0}
