@@ -41,6 +41,7 @@ public class RussianBulletMove : MonoBehaviour
         Fire();
         if(Input.GetMouseButtonUp(0) && !isFire)
         {
+            CinemachineShake.Instance.ShakeCamera(1f,0.5f);
             isFire = true;
         }
     }
@@ -64,6 +65,7 @@ public class RussianBulletMove : MonoBehaviour
                     point.y -= tr.transform.position.y;
                     angle = Mathf.Atan2(point.y, point.x) * Mathf.Rad2Deg;
                     tr.eulerAngles = new Vector3(0,0,angle);
+                    CinemachineShake.Instance.ShakeCamera(0.3f,0.1f);
                 }
             }
         }

@@ -43,6 +43,7 @@ public class EnemyMeeleAttack : MonoBehaviour
 
     void EnemyAttack()
     {
+        CinemachineShake.Instance.ShakeCamera(0.5f, 0.1f);
         player.nowHp -= enemyDamage;
         player.ultimateGauge += 1;
     }

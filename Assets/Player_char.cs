@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
 
+
 public class Player_char : MonoBehaviour
 {
     public string charname;
@@ -48,9 +49,12 @@ public class Player_char : MonoBehaviour
     public float ultimateGauge;
     public bool isDead;
     
+    public float shakevalue;
+    public float shaketime;
 
     void Start()
     {
+
         audioSource = GetComponent<AudioSource>();
         audioSource.clip = audioFire;
         growrate += DataManager.Instance.growRateUpgrade[characterIndex];
@@ -88,9 +92,9 @@ public class Player_char : MonoBehaviour
                     
                     isDelay = true;
                     audioSource.Play();
-                    //mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                     Instantiate(bulletPrefab, tr.position, Quaternion.identity);
-            
+                    //CinemachineShake.Instance.ShakeCamera(shakevalue, shaketime);
+
                     StartCoroutine(Delay());
                 }
             }

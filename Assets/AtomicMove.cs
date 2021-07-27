@@ -26,6 +26,7 @@ public class AtomicMove : MonoBehaviour
     {
        if(tr.position.y <= target.y)
        {
+           CinemachineShake.Instance.ShakeCamera(3f,0.5f);
            Instantiate(effectPrefab ,target, Quaternion.identity);
            gameObject.SetActive(false);
            Destroy(gameObject, 0.1f);

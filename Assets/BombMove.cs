@@ -42,6 +42,7 @@ public class BombMove : MonoBehaviour
     {
         if(collision.tag == "Wall")
         {
+            CinemachineShake.Instance.ShakeCamera(0.7f,0.3f);
             player.nowHp -= bombDamage;
             Destroy(gameObject, 0.1f);
         }

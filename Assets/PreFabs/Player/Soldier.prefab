@@ -120,6 +120,8 @@ MonoBehaviour:
   characterIndex: 1
   ultimateGauge: 100
   isDead: 0
+  shakevalue: 0.3
+  shaketime: 0.1
 --- !u!82 &-8131350778483141749
 AudioSource:
   m_ObjectHideFlags: 0

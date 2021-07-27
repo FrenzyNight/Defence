@@ -216,6 +216,8 @@ MonoBehaviour:
   characterIndex: 0
   ultimateGauge: 0
   isDead: 0
+  shakevalue: 0.35
+  shaketime: 0.1
 --- !u!114 &4466064378123682790
 MonoBehaviour:
   m_ObjectHideFlags: 0

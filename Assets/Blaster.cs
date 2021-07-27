@@ -57,6 +57,7 @@ public class Blaster : MonoBehaviour
 
     void Attack()
     {
+        CinemachineShake.Instance.ShakeCamera(0.5f,0.1f);
         isFire = true;
         player.nowHp -= damage;
         Destroy(gameObject, 0.3f);

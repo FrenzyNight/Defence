@@ -115,6 +115,7 @@ public class SoldierSkill : MonoBehaviour
             {
                 sk1ready = false;
 
+                CinemachineShake.Instance.ShakeCamera(0.5f, 0.2f);
                 Instantiate(rocketPrefab, tr.position , Quaternion.identity);
 
                 yield return new WaitForSeconds(0.3f); //후딜

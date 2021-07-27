@@ -79,6 +79,7 @@ public class RocketMove : MonoBehaviour
     
     void CreateEffect()
     {
+        CinemachineShake.Instance.ShakeCamera(0.5f,0.1f);
         Instantiate(rocketeffect, effectTr.position, Quaternion.identity);
         Destroy(gameObject);
     }

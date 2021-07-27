@@ -85,6 +85,7 @@ public class RockMove : MonoBehaviour
     {
         if(collision.tag == "Wall")
         {
+            CinemachineShake.Instance.ShakeCamera(0.5f,0.1f);
             player.nowHp -= damage;
             Destroy(gameObject, 0.1f);
         }

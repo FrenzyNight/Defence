@@ -137,6 +137,7 @@ public class McCreeSkill : MonoBehaviour
         for(int i=0;i<3;i++)
         {
             audioSource.Play();
+            CinemachineShake.Instance.ShakeCamera(0.3f,0.1f);
             Instantiate(bulletPrefab, tr.position, Quaternion.identity);
             yield return new WaitForSeconds(0.1f);
 
@@ -161,6 +162,7 @@ public class McCreeSkill : MonoBehaviour
             {
                 sk2ready = false;
                 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                CinemachineShake.Instance.ShakeCamera(0.1f,0.1f);
                 Instantiate(Target, mousePosition , Quaternion.identity);
             }
         }

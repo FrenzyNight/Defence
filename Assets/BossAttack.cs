@@ -70,6 +70,7 @@ public class BossAttack : MonoBehaviour
                         randY *= (-1);
                     }
                     spontr = new Vector2(tr.position.x, tr.position.y + randY);
+                    CinemachineShake.Instance.ShakeCamera(0.3f,0.1f);
                     Instantiate(Rock, spontr, Quaternion.identity);
                 }
             }
