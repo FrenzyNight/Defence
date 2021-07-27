@@ -55,6 +55,7 @@ public class TargetMove : MonoBehaviour
 
     void MakeGranade()
     {
+        CinemachineShake.Instance.ShakeCamera(0.1f,0.1f);
         Instantiate(granadePrefab, playertr.position, Quaternion.identity);
     }
 

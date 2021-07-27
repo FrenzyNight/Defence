@@ -162,7 +162,7 @@ public class McCreeSkill : MonoBehaviour
             {
                 sk2ready = false;
                 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                CinemachineShake.Instance.ShakeCamera(0.1f,0.1f);
+                
                 Instantiate(Target, mousePosition , Quaternion.identity);
             }
         }

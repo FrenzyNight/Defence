@@ -76,7 +76,7 @@ public class ParabolaMove : MonoBehaviour
         }
 
         yield return new WaitForSeconds(0.03f);
-        CinemachineShake.Instance.ShakeCamera(0.4f, 0.15f);
+        CinemachineShake.Instance.ShakeCamera(0.3f, 0.15f);
         Instantiate(explosionPrefab, Projectile.position, Quaternion.identity);
         Destroy(gameObject);
     }

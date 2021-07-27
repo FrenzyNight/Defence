@@ -13,7 +13,6 @@ public class MenuManager : MonoBehaviour
     public Text LevelText;
 
     public Text CharNameText;
-    
 
     
     // Start is called before the first frame update
