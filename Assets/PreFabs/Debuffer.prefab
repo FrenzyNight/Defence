@@ -97,7 +97,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   debuffbulet: {fileID: 4316983110859674386, guid: 072f0e3331ec5df4b955b5bf60e46feb, type: 3}
   debuffeffect: {fileID: 3129548306698447946, guid: 90073f3056c641849aeb199dfae39cb0, type: 3}
-  Damage: 5
-  FPS: 1.5
+  Damage: 2
+  FPS: 1
   bulletSpeed: 30
   target: {fileID: 0}

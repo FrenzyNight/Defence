@@ -238,7 +238,7 @@ MonoBehaviour:
   skillBtn1: {fileID: 0}
   skillBtn2: {fileID: 0}
   skillBtn3: {fileID: 0}
-  sk1ct: 1
+  sk1ct: 2
   sk2ct: 10
   sk3ct: 0
   sk1ready: 0
