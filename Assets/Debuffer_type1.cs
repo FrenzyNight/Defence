@@ -29,9 +29,6 @@ public class Debuffer_type1 : MonoBehaviour
     private GameObject FindRandomEnemy()
     {
         var objects = GameObject.FindGameObjectsWithTag("enemy").ToList();
-
-        
-
         
         GameObject targetenemy = null;
 

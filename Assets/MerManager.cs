@@ -20,9 +20,10 @@ public class MerManager : MonoBehaviour
     public Button MerBtn1, MerBtn2, MerBtn3; 
     int idx1, idx2, idx3;
 
-    // Start is called before the first frame update
+    
     void Start()
     {
+        SetMercenary();
         wm = GetComponent<WaveManager>();
         CallBtn.interactable = false;
         
@@ -34,6 +35,22 @@ public class MerManager : MonoBehaviour
     {
         CanCallCheck();
         resetNumText.text = "ResetNum : " + resetNum.ToString();
+    }
+
+    void SetMercenary()
+    {
+        GameObject[] RandomMer = (GameObject[])DataManager.Instance.MerInventory.Clone();
+
+        int idx;
+        for(int i=0;i<5;i++)
+        {
+            idx = Random.Range(0,8-i);
+
+            mercenary[i] = RandomMer[idx];
+
+            RandomMer[idx] = RandomMer[7-i];
+
+        }
     }
 
     private void OnDrawGizmos()

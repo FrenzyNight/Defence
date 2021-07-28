@@ -32,11 +32,11 @@ public class EnemyMove : MonoBehaviour
         tr = GetComponent<Transform>();
         wm = GameObject.Find("WaveManager").GetComponent<WaveManager>();
         enemyNowHp = EnemyHp;
-        
         HP =  Instantiate(HpImg, tr.position, Quaternion.identity, GameObject.Find("Canvas_Enemy").transform);  
         
         Bar = HP.GetComponent<Image>();
         Bar.fillAmount = 1;
+        
     }
 
     // Update is called once per frame
@@ -46,10 +46,10 @@ public class EnemyMove : MonoBehaviour
         {
             tr.Translate(Vector2.left * speed * Time.deltaTime);
             HP.transform.position = Camera.main.WorldToScreenPoint(transform.position);
-            //HP.GetComponent<Transform>().Translate(new Vector2(10f,95f));
         }
         Bar.fillAmount = enemyNowHp / EnemyHp ;
         Death();
+        
     }
 
     void Death()
@@ -65,4 +65,5 @@ public class EnemyMove : MonoBehaviour
             player.ultimateGauge += 5;
         }
     }
+
 }

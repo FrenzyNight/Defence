@@ -18,6 +18,7 @@ TagManager:
   - rock
   - boss
   - bomb
+  - debuff_floor
   layers:
   - Default
   - TransparentFX

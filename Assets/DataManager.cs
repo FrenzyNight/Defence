@@ -39,4 +39,5 @@ public class DataManager : MonoBehaviour
     public int playerLevel;
 
     public float exp;
+    public GameObject[] MerInventory;
 }

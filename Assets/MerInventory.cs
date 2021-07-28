@@ -17,16 +17,23 @@ public class MerInventory : MonoBehaviour
 
     public int selectIndex;
 
+    public GameObject info;
+
+    public Button saveButton;
+    public GameObject MerPanel;
+
     void Awake()
     {
         Instance = this;
         selectButton.onClick.AddListener(()=>SelectMercenary(merc));
+        selectedMer = (GameObject[])DataManager.Instance.MerInventory.Clone();
     }
 
     // Update is called once per frame
     void Update()
     {
         SetInventory();
+        CanSave();
     }
 
     void SetInventory()
@@ -49,6 +56,8 @@ public class MerInventory : MonoBehaviour
         if(selectedMer[idx]!= null)
         {
             //용병 정보 표시
+            info.SetActive(true);
+
             Infoimg.sprite = selectedMer[idx].GetComponent<SpriteRenderer>().sprite;
         }
     }
@@ -56,6 +65,8 @@ public class MerInventory : MonoBehaviour
     public void ClickMercenary(GameObject mer)
     {
         //용병 정보 표시
+        info.SetActive(true);
+
         Infoimg.sprite = mer.GetComponent<SpriteRenderer>().sprite;
 
         merc = mer;
@@ -71,7 +82,30 @@ public class MerInventory : MonoBehaviour
             {
                 selectedMer[selectIndex] = mer;
                 selectIndex = -1;
+                info.SetActive(false);
             }
         }
+    }
+
+    void CanSave()
+    {
+        bool isFull = true;
+
+        for(int i=0;i<8;i++)
+        {
+            if(selectedMer[i] == null)
+            {
+                isFull = false;
+            }
+        }
+
+        if(isFull)
+            saveButton.gameObject.SetActive(true);
+    }
+
+    public void SaveInventory()
+    {
+        DataManager.Instance.MerInventory = (GameObject[])selectedMer.Clone();
+        MerPanel.SetActive(false);
     }
 }

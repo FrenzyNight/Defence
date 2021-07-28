@@ -1121,14 +1121,11 @@ MonoBehaviour:
   mercount: 0
   CallBtn: {fileID: 8018451}
   mercenary:
-  - {fileID: 3014200942137866607, guid: 8674dae670590c54fb567d4ac3554cc9, type: 3}
-  - {fileID: 970975057622605891, guid: d85c7e376497b4d40bd6fbfc2c122b23, type: 3}
-  - {fileID: 6433749877688207059, guid: 5c2f0fe9913c4434c98cd8e7ed3ba555, type: 3}
-  - {fileID: 5904838579525297937, guid: caabb56bd94e34048b228156dd44bda7, type: 3}
-  - {fileID: 540434797568445169, guid: d034a79732a230046ac12caa79d066c1, type: 3}
-  - {fileID: 8761662247643193586, guid: 7cdab44444faaec4ea1d2629d350e73d, type: 3}
-  - {fileID: 3692776884153425221, guid: 5a684aef126d73e4ca40722f697bbce0, type: 3}
-  - {fileID: 7680907213607584562, guid: 21c3af3a8d94f394d83a599d97224fc9, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   resetNum: 20
   resetNumText: {fileID: 860720072}
   MerBtn1: {fileID: 737587906}

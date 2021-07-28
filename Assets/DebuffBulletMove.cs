@@ -39,7 +39,7 @@ public class DebuffBulletMove : MonoBehaviour
         {
             effectTr = collision.gameObject.GetComponent<Transform>();
             collision.gameObject.GetComponent<EnemyMove>().enemyNowHp -= debuffer.GetComponent<Debuffer_type1>().Damage;
-            Instantiate(debuffer.GetComponent<Debuffer_type1>().debuffeffect, tr.position, Quaternion.identity, collision.gameObject.transform);
+            Instantiate(debuffer.GetComponent<Debuffer_type1>().debuffeffect, effectTr.position, Quaternion.identity, collision.gameObject.transform);
             Destroy(gameObject);
         }
         else if(collision.tag == "boss")

@@ -13,12 +13,6 @@ public class DebuffEffect : MonoBehaviour
         StartEffect();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     void StartEffect()
     {
         if(enemy.tag == "enemy")
