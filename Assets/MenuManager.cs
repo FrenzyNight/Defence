@@ -14,11 +14,12 @@ public class MenuManager : MonoBehaviour
 
     public Text CharNameText;
 
-    
+    public Image[] merInventory;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        SetInventoryImg();
     }
 
     // Update is called once per frame
@@ -34,6 +35,14 @@ public class MenuManager : MonoBehaviour
         CharNameText.text = DataManager.Instance.Characters[DataManager.Instance.selectedChar].GetComponent<Player_char>().charname;
     
         LevelText.text = "Lv. " + DataManager.Instance.playerLevel.ToString();
+    }
+
+    public void SetInventoryImg()
+    {
+        for(int i=0; i<8; i++)
+        {
+            merInventory[i].sprite = DataManager.Instance.MerList[DataManager.Instance.selectInventoryIndex].MerInventory[i].GetComponent<SpriteRenderer>().sprite;
+        }
     }
 
     void LevelUp()
@@ -72,5 +81,11 @@ public class MenuManager : MonoBehaviour
         DataManager.Instance.selectedChar--;
         if(DataManager.Instance.selectedChar < 0)
             DataManager.Instance.selectedChar = DataManager.Instance.Characters.Length-1;
+    }
+
+    public void SetInventoryIndex(int idx)
+    {
+        DataManager.Instance.selectInventoryIndex = idx;
+        SetInventoryImg();
     }
 }

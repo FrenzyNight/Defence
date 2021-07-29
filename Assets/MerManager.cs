@@ -39,7 +39,7 @@ public class MerManager : MonoBehaviour
 
     void SetMercenary()
     {
-        GameObject[] RandomMer = (GameObject[])DataManager.Instance.MerInventory.Clone();
+        GameObject[] RandomMer = (GameObject[])DataManager.Instance.MerList[DataManager.Instance.selectInventoryIndex].MerInventory.Clone();
 
         int idx;
         for(int i=0;i<5;i++)

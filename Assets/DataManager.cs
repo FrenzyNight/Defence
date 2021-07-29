@@ -2,6 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable] 
+public class MerInventoryList
+{
+    public GameObject[] MerInventory;
+}
+
 public class DataManager : MonoBehaviour
 {
    static DataManager instance;
@@ -39,5 +45,11 @@ public class DataManager : MonoBehaviour
     public int playerLevel;
 
     public float exp;
-    public GameObject[] MerInventory;
+
+    public int selectInventoryIndex;
+
+    public MerInventoryList[] MerList;
 }
+
+
+

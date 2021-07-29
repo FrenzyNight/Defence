@@ -26,14 +26,20 @@ public class MerInventory : MonoBehaviour
     {
         Instance = this;
         selectButton.onClick.AddListener(()=>SelectMercenary(merc));
-        selectedMer = (GameObject[])DataManager.Instance.MerInventory.Clone();
+        selectedMer = (GameObject[])DataManager.Instance.MerList[DataManager.Instance.selectInventoryIndex].MerInventory.Clone();
     }
 
     // Update is called once per frame
     void Update()
     {
-        SetInventory();
+        //SetInventory();
         CanSave();
+    }
+
+    public void LoadInventory()
+    {
+        selectedMer = (GameObject[])DataManager.Instance.MerList[DataManager.Instance.selectInventoryIndex].MerInventory.Clone();
+        SetInventory();
     }
 
     void SetInventory()
@@ -82,6 +88,7 @@ public class MerInventory : MonoBehaviour
             {
                 selectedMer[selectIndex] = mer;
                 selectIndex = -1;
+                SetInventory();
                 info.SetActive(false);
             }
         }
@@ -105,7 +112,8 @@ public class MerInventory : MonoBehaviour
 
     public void SaveInventory()
     {
-        DataManager.Instance.MerInventory = (GameObject[])selectedMer.Clone();
+        DataManager.Instance.MerList[DataManager.Instance.selectInventoryIndex].MerInventory = (GameObject[])selectedMer.Clone();
         MerPanel.SetActive(false);
+        GetComponent<MenuManager>().SetInventoryImg();
     }
 }
