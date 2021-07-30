@@ -26,12 +26,19 @@ public class Turret_assist : MonoBehaviour
 
         audioSource = GetComponent<AudioSource>();
         audioSource.clip = audioFire;
+        Golden();
     }
 
     // Update is called once per frame
     void Update()
     {
         Fire();
+    }
+
+    void Golden()
+    {
+        if(GetComponent<MercenaryInfo>().step == 2)
+            FPS *= 2;
     }
 
     void Fire()

@@ -18,7 +18,14 @@ public class Debuffer_type2 : MonoBehaviour
     {
         wm = GameObject.Find("WaveManager").GetComponent<WaveManager>();
 
+        Golden();
         StartCoroutine(Fire());
+    }
+
+    void Golden()
+    {
+        if(GetComponent<MercenaryInfo>().step == 2)
+            cooltime /= 2;
     }
 
     

@@ -22,7 +22,14 @@ public class Healer_type1 : MonoBehaviour
         wm = GameObject.Find("WaveManager").GetComponent<WaveManager>();
         playerTr = GameObject.FindWithTag("Player").GetComponent<Transform>();
 
+        Golden();
         StartCoroutine(Healing());
+    }
+
+    void Golden()
+    {
+        if(GetComponent<MercenaryInfo>().step == 2)
+            cooltime /= 2;
     }
 
     // Update is called once per frame

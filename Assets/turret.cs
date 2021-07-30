@@ -21,6 +21,8 @@ public class turret : MonoBehaviour
     
         audioSource = GetComponent<AudioSource>();
         audioSource.clip = audioFire;
+
+        Golden();
     }
 
     // Update is called once per frame
@@ -36,6 +38,12 @@ public class turret : MonoBehaviour
                 InvokeRepeating("Fire",firstDelay, 1/FPS);
             }
         }
+    }
+
+    void Golden()
+    {
+        if(GetComponent<MercenaryInfo>().step == 2)
+            FPS *= 2;
     }
 
     private GameObject FindNearestEnemy()
