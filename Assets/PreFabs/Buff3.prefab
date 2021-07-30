@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7320286310970775720}
   - component: {fileID: 5471326720300643748}
   - component: {fileID: 4600422085356597449}
+  - component: {fileID: -657091016280297876}
   m_Layer: 0
   m_Name: Buff3
   m_TagString: Untagged
@@ -99,3 +100,18 @@ MonoBehaviour:
   cooltime: 10
   keeptime: 5
   buff_value: 50
+--- !u!114 &-657091016280297876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3692776884153425221}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4d1e489e4db80044b881797749210b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  step: 1
+  MerName: Buffer3
+  locationNum: 0

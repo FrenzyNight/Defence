@@ -7,13 +7,15 @@ using System.Linq;
 public class MerManager : MonoBehaviour
 {
     public Vector2[] MerSponPoint;
-    List<int> sponlist = new List<int>() {0,1,2,3,4,5,6,7,8,9,10,11,12,13};
+    [SerializeField] List<int> sponlist = new List<int>() {0,1,2,3,4,5,6,7,8,9,10,11,12,13};
     public int mercount;
     //용병단 뽑기
     public Button CallBtn;
     public GameObject[] mercenary; //용병단
     public int resetNum;
     public Text resetNumText;
+
+    List<GameObject> merlist = new List<GameObject>();
 
     WaveManager wm;
 
@@ -75,13 +77,59 @@ public class MerManager : MonoBehaviour
     {
         if(wm.Coin >= wm.Cost)
         {
-            int rndidx = Random.Range(0,sponlist.Count);
+            int rndidx = Random.Range(0,sponlist.Count); // 랜덤 스폰 위치
 
-            Instantiate(mercenary[idx], MerSponPoint[sponlist[rndidx]], Quaternion.identity);
-            CallBtn.interactable = false;
+            int count = 0;
+            foreach(var mer in merlist)
+            {
+                //소환되어 있는 1단계 용병 수 체크
+                if(mer.GetComponent<MercenaryInfo>().MerName.Equals(mercenary[idx].GetComponent<MercenaryInfo>().MerName) && mer.GetComponent<MercenaryInfo>().step == 1)
+                    count++;
+            }
 
-            sponlist.RemoveAt(rndidx);
-            mercount+=1;
+            //기존에 2마리 미만시 1단계 소환
+            if(count!=2)
+            {
+                GameObject mer = Instantiate(mercenary[idx], MerSponPoint[sponlist[rndidx]], Quaternion.identity);
+                CallBtn.interactable = false;
+
+                mer.GetComponent<MercenaryInfo>().locationNum = sponlist[rndidx];
+
+                merlist.Add(mer);
+                sponlist.RemoveAt(rndidx);
+
+                mercount+=1;
+            }
+            //기존에 2마리 있을시 기존 2명 삭제 후 2단계(황금) 용병 소환
+            else if(count == 2)
+            {
+                foreach(var merc in merlist.ToList())
+                {
+                    if(merc.GetComponent<MercenaryInfo>().MerName.Equals(mercenary[idx].GetComponent<MercenaryInfo>().MerName) && merc.GetComponent<MercenaryInfo>().step == 1)
+                    {
+                        sponlist.Add(merc.GetComponent<MercenaryInfo>().locationNum);
+                        merlist.Remove(merc);
+                        Destroy(merc);
+                        mercount-=1;
+                    }
+                }
+                rndidx = Random.Range(0,sponlist.Count);
+
+                GameObject mer = Instantiate(mercenary[idx], MerSponPoint[sponlist[rndidx]], Quaternion.identity);
+                CallBtn.interactable = false;
+
+                mer.GetComponent<MercenaryInfo>().step = 2;
+                mer.GetComponent<MercenaryInfo>().locationNum = sponlist[rndidx];
+
+                mer.GetComponent<MercenaryInfo>().stepcheck();
+
+                merlist.Add(mer);
+                sponlist.RemoveAt(rndidx);
+
+                mercount+=1;
+            }
+            
+            
 
             wm.Coin -= wm.Cost;
             wm.Cost += 25;

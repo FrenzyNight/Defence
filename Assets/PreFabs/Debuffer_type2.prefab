@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7176813970785025528}
   - component: {fileID: 6360499251252046084}
   - component: {fileID: 857262854289992959}
+  - component: {fileID: 6046359411423805723}
   m_Layer: 0
   m_Name: Debuffer_type2
   m_TagString: Untagged
@@ -100,3 +101,18 @@ MonoBehaviour:
   limitMax: {x: 7, y: 3.5}
   useTime: 4
   cooltime: 5
+--- !u!114 &6046359411423805723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4425594768716632768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4d1e489e4db80044b881797749210b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  step: 1
+  MerName: Debuffer2
+  locationNum: 0

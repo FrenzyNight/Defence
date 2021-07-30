@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7009006825955650688}
   - component: {fileID: 7919448289958206396}
   - component: {fileID: 8862612108489235186}
+  - component: {fileID: 8137782785011284446}
   m_Layer: 0
   m_Name: Buffet2
   m_TagString: Untagged
@@ -99,3 +100,18 @@ MonoBehaviour:
   cooltime: 10
   keeptime: 5
   buff_value: 30
+--- !u!114 &8137782785011284446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8761662247643193586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4d1e489e4db80044b881797749210b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  step: 1
+  MerName: Buffer2
+  locationNum: 0

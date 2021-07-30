@@ -22,7 +22,14 @@ public class Debuffer_type1 : MonoBehaviour
         wm = GameObject.Find("WaveManager").GetComponent<WaveManager>();
         tr = GetComponent<Transform>();
 
+        Golden();
         StartCoroutine(Fire());
+    }
+
+    void Golden()
+    {
+        if(GetComponent<MercenaryInfo>().step == 2)
+            FPS *= 2;
     }
 
 

@@ -1022,7 +1022,7 @@ MonoBehaviour:
   LvText: {fileID: 1777556870}
   CostText: {fileID: 19885752}
   PlayerSponPoint: {x: -5, y: 0}
-  Coin: 3000
+  Coin: 300000
   Cost: 50
 --- !u!4 &315279814
 Transform:
@@ -1118,6 +1118,7 @@ MonoBehaviour:
   - {x: -10, y: -4}
   - {x: -7.5, y: -4}
   - {x: -5, y: -4}
+  sponlist: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d000000
   mercount: 0
   CallBtn: {fileID: 8018451}
   mercenary:
