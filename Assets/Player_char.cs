@@ -21,8 +21,15 @@ public class Player_char : MonoBehaviour
     public int level; //레벨
     public float growrate; //성장률
     public float damage; //데미지
+    
+
+    public float DMG_INCR; //데미지 증가 비율
+    public float FINAL_DMG;
 
     public float FPS; // 초당 발사수 Fire Per Seconds
+    
+    public float FPS_INCR; // 공속 증가 비율
+    public float FINAL_FPS;
 
     public float bulletspeed; //탄속
 
@@ -70,6 +77,7 @@ public class Player_char : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        DmgAndFPSCheck();
         Fire();
         LevelUp();
         Died();
@@ -77,8 +85,14 @@ public class Player_char : MonoBehaviour
 
     IEnumerator Delay()
     {
-        yield return new WaitForSeconds(1/FPS);
+        yield return new WaitForSeconds(1/(FPS * (100+FPS_INCR)/100));
         isDelay = false;
+    }
+
+    void DmgAndFPSCheck()
+    {
+        FINAL_DMG = damage * (100+DMG_INCR)/100;
+        FINAL_FPS = FPS * (100+FPS_INCR)/100;
     }
 
     void Fire()

@@ -36,6 +36,7 @@ ScriptsOnlyBuild:
     - MerButton
     - MerInventory
     - MerManager
+    - MercenaryInfo
     - OverManager
     - ParabolaMove
     - Player_char
@@ -255,6 +256,8 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 4380}
     - Class: 114
+      Script: {instanceID: 4384}
+    - Class: 114
       Script: {instanceID: 4400}
     - Class: 114
       Script: {instanceID: 4556}
@@ -263,21 +266,21 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 4694}
     - Class: 114
-      Script: {instanceID: 4854}
+      Script: {instanceID: 4710}
     - Class: 114
-      Script: {instanceID: 5010}
+      Script: {instanceID: 4856}
     - Class: 114
-      Script: {instanceID: 5098}
+      Script: {instanceID: 5012}
     - Class: 114
-      Script: {instanceID: 5120}
+      Script: {instanceID: 5100}
     - Class: 114
-      Script: {instanceID: 5312}
+      Script: {instanceID: 5122}
     - Class: 114
-      Script: {instanceID: 5346}
+      Script: {instanceID: 5314}
     - Class: 114
-      Script: {instanceID: 5358}
+      Script: {instanceID: 5348}
     - Class: 114
-      Script: {instanceID: 26832}
+      Script: {instanceID: 5360}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -374,13 +377,13 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 4700}
     - Class: 114
-      Script: {instanceID: 4740}
+      Script: {instanceID: 4742}
     - Class: 114
-      Script: {instanceID: 5028}
+      Script: {instanceID: 5030}
     - Class: 114
-      Script: {instanceID: 5060}
+      Script: {instanceID: 5062}
     - Class: 114
-      Script: {instanceID: 5118}
+      Script: {instanceID: 5120}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -564,7 +567,7 @@ ScriptsOnlyBuild:
     className: CinemachineCameraOffset
   - hash:
       serializedVersion: 2
-      Hash: 7b4bbb3eb31e9d3b52138354fa5efca4
+      Hash: 74c1528929bbc90e6a02882089f09b41
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: DataManager
@@ -960,7 +963,7 @@ ScriptsOnlyBuild:
     className: Blaster
   - hash:
       serializedVersion: 2
-      Hash: 6fed897b98dfd9bd2569346d353cb3b6
+      Hash: 9bf63b837d791656daff6fb556c91b28
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Player_char
@@ -1236,7 +1239,7 @@ ScriptsOnlyBuild:
     className: Debuff2Effect
   - hash:
       serializedVersion: 2
-      Hash: 38510ab4f98dffd386c641a84494fbcf
+      Hash: c83dd2130804973fa072acb55748dbfc
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: MercenaryInfo
@@ -1278,7 +1281,7 @@ ScriptsOnlyBuild:
     className: CinemachineStoryboard
   - hash:
       serializedVersion: 2
-      Hash: 660fdbcf76dcbeb54602d71f42289fc7
+      Hash: 2099581d686dc816490da63e2499f6d9
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: MerManager
@@ -1308,7 +1311,7 @@ ScriptsOnlyBuild:
     className: TMP_Settings
   - hash:
       serializedVersion: 2
-      Hash: 412f1d872d778f8f495ce03ee93a77c5
+      Hash: e378a02eca0e8c624e459ec6b6451e73
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: MenuManager
@@ -1348,6 +1351,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: EnemyRagedAttack
+  - hash:
+      serializedVersion: 2
+      Hash: 3b72aea774ac2c16af2e78f5387b3c79
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Debuff2_floor
   - hash:
       serializedVersion: 2
       Hash: 28cfb4bd305dd11c6326cc3ee7c14138
@@ -1510,12 +1519,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.2D.IK.Runtime.dll
     namespaceName: UnityEngine.U2D.IK
     className: FabrikSolver2D
-  - hash:
-      serializedVersion: 2
-      Hash: 3b72aea774ac2c16af2e78f5387b3c79
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: Debuff2_floor
   platform: 5
   scenePathNames:
   - Assets/Scenes/MainMenu.unity

@@ -45,11 +45,11 @@ public class Buffer_type1 : MonoBehaviour
 
                 
                 effectimg = Instantiate(effect, new Vector2(playerTr.position.x, playerTr.position.y + 2f), Quaternion.identity);
-                player.FPS *= (1 + buff_value/100);
+                player.FPS_INCR += buff_value;
                 yield return new WaitForSeconds(keeptime);
                 
                 Destroy(effectimg);
-                player.FPS /= (1 + buff_value/100);
+                player.FPS_INCR -= buff_value;
                 
                 yield return new WaitForSeconds(cooltime);
             }

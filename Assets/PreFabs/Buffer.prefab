@@ -99,7 +99,7 @@ MonoBehaviour:
   effect: {fileID: 8041479457892728439, guid: bc28ddb6b0f0f0442935a37076501e8e, type: 3}
   cooltime: 15
   keeptime: 5
-  buff_value: 50
+  buff_value: 20
 --- !u!114 &-4665764592177558293
 MonoBehaviour:
   m_ObjectHideFlags: 0

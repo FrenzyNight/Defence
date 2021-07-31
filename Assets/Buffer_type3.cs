@@ -43,11 +43,11 @@ public class Buffer_type3 : MonoBehaviour
 
                 
                 effectimg = Instantiate(effect, new Vector2(playerTr.position.x, playerTr.position.y + 2f), Quaternion.identity);
-                player.damage *= (1 + buff_value/100);
+                player.DMG_INCR += buff_value;
                 yield return new WaitForSeconds(keeptime);
                 
                 Destroy(effectimg);
-                player.damage /= (1 + buff_value/100);
+                player.DMG_INCR -= buff_value;
                 
                 yield return new WaitForSeconds(cooltime);
             }
