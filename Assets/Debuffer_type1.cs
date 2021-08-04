@@ -22,6 +22,7 @@ public class Debuffer_type1 : MonoBehaviour
         wm = GameObject.Find("WaveManager").GetComponent<WaveManager>();
         tr = GetComponent<Transform>();
 
+
         Golden();
         StartCoroutine(Fire());
     }
