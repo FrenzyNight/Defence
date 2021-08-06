@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using DG.Tweening;
 
 public class BulletMove : MonoBehaviour
@@ -12,7 +13,11 @@ public class BulletMove : MonoBehaviour
     Transform effectTr;
     WaveManager wm;
     Player_char player;
+
+    public GameObject DMG_Text;
+    GameObject EnemyCanvus;
     
+    GameObject dmg;
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +31,8 @@ public class BulletMove : MonoBehaviour
         point.y -= tr.transform.position.y;
         angle = Mathf.Atan2(point.y, point.x) * Mathf.Rad2Deg - 90f;
         tr.eulerAngles = new Vector3(0,0,angle);
+
+        EnemyCanvus = GameObject.Find("Canvas_Enemy");
     }
 
     // Update is called once per frame
@@ -45,11 +52,15 @@ public class BulletMove : MonoBehaviour
             
             if(Random.Range(0,101) <= player.criticalrate) // 크리티컬 발생
             {   
+                dmg = Instantiate(DMG_Text, Camera.main.WorldToScreenPoint(effectTr.position), Quaternion.identity, EnemyCanvus.transform);
+                dmg.GetComponent<Text>().text = "<color=#ff0000>" + (player.FINAL_DMG*1.5f).ToString() + "</color>";
                 collision.gameObject.GetComponent<EnemyMove>().enemyNowHp -= player.FINAL_DMG*1.5f;
                 collision.gameObject.transform.DOShakePosition(0.05f, 0.5f , 1, 180f);
             }
             else
             {
+                dmg = Instantiate(DMG_Text, Camera.main.WorldToScreenPoint(effectTr.position), Quaternion.identity, EnemyCanvus.transform);
+                dmg.GetComponent<Text>().text = (player.FINAL_DMG).ToString();
                 collision.gameObject.GetComponent<EnemyMove>().enemyNowHp -= player.FINAL_DMG;
                 collision.gameObject.transform.DOShakePosition(0.05f, 0.1f , 1, 180f);
             }
@@ -59,35 +70,65 @@ public class BulletMove : MonoBehaviour
         else if(collision.tag == "blaster")
         {
             if(Random.Range(0,101) <= player.criticalrate) // 크리티컬 발생
+            {
                 collision.gameObject.GetComponent<Blaster>().HP -= player.FINAL_DMG *1.5f;
+                dmg = Instantiate(DMG_Text, Camera.main.WorldToScreenPoint(effectTr.position), Quaternion.identity, EnemyCanvus.transform);
+                dmg.GetComponent<Text>().text = "<color=#ff0000>" + (player.FINAL_DMG*1.5f).ToString() + "</color>";
+            }
             else
+            {
                 collision.gameObject.GetComponent<Blaster>().HP -= player.FINAL_DMG;
+                dmg = Instantiate(DMG_Text, Camera.main.WorldToScreenPoint(effectTr.position), Quaternion.identity, EnemyCanvus.transform);
+                dmg.GetComponent<Text>().text = (player.FINAL_DMG).ToString();
+            }
             Destroy(gameObject);
         }
         else if(collision.tag == "rock")
         {
             if(Random.Range(0,101) <= player.criticalrate)
+            {
                 collision.gameObject.GetComponent<RockMove>().HP -= player.FINAL_DMG * 1.5f;
+                dmg = Instantiate(DMG_Text, Camera.main.WorldToScreenPoint(effectTr.position), Quaternion.identity, EnemyCanvus.transform);
+                dmg.GetComponent<Text>().text = "<color=#ff0000>" + (player.FINAL_DMG*1.5f).ToString() + "</color>";
+            }
             else
+            {
                 collision.gameObject.GetComponent<RockMove>().HP -= player.FINAL_DMG;
+                dmg = Instantiate(DMG_Text, Camera.main.WorldToScreenPoint(effectTr.position), Quaternion.identity, EnemyCanvus.transform);
+                dmg.GetComponent<Text>().text = (player.FINAL_DMG).ToString();
+            }
             Destroy(gameObject);
         }
         else if(collision.tag == "bomb")
         {
             if(Random.Range(0,101) <= player.criticalrate)
+            {
                 collision.gameObject.GetComponent<BombMove>().bombHP -= player.FINAL_DMG * 1.5f;
+                dmg = Instantiate(DMG_Text, Camera.main.WorldToScreenPoint(effectTr.position), Quaternion.identity, EnemyCanvus.transform);
+                dmg.GetComponent<Text>().text = "<color=#ff0000>" + (player.FINAL_DMG*1.5f).ToString() + "</color>";
+            }
             else
+            {
                 collision.gameObject.GetComponent<BombMove>().bombHP -= player.FINAL_DMG;
-
+                dmg = Instantiate(DMG_Text, Camera.main.WorldToScreenPoint(effectTr.position), Quaternion.identity, EnemyCanvus.transform);
+                dmg.GetComponent<Text>().text = (player.FINAL_DMG).ToString();
+            }
             Destroy(gameObject);
         }
         else if(collision.tag == "boss")
         {
             if(Random.Range(0,101) <= player.criticalrate)
+            {
                 collision.gameObject.GetComponent<Boss>().BossNowHP -= player.FINAL_DMG * 1.5f;
+                dmg = Instantiate(DMG_Text, Camera.main.WorldToScreenPoint(effectTr.position), Quaternion.identity, EnemyCanvus.transform);
+                dmg.GetComponent<Text>().text = "<color=#ff0000>" + (player.FINAL_DMG*1.5f).ToString() + "</color>";
+            }
             else
+            {
                 collision.gameObject.GetComponent<Boss>().BossNowHP -= player.FINAL_DMG;
-
+                dmg = Instantiate(DMG_Text, Camera.main.WorldToScreenPoint(effectTr.position), Quaternion.identity, EnemyCanvus.transform);
+                dmg.GetComponent<Text>().text =(player.FINAL_DMG).ToString() ;
+            }
             Destroy(gameObject);
         }
     }

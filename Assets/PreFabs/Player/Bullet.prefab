@@ -112,3 +112,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22eff624ab85ee642bdee6739788b4a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DMG_Text: {fileID: 5171042731671597386, guid: 8f9ab2ff3deb2884ca36d92fc420e920, type: 3}
+  EnemyCanvus: {fileID: 0}
